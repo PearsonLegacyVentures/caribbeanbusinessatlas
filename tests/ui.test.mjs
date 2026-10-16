@@ -59,7 +59,7 @@ test('prelaunch form does not solicit data until configured',()=>{
 });
 test('article and business views retain facts and source references',()=>{
  for(const s of stories){const page=html('stories/'+s.slug);assert.match(page,/article-visual/);assert.match(page,/article-navigation/);for(const source of s.sources||[])assert.ok(page.includes(source.url.replaceAll('&','&amp;')),s.slug+' '+source.url)}
- for(const c of companies){const page=html('directory/'+c.slug);assert.ok(page.includes(c.name));assert.match(page,/Business at a glance/);if(c.affiliated)assert.match(page,/publisher has a business interest/)}
+ for(const c of companies){const page=html('directory/'+c.slug);assert.ok(page.includes(c.name));assert.match(page,/Business at a glance/);if(c.affiliated)assert.match(page,/[Pp]ublisher has a business interest/)}
 });
 test('all internal route URLs resolve within the generated output',()=>{
  const routeDirs=['', 'directory','stories','about','islands','submit','editorial-policy','privacy',...stories.map(x=>'stories/'+x.slug),...companies.map(x=>'directory/'+x.slug)];
