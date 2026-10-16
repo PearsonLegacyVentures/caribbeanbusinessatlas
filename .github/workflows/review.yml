@@ -13,5 +13,7 @@ jobs:
           node-version: '22'
       - run: npm run build
       - run: npm test
+      - name: Verify 320px–1440px layouts and interactive states in Chromium
+        run: npm run qa:browser
       - name: Verify generated site matches committed output
         run: git diff --exit-code -- dist
