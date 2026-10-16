@@ -1,5 +1,20 @@
 /* Caribbean Business Atlas interaction states — ui-spec.yaml */
 (()=>{'use strict';
+  // Remote company photos may fail if their original publisher blocks embedding.
+  // Never turn a missing source image into a broken-image glyph or an invented photo.
+  function handleImage(img){
+    if(!img || !img.matches?.('img[data-editorial-photo]'))return;
+    if(img.complete && img.naturalWidth===0){
+      img.classList.add('media-broken');
+      img.closest('.media-frame')?.classList.add('media-unavailable');
+    }
+  }
+  document.addEventListener('error',e=>handleImage(e.target),true);
+  document.querySelectorAll('img[data-editorial-photo]').forEach(img=>{
+    handleImage(img);
+    img.addEventListener('load',()=>img.closest('.media-frame')?.classList.add('media-loaded'),{once:true});
+  });
+
   const toggle=document.querySelector('[data-menu-toggle]');
   const nav=document.querySelector('[data-nav]');
   const mobile=window.matchMedia('(max-width: 820px)');
