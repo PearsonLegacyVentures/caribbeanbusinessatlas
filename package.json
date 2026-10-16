@@ -1,0 +1,9 @@
+{
+  "name": "caribbean-business-atlas",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs"
+  }
+}
