@@ -1,9 +1,10 @@
 // Zero-dependency Chromium smoke test for the static publication.
 // Runs real viewport/layout and keyboard/filter checks against the generated dist.
 import {createServer} from 'node:http';
-import {readFileSync,existsSync} from 'node:fs';
+import {readFileSync,existsSync,mkdtempSync,rmSync} from 'node:fs';
 import {spawn,spawnSync} from 'node:child_process';
 import path from 'node:path';
+import os from 'node:os';
 
 const testPage=String.raw`<!doctype html><html lang="en"><head><meta charset="utf-8"><title>CBA browser QA</title></head><body>
 <pre id="qa-result">RUNNING</pre><script>
@@ -90,19 +91,80 @@ const server=createServer((req,res)=>{
 await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
 const port=server.address().port;
 const chrome=resolveChrome();
-const browser=spawn(chrome,['--headless=new','--no-sandbox','--disable-gpu','--disable-dev-shm-usage','--hide-scrollbars','--window-size=1440,900','--virtual-time-budget=25000','--dump-dom','http://127.0.0.1:'+port+'/__qa__'],{stdio:['ignore','pipe','pipe']});
-let stdout='',stderr='';
-browser.stdout.on('data',d=>stdout+=d);
-browser.stderr.on('data',d=>stderr+=d);
-const watchdog=setTimeout(()=>browser.kill('SIGKILL'),90000);
-const exit=await new Promise(resolve=>browser.on('close',resolve));
-clearTimeout(watchdog);server.close();
-const found=stdout.match(/<pre id="qa-result">([\s\S]*?)<\/pre>/);
-if(!found){console.error(stderr.slice(-1200));throw Error('Chrome did not complete browser QA (exit '+exit+').')}
-const decoded=found[1].replace(/&quot;/g,'"').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>');
-const report=JSON.parse(decoded);
-if(!report.complete)throw Error('Browser QA failed to execute: '+report.error);
-for(const r of report.results)console.log((r.pass?'PASS':'FAIL')+' '+r.name+(r.detail?' — '+r.detail:''));
-const failures=report.results.filter(r=>!r.pass);
-console.log('Browser QA: '+(report.results.length-failures.length)+'/'+report.results.length+' checks passed');
-if(failures.length)process.exitCode=1;
+const userDataDir=mkdtempSync(path.join(os.tmpdir(),'cba-browser-'));
+const browser=spawn(chrome,[
+  '--headless=new','--no-sandbox','--disable-gpu','--disable-dev-shm-usage',
+  '--remote-allow-origins=*','--remote-debugging-port=0',
+  '--user-data-dir='+userDataDir,'--window-size=1440,900',
+  'http://127.0.0.1:'+port+'/__qa__'
+],{stdio:['ignore','pipe','pipe']});
+let stderr='';
+browser.stderr.on('data',d=>stderr+=d.toString());
+const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const deadline=Date.now()+75000;
+async function awaitTab(){
+  while(Date.now()<deadline){
+    const activePort=path.join(userDataDir,'DevToolsActivePort');
+    if(existsSync(activePort)){
+      const portNumber=Number(readFileSync(activePort,'utf8').split('\n')[0]);
+      if(Number.isFinite(portNumber)){
+        try{
+          const response=await fetch('http://127.0.0.1:'+portNumber+'/json');
+          const targets=await response.json();
+          const target=targets.find(x=>x.type==='page'&&x.url.includes('/__qa__'));
+          if(target?.webSocketDebuggerUrl)return target.webSocketDebuggerUrl;
+        }catch{}
+      }
+    }
+    await sleep(180);
+  }
+  throw Error('Chrome DevTools target not found. '+stderr.slice(-500));
+}
+let socket;
+try{
+  const target=await awaitTab();
+  socket=new WebSocket(target);
+  await new Promise((resolve,reject)=>{
+    socket.addEventListener('open',resolve,{once:true});
+    socket.addEventListener('error',reject,{once:true});
+  });
+  let sequence=0;
+  const pending=new Map();
+  socket.addEventListener('message',event=>{
+    const message=JSON.parse(event.data);
+    if(message.id&&pending.has(message.id)){
+      pending.get(message.id)(message);
+      pending.delete(message.id);
+    }
+  });
+  function send(method,params={}){
+    return new Promise((resolve,reject)=>{
+      const id=++sequence;
+      const timeout=setTimeout(()=>{pending.delete(id);reject(Error('DevTools timeout: '+method))},5000);
+      pending.set(id,result=>{clearTimeout(timeout);resolve(result)});
+      socket.send(JSON.stringify({id,method,params}));
+    });
+  }
+  await send('Runtime.enable');
+  let report=null;
+  while(Date.now()<deadline){
+    const response=await send('Runtime.evaluate',{expression:"document.querySelector('#qa-result')?.textContent || ''",returnByValue:true});
+    const text=response.result?.result?.value||'';
+    if(text&&text!=='RUNNING'){
+      report=JSON.parse(text);
+      break;
+    }
+    await sleep(220);
+  }
+  if(!report)throw Error('Timed out waiting for browser QA to finish.');
+  if(!report.complete)throw Error('Browser QA script error: '+report.error);
+  for(const r of report.results)console.log((r.pass?'PASS':'FAIL')+' '+r.name+(r.detail?' — '+r.detail:''));
+  const failures=report.results.filter(r=>!r.pass);
+  console.log('Browser QA: '+(report.results.length-failures.length)+'/'+report.results.length+' checks passed');
+  if(failures.length)process.exitCode=1;
+}finally{
+  socket?.close();
+  browser.kill();
+  server.close();
+  try{rmSync(userDataDir,{recursive:true,force:true})}catch{}
+}
