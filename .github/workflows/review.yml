@@ -13,3 +13,5 @@ jobs:
           node-version: '22'
       - run: npm run build
       - run: npm test
+      - name: Verify generated site matches committed output
+        run: git diff --exit-code -- dist

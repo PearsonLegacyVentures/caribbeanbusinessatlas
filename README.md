@@ -73,3 +73,9 @@ The publisher is Amar Pearson. Multiple featured companies are connected to him.
 - [ ] Review GitHub Actions test results and get explicit production approval.
 
 **GitHub commits ≠ verified production release.**
+
+## Cloudflare Pages blank-site recovery
+
+The site now ships prebuilt HTML in `dist/` plus a `wrangler.toml` declaring Pages output `./dist` to prevent an empty deployment when a build command is omitted. CI tests compare `npm run build` against committed `dist` output.
+
+Cloudflare Pages Git settings: **Framework: None; Build command: `npm run build`; Output directory: `dist`; Root directory: `/`**. Remains review-only (`noindex,nofollow`). Do not connect to a production custom domain without approval.
