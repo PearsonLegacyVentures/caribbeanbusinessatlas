@@ -516,3 +516,26 @@ form [role=status]{font-size:.9rem;min-height:25px}
  .photo-company-card .company-bottom{flex-wrap:wrap}
 }
 @media(prefers-reduced-motion:reduce){.media-frame>img{transition:none!important;transform:none!important}}
+
+/* Magazine rhythm: asymmetric story placement instead of uniform SaaS cards */
+.journal-section .stories-grid{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:24px;row-gap:43px}
+.journal-section .story-tile:first-child{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:0;background:var(--color-surface);border:1px solid var(--color-border)}
+.journal-section .story-tile:first-child .story-cover{height:100%;aspect-ratio:auto}
+.journal-section .story-tile:first-child .story-info{padding:clamp(22px,3vw,39px)}
+.journal-section .story-tile:first-child .story-info h3{font-size:clamp(2rem,3vw,3.5rem)}
+.journal-section .story-tile:first-child .story-info .arrow-link{margin-top:auto}
+.journal-section .story-tile:nth-child(n+4){border-top:1px solid var(--color-border);padding-top:28px}
+.journal-section .story-tile:nth-child(n+4) .story-cover{aspect-ratio:1.75}
+.company-card .company-photo-wrap .media-credit>a{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.company-card-content .company-location{max-width:53%;text-align:right}
+@media(max-width:1024px){
+ .journal-section .stories-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .journal-section .story-tile:first-child{grid-column:span 2}
+}
+@media(max-width:700px){
+ .journal-section .stories-grid{grid-template-columns:1fr;row-gap:28px}
+ .journal-section .story-tile:first-child{grid-column:auto;display:flex;flex-direction:column}
+ .journal-section .story-tile:first-child .story-cover{height:auto;aspect-ratio:1.5}
+ .journal-section .story-tile:first-child .story-info{padding:25px}
+ .journal-section .story-tile:nth-child(n+4){padding-top:18px}
+}
