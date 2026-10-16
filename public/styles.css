@@ -5,3 +5,21 @@
 @media(max-width:1020px){.hero-layout{grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr)}.hero-art{min-height:480px}.hero-main{padding:38px 0 50px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.art-big{font-size:9vw}}
 @media(max-width:700px){header{display:block;padding:20px 22px}nav{margin-top:20px;gap:10px 20px}nav a{font-size:11px}main{padding:0 19px 65px}.hero{padding-top:32px}.hero-layout{grid-template-columns:1fr;gap:20px}.hero-main{padding:8px 0 16px}.hero h1{font-size:clamp(3.8rem,14.8vw,6.5rem)}.hero-art{min-height:320px}.art-sun{height:180px;width:180px}.art-big{font-size:25vw}.hero-bottom{display:none}.issue{display:none}.ticker{margin:30px -19px 0;padding:19px;justify-content:flex-start}.ticker span:nth-of-type(n+4),.ticker b:nth-of-type(n+4){display:none}.rule{margin:45px 0 30px}.grid{grid-template-columns:1fr}.tile{min-height:210px}.profile-layout,.two{grid-template-columns:1fr}.profile-aside{position:static}.article,.profile{padding-top:38px}.article h1{font-size:clamp(3.1rem,12vw,5.1rem)}.sources{padding:22px}.facts>div{grid-template-columns:100px 1fr}.hero-actions{gap:18px}.hero-bottom{display:none}}
 @media(max-width:370px){.hero h1{font-size:3.5rem}.searchbar input,.searchbar select{min-width:100%;width:100%}header nav{gap:14px}}
+
+/* Publication masthead and mobile navigation */
+.site-header{z-index:20;box-shadow:0 5px 30px rgba(7,33,28,.04)}
+.brand{display:flex;align-items:center;gap:11px}
+.brand-symbol{display:flex;width:38px;height:38px;justify-content:center;align-items:center;background:var(--acid);color:var(--ink2);font-size:27px;border-radius:1px}
+.menu-toggle{display:none}
+.skip-link{position:absolute;top:-100px;left:20px;background:var(--acid);color:var(--ink2);padding:12px 17px;z-index:100;font-weight:700}
+.skip-link:focus{top:10px}
+@media(max-width:700px){
+ .site-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0}
+ .menu-toggle{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.1em;background:none;color:#f8f6ef;border:1px solid #6e8e82;padding:11px 13px}
+ .menu-toggle:hover{background:#31564a}
+ .site-header nav{display:none;width:100%;flex-direction:column;align-items:stretch;gap:0;padding:17px 0 4px}
+ .site-header nav[data-open]{display:flex}
+ .site-header nav a{padding:13px 2px;border-bottom:1px solid rgba(255,255,255,.17);font-size:13px}
+ .brand-symbol{width:30px;height:30px;font-size:23px}
+ .brand strong{font-size:12px}
+}
