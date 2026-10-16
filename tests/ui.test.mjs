@@ -31,9 +31,9 @@ test('primary content contrast satisfies 4.5:1 target',()=>{
  assert.ok(contrast('#112B2A','#DDF07B')>=4.5);
  assert.ok(contrast('#FFFFFF','#112B2A')>=4.5);
 });
-test('homepage has one leading editorial CTA and original atlas artwork',()=>{
+test('homepage has one leading editorial CTA and original sourced business photography',()=>{
  assert.match(root,/Read the journal/);
- assert.match(root,/hero-cartography/);
+ assert.match(root,/hero-photo-collection/);
  assert.match(root,/THE COVER STORY/);
  assert.match(root,/Read the feature/);
  assert.match(root,/editorial-policy/);
