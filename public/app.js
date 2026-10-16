@@ -41,3 +41,9 @@ form?.addEventListener('submit',async event=>{
  }catch{if(output)output.textContent='Connection error. Please try again later.'}
  finally{if(btn){btn.disabled=false;btn.textContent='Submit for editorial consideration →'}}
 });
+
+const toggle=document.querySelector('[data-menu-toggle]'),navigation=document.querySelector('[data-nav]');
+function closeMenu(){if(!toggle||!navigation)return;navigation.removeAttribute('data-open');toggle.setAttribute('aria-expanded','false')}
+toggle?.addEventListener('click',()=>{const open=navigation?.hasAttribute('data-open');if(open)closeMenu();else{navigation?.setAttribute('data-open','');toggle.setAttribute('aria-expanded','true')}});
+navigation?.addEventListener('click',event=>{if(event.target.closest('a'))closeMenu()});
+document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu()});
