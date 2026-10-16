@@ -1,0 +1,33 @@
+name: Prepare editorial research brief
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Brief date (YYYY-MM-DD; leave blank for today)"
+        required: false
+        type: string
+permissions:
+  contents: read
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Generate unpublished assignment
+        shell: bash
+        env:
+          BRIEF_DATE: ${{ inputs.date }}
+        run: |
+          if [ -n "$BRIEF_DATE" ]; then
+            node scripts/editorial-brief.mjs --date="$BRIEF_DATE"
+          else
+            node scripts/editorial-brief.mjs
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: editorial-brief
+          path: drafts/*.md
+          retention-days: 30
