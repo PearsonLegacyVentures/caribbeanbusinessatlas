@@ -411,3 +411,108 @@ form [role=status]{font-size:.9rem;min-height:25px}
  .region-row strong{font-size:clamp(1.9rem,7vw,3.5rem)}
  .about-manifesto{padding:30px 24px}
 }
+
+/* PHOTO-LED EDITORIAL UPGRADE — real company images, rights noted in src/media.mjs */
+.media-frame{position:relative;isolation:isolate;display:block;margin:0;overflow:hidden;min-width:0;background:#244B43;height:100%;min-height:180px}
+.media-backup{position:absolute;inset:0;z-index:0;padding:22px;background:linear-gradient(130deg,#2B6256,#102C30);color:#E1EDC8;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;font-size:.64rem;font-weight:700;letter-spacing:.13em}
+.media-backup>b{font-size:clamp(4rem,13vw,9rem);font-weight:400;align-self:center;opacity:.25}
+.media-frame>img{position:absolute;z-index:1;width:100%;height:100%;inset:0;object-fit:cover;object-position:center;display:block;transition:transform 550ms var(--ease-enter),opacity var(--duration-normal)}
+.media-frame.media-screenshot>img{object-fit:contain;background:#E5E9E3}
+.media-frame:hover>img{transform:scale(1.035)}
+.media-frame>img.media-broken{display:none}
+.media-credit{position:absolute;z-index:3;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:19px 17px 12px;background:linear-gradient(transparent,rgba(9,35,34,.83));color:#fff;font-size:.6rem;letter-spacing:.085em;line-height:1.4;text-transform:uppercase;font-weight:700}
+.media-credit a{color:#F3F8E5;text-decoration:none;min-height:32px;display:inline-flex;align-items:center}
+.media-credit a:hover{text-decoration:underline}
+.media-screenshot .media-credit{background:linear-gradient(transparent,rgba(16,43,39,.85))}
+.media-unverified{background:#E3E8DC;color:var(--color-text)}
+.media-unverified .media-backup{background:repeating-linear-gradient(135deg,#E2E8DC,#E2E8DC 22px,#D3DFC9 23px,#D3DFC9 24px);color:var(--color-text)}
+.media-unverified .media-credit{background:rgba(17,43,42,.9)}
+/* Staggered real-business photo spread in place of ornamental atlas SVG */
+.hero-photo-collection{min-width:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1.3fr 1fr;min-height:590px;gap:4px;background:#D7E5D5;padding:4px;position:relative}
+.hero-phototile{position:relative;min-width:0;min-height:0;overflow:hidden;background:#183F36}
+.hero-phototile>.media-frame{height:100%;width:100%}
+.hero-phototile-a{grid-column:1 / 3;grid-row:1;min-height:350px}
+.hero-phototile-b{grid-column:1;grid-row:2;min-height:220px}
+.hero-phototile-c{grid-column:2;grid-row:2;min-height:220px}
+.hero-photo-collection .media-credit{padding:30px 12px 10px;font-size:.53rem;gap:4px}
+.hero-photo-collection .media-credit span{display:none}
+.hero-photo-collection .media-credit a{font-size:.53rem}
+.hero-image-title{position:absolute;top:24px;left:24px;z-index:5;color:#fff;text-shadow:0 2px 25px rgba(0,0,0,.5);display:flex;flex-direction:column;gap:14px;pointer-events:none}
+.hero-image-title span{font-size:.64rem;font-weight:700;letter-spacing:.16em}
+.hero-image-title strong{font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3.5rem);font-weight:400;letter-spacing:-.04em;line-height:1.02}
+.hero-main h1{font-size:clamp(3.6rem,6vw,6.65rem)}
+.hero-main .lead{max-width:440px}
+/* Photographic cover feature */
+.feature-grid>.media-frame{min-height:470px}
+.feature-photo .media-credit{padding:32px 24px 18px}
+/* Story cards: photo first, editorial copy second */
+.story-cover{display:block;min-width:0;aspect-ratio:1.43;overflow:hidden;background:#DCE9DD}
+.story-cover>.media-frame{height:100%;min-height:0}
+.story-cover .media-credit{padding:32px 15px 9px;font-size:.56rem}
+.story-cover .media-credit span{display:none}
+.story-cover .media-credit a{font-size:.58rem}
+.story-info{padding-top:2px}
+/* Business cards: photographs anchor the catalogue. */
+.photo-company-card{padding:0;display:flex;min-height:390px;overflow:hidden;gap:0}
+.company-photo-wrap{height:190px;position:relative;overflow:hidden;background:#E5ECE2;flex:none}
+.company-photo-wrap>.media-frame{height:100%;min-height:0}
+.company-photo-wrap .media-credit{padding:28px 12px 8px}
+.company-photo-wrap .media-credit span{display:none}
+.company-photo-wrap .media-credit a{font-size:.56rem}
+.company-card-content{padding:23px 25px 20px;flex:1;display:flex;flex-direction:column;gap:3px;min-height:250px}
+.photo-company-card .company-index{font-size:.69rem}
+.photo-company-card h3{font-size:clamp(1.65rem,2.1vw,2.25rem);margin:9px 0 7px}
+.photo-company-card .company-summary{line-height:1.55;max-width:42ch;margin-bottom:15px}
+.photo-company-card .company-top{margin-bottom:9px}
+.photo-company-card .company-bottom{gap:8px}
+.photo-company-card .company-bottom .status{font-size:.62rem}
+.directory-grid .photo-company-card{min-height:400px}
+/* Actual brand picture on company profiles */
+.profile-photo-wrap{height:250px;margin:17px 0 24px}
+.profile-photo-wrap .media-frame{min-height:250px}
+.profile-photo-wrap .media-credit{padding:34px 11px 13px}
+.profile-aside .profile-photo-wrap{margin-top:16px}
+.profile-aside .disclosure{margin-top:16px}
+/* Article illustration uses company-specific source imagery */
+.article-visual{height:clamp(260px,35vw,500px);margin:35px 0 28px}
+.article-visual>.media-frame{height:100%;min-height:0}
+.article-visual .media-credit{padding:38px 21px 16px}
+/* Caption/source links are accessible and remain honest on failed remote hosts */
+@media(max-width:1024px){
+ .hero-photo-collection{min-height:540px}
+ .hero-phototile-a{min-height:320px}
+ .hero-phototile-b,.hero-phototile-c{min-height:205px}
+ .company-photo-wrap{height:180px}
+}
+@media(max-width:820px){
+ .hero-photo-collection{min-height:410px;grid-template-rows:1fr .8fr}
+ .hero-phototile-a{min-height:235px}
+ .hero-phototile-b,.hero-phototile-c{min-height:170px}
+ .hero-image-title strong{font-size:2.5rem}
+ .feature-grid>.media-frame{min-height:360px}
+}
+@media(max-width:700px){
+ .hero-photo-collection{min-height:360px}
+ .hero-phototile-a{min-height:220px}
+ .hero-phototile-b,.hero-phototile-c{min-height:130px}
+ .hero-photo-collection .media-credit{padding:21px 7px 6px}
+ .hero-photo-collection .media-credit a{font-size:.46rem}
+ .hero-image-title{top:15px;left:16px;gap:8px}
+ .hero-image-title strong{font-size:2.4rem}
+ .feature-grid>.media-frame{min-height:310px}
+ .story-cover{aspect-ratio:1.6}
+ .story-cover .media-frame{min-height:0}
+ .photo-company-card{min-height:0}
+ .company-photo-wrap{height:210px}
+ .company-card-content{padding:20px;min-height:245px}
+ .profile-photo-wrap{height:240px}
+ .article-visual{height:260px}
+}
+@media(max-width:380px){
+ .hero-photo-collection{min-height:315px}
+ .hero-phototile-a{min-height:185px}
+ .hero-phototile-b,.hero-phototile-c{min-height:115px}
+ .media-credit{padding:21px 7px 7px;font-size:.52rem}
+ .photo-company-card .company-bottom{flex-wrap:wrap}
+}
+@media(prefers-reduced-motion:reduce){.media-frame>img{transition:none!important;transform:none!important}}
