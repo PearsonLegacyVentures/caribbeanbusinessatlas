@@ -19,6 +19,7 @@ Node.js 22+, no third-party npm installation required:
 ```sh
 npm run build
 npm test
+npm run qa:browser # requires a locally installed Chromium-family browser
 npm run editorial:brief
 npx serve dist
 ```
@@ -79,3 +80,11 @@ The publisher is Amar Pearson. Multiple featured companies are connected to him.
 The site now ships prebuilt HTML in `dist/` plus a `wrangler.toml` declaring Pages output `./dist` to prevent an empty deployment when a build command is omitted. CI tests compare `npm run build` against committed `dist` output.
 
 Cloudflare Pages Git settings: **Framework: None; Build command: `npm run build`; Output directory: `dist`; Root directory: `/`**. Remains review-only (`noindex,nofollow`). Do not connect to a production custom domain without approval.
+
+## HorizonX-inspired review redesign
+
+The design branch `design/horizonx-editorial-upgrade` uses the original vendor-neutral HorizonX UI Specification, adapted into [`ui-spec.yaml`](ui-spec.yaml) with concrete editorial tokens, states, breakpoints and QA gates. See [`AGENTS.md`](AGENTS.md) for future coding instructions and [`docs/HORIZONX-QA.md`](docs/HORIZONX-QA.md) for evidence-based checks.
+
+Preview (not the production branch): https://design-horizonx-editorial-up.caribbeanbusinessatlas.pages.dev/
+
+GitHub Actions runs `npm run build`, `npm test` and `npm run qa:browser`, testing actual mobile-sized Chromium viewports, keyboard navigation and directory interaction. **No production merge until review and authorization.**
