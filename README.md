@@ -1,13 +1,75 @@
 # Caribbean Business Atlas
 
-Standalone regional publication — GitHub review branch only. **Not deployed.**
+**Working name. Standalone Caribbean business publication. Review build only.**
 
-This is a lightweight review scaffold uploaded directly through the GitHub connector. It is **not yet the complete 18-page local build**. The full local source package remains in the conversation attachments. Editorial content, full company pages, backend and automated workflow are not yet integrated.
+Repository: `PearsonLegacyVentures/caribbeanbusinessatlas`
 
-## Local build
+## Site
 
-Run `npm run build`. Output: `dist/`. Search runs client-side. Indexing disabled.
+The current static generator produces **30 pages** from 13 researched/provisional company records and nine editorial pieces, plus a custom 404. Routes: `/`, `/stories/`, `/stories/{slug}/`, `/directory/`, `/directory/{slug}/`, `/islands/`, `/about/`, `/submit/`, `/editorial-policy/`, and `/privacy/`.
 
-## Editorial safeguards
+The directory supports live company search plus country and industry filters. Each profile distinguishes established operations from pre-commercial, in-development and identity-verification status. Source links accompany evidence-backed entries. Information supplied by companies is distinguished from independent reporting.
 
-No invented awards, rankings, client results or testimonials. Publisher-affiliated businesses labeled. No auto-publication without human approval.
+**No production deployment has been made.** All pages carry `noindex,nofollow` and `public/robots.txt` disallows crawling. Do not remove these until branding, domain, sources, imagery, privacy contact and owner review are complete.
+
+## Run locally
+
+Node.js 22+, no third-party npm installation required:
+
+```sh
+npm run build
+npm test
+npm run editorial:brief
+npx serve dist
+```
+
+Build output is `dist/`; Cloudflare Pages Functions are in `functions/`.
+
+## Source structure
+
+- `src/data.mjs`: business profiles and articles, including original source references.
+- `scripts/generate.mjs`: static publication renderer, metadata and internal routes.
+- `public/styles.css`: responsive editorial design.
+- `public/app.js`: search, country/sector filtering, mobile navigation and submission flow.
+- `functions/api/submissions.js`: protected Cloudflare Pages endpoint.
+- `tests/`: site structure and API validation tests.
+- `scripts/editorial-brief.mjs`: creates an **unpublished** editorial research brief.
+- `docs/RESEARCH.md`: evidence register and verification issues.
+- `docs/EDITORIAL_WORKFLOW.md`: editorial process, sourcing and publishing gates.
+- `.github/workflows/`: test-only workflow and manual-only draft workflow, **no deploy jobs**.
+
+## Submissions
+
+Business nominations are intentionally not collected in review mode. After owner approval, create a new Cloudflare Pages project and configure:
+
+1. Cloudflare KV binding `SUBMISSIONS` for the Pages Function.
+2. Encrypted runtime secret `TURNSTILE_SECRET_KEY`.
+3. Build variable `PUBLIC_TURNSTILE_SITE_KEY` (public site key, **never** a secret).
+4. Build variable `PUBLIC_EDITORIAL_CONTACT` (an approved privacy/editorial contact).
+
+The build only activates form submission when the site key **and** contact are provided; the backend requires KV **and** Turnstile secret and verifies each token. Accepted records expire from KV after **90 days**. Before activation, review consent language, retention obligations, privacy and contact terms. Do not store sensitive documents in the form.
+
+Cloudflare Pages settings **after approval**: Build command `npm run build`, output directory `dist`, root `/`. Deploy the standalone repository only. Do not change Bahamas AI Solutions or another existing Cloudflare project.
+
+## Editorial trust
+
+The publisher is Amar Pearson. Multiple featured companies are connected to him. The Atlas can cover and positively describe those companies based on factual evidence, but relationships are disclosed on relevant profiles and editorial standards. Do not publish fabricated reviews, numerical rankings without criteria, hidden paid endorsements, invented awards, client outcomes, or interviews that did not occur.
+
+**Creative Growth Agency:** specific identity/official web presence remains unconfirmed. That profile stays in research-pending status, and no unrelated company's website is linked.  
+**CocoLoop Bahamas:** an in-development concept, not an operating business.  
+**TriblockHR:** metrics and security statements are attributed to the company until verified independently.  
+**Pedal Paradise:** current itinerary and duration should be confirmed with the operator; the tourism authority and operator site describe different tour offerings.
+
+## Launch gates
+
+- [ ] Founder reviews site on a staging preview (desktop and mobile).
+- [ ] Approve title, domain and trademark checks.
+- [ ] Verify business facts, third-party photo rights and official URLs.
+- [ ] Identify and verify Creative Growth Agency.
+- [ ] Review editorial disclosures and methodology.
+- [ ] Publish verified contact and privacy information.
+- [ ] Test live submission endpoint and consent/abuse protection.
+- [ ] Add canonical domain, sitemap, RSS and turn indexing on deliberately.
+- [ ] Review GitHub Actions test results and get explicit production approval.
+
+**GitHub commits ≠ verified production release.**
