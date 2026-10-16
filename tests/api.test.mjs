@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import{onRequestPost,onRequestGet}from '../functions/api/submissions.js';
+const complete={businessName:'Sample Caribbean Business',country:'The Bahamas',sector:'Tourism',website:'https://example.com',description:'We provide a clearly described product or visitor service in Nassau.',contactName:'Test User',email:'test@example.com',relationship:'Owner',consent:true,turnstileToken:'valid-test-token'};
+const req=body=>new Request('https://review.example/api/submissions',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)});
+test('GET cannot expose submissions',()=>assert.equal(onRequestGet().status,405));
+test('submissions refuse unconfigured backend',async()=>assert.equal((await onRequestPost({request:req(complete),env:{}})).status,503));
+test('invalid email refused',async()=>assert.equal((await onRequestPost({request:req({...complete,email:'invalid'}),env:{SUBMISSIONS:{},TURNSTILE_SECRET_KEY:'test'}})).status,400));
+test('invalid site URL refused',async()=>assert.equal((await onRequestPost({request:req({...complete,website:'http://example.com'}),env:{SUBMISSIONS:{},TURNSTILE_SECRET_KEY:'test'}})).status,400));
+test('blank anti-bot token refused',async()=>assert.equal((await onRequestPost({request:req({...complete,turnstileToken:''}),env:{SUBMISSIONS:{},TURNSTILE_SECRET_KEY:'test'}})).status,400));
+test('honeypot does not write',async()=>{let writes=0;const res=await onRequestPost({request:req({...complete,companyFax:'spam'}),env:{SUBMISSIONS:{put:async()=>writes++},TURNSTILE_SECRET_KEY:'test'}});assert.equal(res.status,200);assert.equal(writes,0)});
+test('valid checked submission written with ninety-day expiry',async()=>{const previous=globalThis.fetch;globalThis.fetch=async()=>new Response(JSON.stringify({success:true}));let captured;try{const res=await onRequestPost({request:req(complete),env:{SUBMISSIONS:{put:async(...args)=>captured=args},TURNSTILE_SECRET_KEY:'test'}});assert.equal(res.status,201);assert.equal(captured[2].expirationTtl,7776000);assert.equal(JSON.parse(captured[1]).businessName,complete.businessName)}finally{globalThis.fetch=previous}});
