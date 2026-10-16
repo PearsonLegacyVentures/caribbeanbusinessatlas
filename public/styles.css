@@ -350,3 +350,64 @@ form [role=status]{font-size:.9rem;min-height:25px}
  .filter-bottom>span{display:none}
  .directory-grid{gap:12px}
 }
+
+/* Full-page editorial templates */
+.journal-intro,.about-intro,.regions-intro{padding:clamp(50px,8vw,105px) 0 clamp(40px,6vw,85px);border-bottom:1px solid var(--color-border)}
+.journal-intro h1,.about-intro h1,.regions-intro h1{font-size:clamp(3.8rem,8.8vw,9.4rem);max-width:1070px;margin:28px 0}
+.journal-intro .lead,.about-intro .lead,.regions-intro .lead{max-width:760px;color:var(--color-muted)}
+.journal-index{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0 14px;margin-bottom:27px;border-bottom:1px solid var(--color-border);font-size:.69rem;letter-spacing:.13em;font-weight:700;color:var(--color-muted)}
+.article-visual{height:360px;overflow:hidden;margin:34px 0 6px}
+.article-visual .story-art{min-height:360px}
+.article-visual .art-glyph{font-size:clamp(12rem,29vw,22rem)}
+.article-navigation{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:12px 0}
+.article-navigation a{display:inline-flex;align-items:center;min-height:44px;font-weight:700;text-decoration:none;font-size:.86rem}
+.article-navigation a:hover{text-decoration:underline}
+.submission-closed{max-width:900px}
+.submission-closed .closed-card{padding:clamp(24px,5vw,58px);background:var(--color-text);color:var(--color-on-inverse);margin:46px 0 25px}
+.closed-card .eyebrow{color:#B7DBB9}
+.closed-card h2{font-size:clamp(2.4rem,4.8vw,4.5rem);margin:14px 0 20px}
+.closed-card p:not(.eyebrow){max-width:580px;color:#DAEBDD}
+.closed-card .button{margin-top:15px}
+.about-manifesto{padding:clamp(35px,5vw,65px);margin-top:42px;background:var(--color-accent);display:grid;grid-template-columns:190px 1fr;gap:20px}
+.about-manifesto h2{max-width:850px;margin:0;font-size:clamp(2.6rem,5vw,5.1rem)}
+.about-manifesto .eyebrow{color:var(--color-text)}
+.principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin:75px 0}
+.principles>div{padding-top:25px;border-top:1px solid var(--color-border)}
+.principles>div>span{font-size:.8rem;font-weight:700;color:var(--color-muted)}
+.principles h3{font-size:2.25rem;margin:18px 0}
+.principles p{color:var(--color-muted)}
+.about-action{display:flex;justify-content:space-between;gap:30px;align-items:center;border-top:1px solid var(--color-border);padding:26px 0}
+.about-action p{max-width:600px}
+.regions-list{padding:45px 0}
+.region-row{display:grid;grid-template-columns:85px 1fr 145px 42px;gap:20px;align-items:center;text-decoration:none;padding:25px 0;border-bottom:1px solid var(--color-border);min-height:97px;transition:background var(--duration-normal)}
+.region-row:hover{background:#E8EFE4}
+.region-row strong{font-family:var(--font-display);font-size:clamp(2rem,4.2vw,4.4rem);font-weight:400;letter-spacing:-.04em;line-height:1.12}
+.region-index,.region-count{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--color-muted)}
+.region-arrow{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--color-border);border-radius:50%;font-size:1.1rem;transition:background var(--duration-normal)}
+.region-row:hover .region-arrow{background:var(--color-accent)}
+.regions-planned{padding:39px 0;max-width:710px}
+.regions-planned p:not(.eyebrow){color:var(--color-muted)}
+[data-form-status][data-kind="error"]{color:var(--color-danger);font-weight:700}
+[data-form-status][data-kind="success"]{color:var(--color-success);font-weight:700}
+[data-form-status][data-kind="pending"]{color:var(--color-muted)}
+.field-error{display:block;color:var(--color-danger);font-size:.77rem;margin:6px 0 0;font-weight:600}
+@media(max-width:820px){
+ .about-manifesto{grid-template-columns:1fr}
+ .about-manifesto h2{margin-top:5px}
+ .principles{grid-template-columns:1fr;gap:18px;margin:45px 0}
+ .principles>div{padding:18px 0}
+ .about-action{display:block}
+ .about-action .button{margin-top:15px}
+}
+@media(max-width:700px){
+ .journal-intro h1,.about-intro h1,.regions-intro h1{font-size:clamp(3.7rem,12vw,5.8rem)}
+ .journal-index{font-size:.62rem;flex-wrap:wrap}
+ .article-visual{height:245px}
+ .article-visual .story-art{min-height:245px}
+ .article-visual .art-glyph{font-size:11rem}
+ .region-row{grid-template-columns:32px minmax(0,1fr) 40px;gap:12px;padding:20px 0}
+ .region-row .region-count{grid-column:2;grid-row:2}
+ .region-row .region-arrow{grid-column:3;grid-row:1 / span 2}
+ .region-row strong{font-size:clamp(1.9rem,7vw,3.5rem)}
+ .about-manifesto{padding:30px 24px}
+}
