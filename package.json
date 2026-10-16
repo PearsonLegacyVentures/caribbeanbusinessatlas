@@ -1,10 +1,12 @@
 {
   "name": "caribbean-business-atlas",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
+  "description": "Caribbean Business Atlas — editorial magazine and researched business directory, pre-launch",
   "scripts": {
     "build": "node scripts/generate.mjs",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "editorial:brief": "node scripts/editorial-brief.mjs"
   }
 }
