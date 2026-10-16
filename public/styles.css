@@ -320,3 +320,33 @@ form [role=status]{font-size:.9rem;min-height:25px}
   *,*::before,*::after{animation-duration:.001ms!important;transition-duration:0ms!important;scroll-behavior:auto!important}
   .atlas-visual{transform:none!important}
 }
+
+/* Directory search and result states */
+.directory-intro{padding:clamp(48px,7vw,94px) 0 clamp(27px,4vw,55px);border-bottom:1px solid var(--color-border)}
+.directory-intro h1{font-size:clamp(3.7rem,8vw,8rem);max-width:980px;margin:30px 0}
+.directory-intro .lead{max-width:690px;color:var(--color-muted)}
+.filter-shell{background:var(--color-surface);border:1px solid var(--color-border);padding:clamp(20px,3.5vw,42px);margin:var(--space-12) 0 25px}
+.filter-head{display:flex;justify-content:space-between;align-items:end;gap:20px}
+.filter-head h2{font-size:clamp(2.1rem,3.3vw,3.1rem);margin:7px 0}
+.filter-head .eyebrow{margin:0}
+.filter-reset{min-height:44px;padding:10px 15px;border:1px solid var(--color-border);background:transparent;color:var(--color-text);font-size:.78rem;font-weight:700}
+.filter-reset:hover{border-color:var(--color-text);background:#E8EFE7}
+.filter-bottom{border-top:1px solid var(--color-border);margin-top:23px;padding-top:15px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.filter-bottom .results-count{margin:0;font-weight:600}
+.filter-bottom>span{color:var(--color-muted);font-size:.66rem;letter-spacing:.1em;font-weight:700}
+.directory-grid{margin:0 0 var(--space-16);gap:18px}
+.directory-grid .company-card{min-height:350px}
+.directory-empty{border:1px solid var(--color-border);padding:clamp(24px,5vw,60px);text-align:center;background:var(--color-surface);margin-bottom:35px}
+.directory-empty>span{font-size:3.5rem;color:var(--color-muted)}
+.directory-empty h3{font-size:2.4rem;margin:5px auto}
+.directory-empty p{color:var(--color-muted)}
+.directory-empty .button{margin-top:15px}
+.directory-disclosure{margin-top:40px}
+@media(max-width:700px){
+ .directory-intro{padding-top:42px}
+ .directory-intro h1{font-size:clamp(3.5rem,12vw,5.5rem)}
+ .filter-head{align-items:flex-start}
+ .filter-head h2{font-size:2.5rem}
+ .filter-bottom>span{display:none}
+ .directory-grid{gap:12px}
+}
