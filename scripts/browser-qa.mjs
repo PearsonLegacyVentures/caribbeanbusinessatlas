@@ -39,6 +39,18 @@ const testPage=String.raw`<!doctype html><html lang="en"><head><meta charset="ut
    }
    frame.remove();
  }
+
+ {
+   const {frame,d}=await open('/',1280,850);
+   const heroImages=[...d.querySelectorAll('.hero-photo-collection img[data-editorial-photo]')];
+   await Promise.race([
+     Promise.allSettled(heroImages.map(img=>img.decode())),
+     new Promise(resolve=>setTimeout(resolve,8500))
+   ]);
+   const loaded=heroImages.filter(img=>img.naturalWidth>0).length;
+   assert('Hero documentary images load',loaded>=2,'loaded '+loaded+' of '+heroImages.length+' official business-source photos');
+   frame.remove();
+ }
  for(const width of [320,390,768,1280]){
    const {frame,d,w}=await open('/directory/',width,850);
    const over=d.documentElement.scrollWidth-d.documentElement.clientWidth;
