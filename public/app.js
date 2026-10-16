@@ -69,19 +69,37 @@
     output.dataset.kind=kind;
     output.setAttribute('role',kind==='error'?'alert':'status');
   }
+  function fieldFeedback(field){
+    const id=(field.id||field.name||'field').replace(/[^a-z0-9-]/gi,'')+'-error';
+    const existing=document.getElementById(id);
+    const ok=field.checkValidity();
+    if(ok){
+      field.removeAttribute('aria-invalid');
+      if(existing)existing.remove();
+      const described=(field.getAttribute('aria-describedby')||'').split(' ').filter(value=>value&&value!==id).join(' ');
+      if(described)field.setAttribute('aria-describedby',described);else field.removeAttribute('aria-describedby');
+    }else{
+      field.setAttribute('aria-invalid','true');
+      const message=existing||document.createElement('span');
+      message.id=id;
+      message.className='field-error';
+      message.textContent=field.validationMessage||'Review this required field.';
+      if(!existing)field.closest('.field')?.append(message);
+      const described=new Set((field.getAttribute('aria-describedby')||'').split(' ').filter(Boolean));
+      described.add(id);field.setAttribute('aria-describedby',[...described].join(' '));
+    }
+    return ok;
+  }
   function validate(){
     let valid=true;
-    for(const field of inputs){
-      const ok=field.checkValidity();
-      field.setAttribute('aria-invalid',String(!ok));
-      valid=valid&&ok;
-    }
-    if(!valid)report('Check the highlighted fields and complete the required information.','error');
+    for(const field of inputs)valid=fieldFeedback(field)&&valid;
+    if(!valid)report('Please correct the highlighted fields and try again.','error');
     return valid;
   }
-  for(const field of inputs)field.addEventListener('input',()=>{
-    if(field.getAttribute('aria-invalid')==='true'&&field.checkValidity())field.removeAttribute('aria-invalid');
-  });
+  for(const field of inputs){
+    field.addEventListener('input',()=>{if(field.getAttribute('aria-invalid')==='true')fieldFeedback(field)});
+    field.addEventListener('change',()=>{if(field.getAttribute('aria-invalid')==='true')fieldFeedback(field)});
+  }
   form.addEventListener('submit',async event=>{
     event.preventDefault();
     if(form.dataset.enabled!=='true'){
