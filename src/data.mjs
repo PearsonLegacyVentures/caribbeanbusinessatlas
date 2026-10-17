@@ -6,17 +6,25 @@ export const companies = [
     "city": "Nassau",
     "island": "The Bahamas",
     "url": "https://massagebahamas.com",
-    "summary": "In-spa, mobile and beach massage experiences for residents and visitors.",
-    "details": "Tranquilitas operates an in-spa location in Nassau and offers mobile and beach massage bookings. Specific coverage, availability, prices and therapist access should be confirmed through its own booking channels.",
+    "summary": "Mobile massage at hotels, villas, yachts and beaches, alongside a Nassau day spa offering couples treatments, facials and wellness services.",
+    "details": "Tranquilitas provides in-spa appointments at #7 Fourth Terrace, Collins Avenue, Nassau, plus mobile massage experiences across Nassau and Paradise Island. Its online booking pages describe therapist-led treatments at hotels, villas, private homes, yachts and beaches, with additional Caribbean destination requests coordinated subject to therapist availability and local confirmation. Guests can request Swedish, deep tissue, couples and other spa treatments. Island-specific coverage and appointment availability must be confirmed directly with the company; regional reach is a company-reported service offering, not an independently audited ranking.",
     "sources": [
       {
-        "name": "Official website",
-        "url": "https://massagebahamas.com"
+        "name": "Tranquilitas official booking and location",
+        "url": "https://www.massagebahamas.com/book"
+      },
+      {
+        "name": "Services and mobile model",
+        "url": "https://www.massagebahamas.com/best-massage-nassau-bahamas"
+      },
+      {
+        "name": "Caribbean locations (company-published)",
+        "url": "https://www.massagebahamas.com/locations"
       }
     ],
     "affiliated": true,
     "status": "Operating",
-    "verification": "Company and website information"
+    "verification": "Active Nassau spa and mobile service on official booking pages; regional coverage is company-reported"
   },
   {
     "slug": "bahamas-ai-solutions",
@@ -255,10 +263,279 @@ export const companies = [
     ],
     "status": "Operating",
     "verification": "Official corporate website"
+  },
+  {
+    "slug": "the-new-duff",
+    "name": "The New Duff",
+    "sector": "Food & Beverage",
+    "city": "Nassau",
+    "island": "The Bahamas",
+    "url": "https://www.thenewduff.com/",
+    "summary": "Bahamian guava-duff specialists bringing a traditional island dessert to contemporary food retail.",
+    "details": "The New Duff began as a Nassau home-kitchen business and built its identity around guava duff, a steamed Bahamian dessert. Its founder's account connects the business to family, local culinary tradition and an expansion through sister brand Gran Bahama in Toronto. The current website includes both brands, so visitors should confirm Nassau opening details directly before traveling.",
+    "sources": [
+      {
+        "name": "The New Duff / Gran Bahama company story",
+        "url": "https://www.thenewduff.com/about-us-1"
+      },
+      {
+        "name": "Bahamas tourism listing",
+        "url": "https://www.bahamas.com/plan-your-trip/restaurants/the-new-duff"
+      }
+    ],
+    "status": "Operating",
+    "verification": "Official brand story and The Bahamas tourism directory"
+  },
+  {
+    "slug": "blue-mountain-tours-jamaica",
+    "name": "Blue Mountain Tours Jamaica",
+    "sector": "Tours & Experiences",
+    "city": "Blue Mountains",
+    "island": "Jamaica",
+    "url": "https://www.bluemountaintoursja.com/",
+    "summary": "Jamaican outdoor experiences combining mountain cycling, rainforest landscapes and local food.",
+    "details": "Blue Mountain Tours operates guided experiences in Jamaica's Blue Mountains. Its published tour itineraries feature downhill cycling, views of the mountain landscape, local food and waterfall experiences, with variations for travelers who do not ride. Prices and pickup arrangements vary by departure point and should be confirmed through the operator's active tour pages.",
+    "sources": [
+      {
+        "name": "Official tours and itineraries",
+        "url": "https://www.bluemountaintoursja.com/all-tours"
+      },
+      {
+        "name": "Operator website",
+        "url": "https://www.bluemountaintoursja.com/"
+      }
+    ],
+    "status": "Operating",
+    "verification": "Current itineraries and booking information on operator website"
+  },
+  {
+    "slug": "earthworks-pottery-barbados",
+    "name": "Earthworks Pottery",
+    "sector": "Arts & Manufacturing",
+    "city": "St. Thomas",
+    "island": "Barbados",
+    "url": "https://www.earthworks-pottery.com/",
+    "summary": "Barbadian pottery studio producing hand-decorated functional ceramics and welcoming visitors behind the scenes.",
+    "details": "Earthworks is a working pottery studio in St. Thomas, Barbados, founded in 1983 and known for bright, hand-finished tableware, serving pieces and decorative ceramics. Its team makes and glazes ceramics on site; the company offers studio visits and online browsing. Earthworks describes its products as food-safe, dishwasher-safe and microwave-safe, which are company product specifications rather than independent testing by the Atlas.",
+    "sources": [
+      {
+        "name": "Studio history and team",
+        "url": "https://www.earthworks-pottery.com/about-earthworks/"
+      },
+      {
+        "name": "Official product and visitor information",
+        "url": "https://www.earthworks-pottery.com/"
+      }
+    ],
+    "status": "Operating",
+    "verification": "Current official studio, team and product pages"
+  },
+  {
+    "slug": "d-market-movers",
+    "name": "D’ Market Movers",
+    "sector": "Food & Beverage",
+    "city": "El Socorro",
+    "island": "Trinidad and Tobago",
+    "url": "https://dmarketmovers.com/",
+    "summary": "Trinidadian online green-grocery and farm-to-table delivery business connecting local growers with shoppers.",
+    "details": "D’ Market Movers says it began operating in 2009 and built a grocery delivery and collection model connecting homes, restaurants and offices to produce and locally sourced food. The company's FAQ identifies David Thomas and Rachel Renie as founders. Public August 2026 business posts indicate recent activity, but its main web storefront was password-protected when this profile was researched in October 2026; ordering availability should be checked directly.",
+    "sources": [
+      {
+        "name": "Company FAQ and founding history",
+        "url": "https://dmarketmovers.com/pages/faqs"
+      },
+      {
+        "name": "Company storefront (access may be restricted)",
+        "url": "https://dmarketmovers.com/"
+      },
+      {
+        "name": "August 2026 business updates",
+        "url": "https://www.findglocal.com/TT/San-Juan/132400200109840/MarketMovers"
+      }
+    ],
+    "status": "Availability to confirm",
+    "verification": "Official company history plus recent business updates; live storefront restricted"
+  },
+  {
+    "slug": "fond-doux-eco-resort",
+    "name": "Fond Doux Eco Resort",
+    "sector": "Hospitality",
+    "city": "Soufrière",
+    "island": "Saint Lucia",
+    "url": "https://fonddouxresort.com/",
+    "summary": "Locally owned Saint Lucian cocoa-estate resort combining eco-conscious cottages, food and cultural experiences.",
+    "details": "Fond Doux Eco Resort sits on a historic cocoa estate in Soufrière, Saint Lucia. Owners Eroline and Lyton Lamontagne describe a locally run property with intimate cottages, guided plantation visits, chocolate-making experiences and farm-to-table dining. Its hospitality model connects accommodation with the estate's cultural and agricultural heritage; tour availability and booking terms come from the resort directly.",
+    "sources": [
+      {
+        "name": "Locally owned resort and historical context",
+        "url": "https://fonddouxresort.com/about/"
+      },
+      {
+        "name": "Experiences and visitor information",
+        "url": "https://fonddouxresort.com/adventures/"
+      }
+    ],
+    "status": "Operating",
+    "verification": "Current official resort and experiences pages"
+  },
+  {
+    "slug": "grenada-chocolate-company",
+    "name": "Grenada Chocolate Company",
+    "sector": "Arts & Manufacturing",
+    "city": "Grenada",
+    "island": "Grenada",
+    "url": "https://thegrenadachocolate.com/",
+    "summary": "Grenadian tree-to-bar chocolate producer making artisan bars using locally grown cocoa.",
+    "details": "The Grenada Chocolate Company describes its work as organic, tree-to-bar chocolate-making using locally sourced Trinitario cocoa. Founded by Mott Green and partners, it helped demonstrate the potential of locally processed Grenadian chocolate and continues to offer bars, cocoa products and visitor experiences on its website. The Atlas reports the company's stated production approach but does not independently certify individual sustainability or award claims.",
+    "sources": [
+      {
+        "name": "Company overview and product information",
+        "url": "https://thegrenadachocolate.com/"
+      },
+      {
+        "name": "Company history",
+        "url": "https://thegrenadachocolate.com/our-story/"
+      }
+    ],
+    "status": "Operating",
+    "verification": "Current official product catalogue and company story"
+  },
+  {
+    "slug": "caicos-dream-tours",
+    "name": "Caicos Dream Tours",
+    "sector": "Tours & Experiences",
+    "city": "Providenciales",
+    "island": "Turks and Caicos Islands",
+    "url": "https://caicosdreamtours.com/",
+    "summary": "Family-owned Turks and Caicos boat-tour operator offering snorkeling, sandbars, private trips and charters.",
+    "details": "Caicos Dream Tours says it began in 2004 with one boat and grew into a family-owned tourism operation in Turks and Caicos. Its active booking pages offer snorkeling trips, sandbar excursions, sunset cruising and private charters. Visitors can choose public group trips or customized experiences; available vessels, prices and logistics are determined by the operator at the time of booking.",
+    "sources": [
+      {
+        "name": "Company history",
+        "url": "https://caicosdreamtours.com/about-us/"
+      },
+      {
+        "name": "Official excursions and booking information",
+        "url": "https://caicosdreamtours.com/"
+      }
+    ],
+    "status": "Operating",
+    "verification": "Official company history and current boat-tour booking listings"
+  },
+  {
+    "slug": "kreyol-essence",
+    "name": "Kreyòl Essence",
+    "sector": "Beauty & Wellness Products",
+    "city": "Haiti / Miami",
+    "island": "Haiti",
+    "url": "https://kreyolessence.com/",
+    "summary": "Haitian-rooted hair and skin-care brand sourcing botanicals and supporting agricultural jobs in Haiti.",
+    "details": "Kreyòl Essence builds beauty products around Haitian botanicals, including Haitian black castor oil. The business operates internationally, including a United States presence, while describing Haitian farmers and women's economic opportunities as central to its model. Its official social-impact page documents the company's own reporting of employment and sourcing initiatives; the Atlas has not independently audited those impact figures.",
+    "sources": [
+      {
+        "name": "Official brand story",
+        "url": "https://kreyolessence.com/pages/about-us"
+      },
+      {
+        "name": "Haiti sourcing and social-impact information",
+        "url": "https://kreyolessence.com/pages/social-impact"
+      }
+    ],
+    "status": "Operating",
+    "verification": "Active official company and Haiti-sourcing impact pages"
   }
 ];
 
 export const stories = [
+  {
+    "slug": "tranquilitas-mobile-massage-caribbean",
+    "title": "Beyond the spa room: Tranquilitas takes massage to the Caribbean stay",
+    "category": "Wellness",
+    "summary": "Inside a Nassau spa's mobile-massage offer for villas, hotels, beaches and travelers seeking treatments in their own space.",
+    "paragraphs": [
+      "A massage business does not have to start and finish inside a spa. Tranquilitas operates treatment rooms in Nassau, but its mobile offering is organized around a different customer need: receiving a spa treatment where a guest is already staying.",
+      "The company's published services describe therapists bringing treatment tables, linens, oils and other setup to hotels, villas, vacation rentals and private residences in Nassau and Paradise Island. The same menu includes couples massage, deep tissue sessions and Swedish treatments, alongside in-spa facials and other wellness services.",
+      "For a visitor on a short itinerary, convenience can be as important as the treatment itself. A clear booking pathway, a location confirmation and predictable arrival logistics are the parts of the service most likely to determine whether a mobile appointment works in practice.",
+      "The brand also advertises the coordination of mobile requests in additional Caribbean destinations. That is a company-reported coverage offer rather than a guarantee that the same therapist, menu or time slot is available on every island. Guests should supply their destination and preferred date and confirm the details directly.",
+      "Its model illustrates one way a Bahamian service business can combine a fixed local location with mobile delivery and wider regional coordination. Those are observable operating choices; they do not establish that one provider is better than every competitor.",
+      "Tranquilitas is connected to the publisher of Caribbean Business Atlas. This is a disclosed promotional company feature, not an independently judged regional award. For current services and reservations, visit the business's own website."
+    ],
+    "sources": [
+      {
+        "name": "Nassau treatments, mobile appointments and company description",
+        "url": "https://www.massagebahamas.com/best-massage-nassau-bahamas"
+      },
+      {
+        "name": "Booking options and official contact",
+        "url": "https://www.massagebahamas.com/book"
+      },
+      {
+        "name": "Company-reported Caribbean destination availability",
+        "url": "https://www.massagebahamas.com/locations"
+      }
+    ]
+  },
+  {
+    "slug": "caribbean-makers-craft-enterprise",
+    "title": "Made here: four Caribbean brands turning local craft into enterprise",
+    "category": "Makers & Enterprise",
+    "summary": "From pottery in Barbados to chocolate in Grenada, a look at the makers building distinct regional products.",
+    "paragraphs": [
+      "Caribbean businesses are often introduced through beaches, hospitality and financial services. But a visitor's most memorable purchase may come from a maker whose value is created locally: the potter, confectioner, or beauty founder with a specific material and story.",
+      "Barbados-based Earthworks Pottery provides a concrete example. Its studio employs local potters making hand-decorated dinnerware and decorative ceramics. Buyers can see where products are made, and the studio turns the manufacturing process itself into a visitor experience.",
+      "In Grenada, the Grenada Chocolate Company builds an offering around cocoa grown on the island. The company's tree-to-bar production brings processing closer to the agricultural source. Its website presents bars and cocoa products alongside the story of the people and processes behind them.",
+      "Nassau's The New Duff started with a locally familiar dessert. Its founder describes beginning in a home kitchen before developing a more recognizable food brand, later connected to sister concept Gran Bahama. That evolution offers a different way to think about scaling tradition: not by removing its origin, but by making it understandable and accessible to new customers.",
+      "Kreyòl Essence takes Haitian botanicals into hair and skin-care products for international customers. The company's own impact reporting emphasizes women, farming livelihoods and an export-led model. These are statements by the company and should be treated as such unless independently audited.",
+      "The examples are not directly comparable in revenue, scale or product economics. What they share is a commercially legible proposition built around origin, recognizable materials and a purchasing path. They show why local manufacturing, packaging, product design and storytelling can be business disciplines, not merely tourist decoration.",
+      "A useful next question for each company is practical: What is actually made locally? Who owns the process? How does an online customer buy, and how does a physical visitor find the workshop or store? Those answers make the difference between a compelling brand narrative and reliable commerce."
+    ],
+    "sources": [
+      {
+        "name": "Earthworks Pottery company and team",
+        "url": "https://www.earthworks-pottery.com/about-earthworks/"
+      },
+      {
+        "name": "Grenada Chocolate Company official website",
+        "url": "https://thegrenadachocolate.com/"
+      },
+      {
+        "name": "The New Duff founder story",
+        "url": "https://www.thenewduff.com/about-us-1"
+      },
+      {
+        "name": "Kreyòl Essence impact disclosures",
+        "url": "https://kreyolessence.com/pages/social-impact"
+      }
+    ]
+  },
+  {
+    "slug": "island-operators-outside-the-resort",
+    "title": "Beyond resort walls: the island operators making local experiences bookable",
+    "category": "Tourism",
+    "summary": "Independent tour businesses in Jamaica, Turks and Caicos and Saint Lucia show what memorable local experiences require.",
+    "paragraphs": [
+      "Caribbean tourism is more than a room booking. Excursions, outdoor guides, food producers and operators of smaller properties turn interest in an island into a concrete experience. Discovering those businesses requires better information than a generic list of attractions.",
+      "Blue Mountain Tours Jamaica sells guided experiences through the island's mountainous interior. Its published itineraries include cycling, local meals and mountain stops. The appeal is not just the bicycle: it is access to a landscape and local context that beach-centric marketing can overlook.",
+      "In Turks and Caicos, Caicos Dream Tours offers group snorkeling, sandbar trips and private boat charters. Its website makes the difference between public tours and private experiences visible, with itinerary descriptions that help guests understand what kind of day they are buying.",
+      "Saint Lucia's Fond Doux Eco Resort connects accommodation to a historic cocoa estate. Its published options extend from cottages and dining to cocoa-making, plantation tours and guided walks. The business is not identical to a boat operator, but it similarly packages local assets into bookable experiences.",
+      "Each faces operational questions behind the photographs: weather, pickup windows, guide or therapist availability, group size, equipment quality and the accuracy of booking information. The visitor sees the resulting experience; the business has to manage all the moving parts.",
+      "These examples are selected for the specificity of their publicly available services, not ranked by popularity, revenue or customer satisfaction. Readers should confirm pricing and availability with each operator before booking."
+    ],
+    "sources": [
+      {
+        "name": "Blue Mountain Tours Jamaica itineraries",
+        "url": "https://www.bluemountaintoursja.com/all-tours"
+      },
+      {
+        "name": "Caicos Dream Tours official experiences",
+        "url": "https://caicosdreamtours.com/"
+      },
+      {
+        "name": "Fond Doux Eco Resort adventures",
+        "url": "https://fonddouxresort.com/adventures/"
+      }
+    ]
+  },
   {
     "slug": "beyond-the-beach",
     "title": "Beyond the beach: the businesses behind the visit",
