@@ -88,3 +88,19 @@ The design branch `design/horizonx-editorial-upgrade` uses the original vendor-n
 Preview (not the production branch): https://design-horizonx-editorial-up.caribbeanbusinessatlas.pages.dev/
 
 GitHub Actions runs `npm run build`, `npm test` and `npm run qa:browser`, testing actual mobile-sized Chromium viewports, keyboard navigation and directory interaction. **No production merge until review and authorization.**
+
+## Living Caribbean Atlas SWAGv2 branch
+
+Preview: https://design-living-atlas-swagv2.caribbeanbusinessatlas.pages.dev/
+
+- Cinematic documentary-photo homepage and color system drawn from Caribbean lagoons, coral sunsets, and dark-ocean tones.
+- Interactive island explorer (Bahamas/Jamaica/Barbados/Trinidad and Tobago) with working company/profile/photograph switching.
+- Scrollable journal rail with working arrows; photo-rich sector portals linked to real directory queries.
+- Command search from every page (`⌘K`/`Ctrl+K`) and keyboard-navigable results from real articles and directory records.
+- Real source-company photo ribbons on Journal, Directory, About, and regional coverage pages.
+- Responsive industry chips and functional grid/list directory view toggle.
+- Progressive scroll reveal, reading progress, bounded magnetic buttons and responsive image depth with reduced-motion support.
+- Actual official business imagery is hotlinked in review; third-party publication permission is still required before launch.
+- Safe review branch, unmerged to `main`, noindex and production launch not authorized.
+
+New implementation details in `docs/LIVING-ATLAS.md`.
