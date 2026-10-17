@@ -575,3 +575,8 @@ button:focus-visible,a:focus-visible{outline-color:var(--la-coral)}
  .la-photo-ribbon-markets .la-ribbon-label{min-width:0}
  .la-photo-ribbon-markets .la-ribbon-label strong{overflow-wrap:anywhere}
 }
+
+/* Final legibility pass: island metadata and secondary nav priority */
+.la-island-count{color:#e2faf2;font-weight:600}
+.la-island-btn[aria-pressed="true"] .la-island-count{color:#fff}
+.site-header nav .nav-suggest{font-weight:700}
