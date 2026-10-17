@@ -234,6 +234,42 @@
    });
  }
 
+
+ // Directory controls are functional, not decorative. Pills mirror the native
+ // sector <select>, and view options change real rendered card layout.
+ if(onDirectory){
+   const selector=document.querySelector('[data-sector]');
+   const chips=[...document.querySelectorAll('[data-la-sector-chip]')];
+   function syncChips(){
+     const selected=selector?.value||'';
+     chips.forEach(chip=>chip.setAttribute('aria-pressed',String((chip.dataset.laSectorChip||'')===selected)));
+   }
+   for(const chip of chips)chip.addEventListener('click',()=>{
+     if(!selector)return;
+     selector.value=chip.dataset.laSectorChip||'';
+     selector.dispatchEvent(new Event('change',{bubbles:true}));
+     const params=new URLSearchParams(location.search);
+     if(selector.value)params.set('sector',selector.value);
+     else params.delete('sector');
+     const query=params.toString();
+     if(history.replaceState)history.replaceState(null,'',location.pathname+(query?'?'+query:'')+location.hash);
+     syncChips();
+   });
+   selector?.addEventListener('change',syncChips);
+   syncChips();
+
+   const layout=document.querySelector('[data-la-directory-layout]');
+   const buttons=[...document.querySelectorAll('[data-la-view]')];
+   const currentView=new URLSearchParams(location.search).get('view');
+   function setView(view){
+     if(!layout||!['grid','list'].includes(view))return;
+     layout.dataset.view=view;
+     buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.laView===view)));
+   }
+   for(const button of buttons)button.addEventListener('click',()=>setView(button.dataset.laView||'grid'));
+   if(currentView==='list')setView('list');
+ }
+
  // Image credits remain navigable source links; failures retain accessible fallbacks.
  const photoObserver=new MutationObserver(records=>{
    for(const record of records){
@@ -252,5 +288,85 @@
    const img=event.target;
    if(img?.matches?.('img[data-editorial-photo]'))img.classList.add('media-broken');
  },true);
+
+ // Universal command search — real directory and article routes, no API required.
+ const command=document.querySelector('[data-la-command]');
+ const commandIndex=document.getElementById('la-command-index');
+ const searchOpeners=[...document.querySelectorAll('[data-la-search-open]')];
+ if(command&&commandIndex&&typeof command.showModal==='function'){
+   const input=command.querySelector('[data-la-command-input]');
+   const results=command.querySelector('[data-la-command-results]');
+   const closeButton=command.querySelector('[data-la-command-close]');
+   let entries=[];
+   let previouslyFocused=null;
+   try{entries=JSON.parse(commandIndex.textContent||'[]')}catch{}
+   function createNode(tag,className,text){
+     const el=document.createElement(tag);
+     if(className)el.className=className;
+     if(text!==undefined)el.textContent=text;
+     return el;
+   }
+   function renderCommand(term=''){
+     if(!results)return;
+     results.replaceChildren();
+     const query=term.trim().toLocaleLowerCase();
+     const matches=(query?entries.filter(record=>(record.name+' '+record.type+' '+record.detail).toLocaleLowerCase().includes(query)):entries).slice(0,7);
+     if(!matches.length){
+       const empty=createNode('p','la-command-empty','No matching businesses or stories. Try another search.');
+       results.append(empty);
+       return;
+     }
+     const list=createNode('div','la-command-list');
+     for(const record of matches){
+       if(!/^\/(?:directory|stories)\/[a-z0-9-]+\/$/.test(record.href))continue;
+       const row=createNode('a','la-command-result');
+       row.href=record.href;
+       const tag=createNode('span','la-command-tag',record.type);
+       const content=createNode('span','la-command-content');
+       content.append(createNode('strong','',record.name),createNode('small','',record.detail));
+       row.append(tag,content,createNode('span','la-command-arrow','↗'));
+       list.append(row);
+     }
+     results.append(list);
+   }
+   function openCommand(){
+     previouslyFocused=document.activeElement;
+     if(!command.open)command.showModal();
+     input.value='';
+     renderCommand();
+     requestAnimationFrame(()=>input.focus());
+   }
+   function closeCommand(){if(command.open)command.close()}
+   for(const opener of searchOpeners)opener.addEventListener('click',openCommand);
+   closeButton?.addEventListener('click',closeCommand);
+   command.addEventListener('click',event=>{if(event.target===command)closeCommand()});
+   command.addEventListener('close',()=>{
+     if(previouslyFocused?.isConnected&&typeof previouslyFocused.focus==='function')previouslyFocused.focus();
+   });
+   input?.addEventListener('input',()=>renderCommand(input.value));
+   input?.addEventListener('keydown',event=>{
+     if(event.key==='ArrowDown'){
+       const first=results.querySelector('.la-command-result');
+       if(first){event.preventDefault();first.focus()}
+     }else if(event.key==='Enter'){
+       const first=results.querySelector('.la-command-result');
+       if(first){event.preventDefault();first.click()}
+     }
+   });
+   results?.addEventListener('keydown',event=>{
+     if(!['ArrowDown','ArrowUp'].includes(event.key))return;
+     const links=[...results.querySelectorAll('.la-command-result')];
+     const index=links.indexOf(document.activeElement);
+     const next=links[index+(event.key==='ArrowDown'?1:-1)];
+     if(next){event.preventDefault();next.focus()}
+     else if(event.key==='ArrowUp'&&index===0){event.preventDefault();input.focus()}
+   });
+   document.addEventListener('keydown',event=>{
+     if(event.key?.toLowerCase()==='k'&&(event.metaKey||event.ctrlKey)){
+       event.preventDefault();
+       if(command.open)closeCommand();else openCommand();
+     }
+   });
+ }
 
 })();
