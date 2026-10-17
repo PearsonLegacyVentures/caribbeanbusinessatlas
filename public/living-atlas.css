@@ -580,3 +580,39 @@ button:focus-visible,a:focus-visible{outline-color:var(--la-coral)}
 .la-island-count{color:#e2faf2;font-weight:600}
 .la-island-btn[aria-pressed="true"] .la-island-count{color:#fff}
 .site-header nav .nav-suggest{font-weight:700}
+
+/* UI Taste 2026-10: image credits, controllable motion and clear filter guidance. */
+.la-image-credit{
+ background:linear-gradient(to top,rgba(1,21,28,.96) 0%,rgba(1,21,28,.8) 47%,rgba(1,21,28,.12) 100%);
+ padding:24px 13px 12px;
+ text-shadow:0 1px 2px rgba(0,0,0,.85);
+}
+.la-ribbon-label,.la-portal-copy,.la-spotlight-label{
+ text-shadow:0 1px 4px rgba(0,15,20,.85);
+}
+.la-ticker{isolation:isolate}
+.la-ticker-track{padding-right:112px}
+.la-ticker-control{
+ position:absolute;right:clamp(12px,3vw,40px);top:50%;
+ transform:translateY(-50%);z-index:4;
+ display:inline-flex;align-items:center;justify-content:center;
+ min-height:44px;min-width:110px;padding:8px 15px;
+ border:1px solid rgba(6,30,38,.65);border-radius:100px;
+ background:#061e26;color:#f8fff5;
+ font:700 .7rem/1.2 var(--la-display);
+ letter-spacing:.025em;cursor:pointer;box-shadow:-10px 0 18px rgba(255,128,101,.35);
+}
+.la-ticker-control:hover{background:#124b52}
+.la-ticker-control:focus-visible{outline:3px solid #f8fff5;outline-offset:3px}
+.la-ticker-control[hidden]{display:none!important}
+.la-ticker.is-paused .la-ticker-track,
+.la-ticker:hover .la-ticker-track,
+.la-ticker:focus-within .la-ticker-track{animation-play-state:paused}
+.la-filter-hint{margin:12px 0 0;color:#3a605c;font-size:.81rem;line-height:1.5}
+@media(max-width:650px){
+ .la-ticker-control{right:9px;min-width:97px;padding:6px 10px;font-size:.64rem}
+ .la-image-credit{padding:19px 9px 9px;font-size:.53rem}
+}
+@media(prefers-reduced-motion:reduce){
+ .la-ticker .la-ticker-track{animation:none!important}
+}
