@@ -70,6 +70,25 @@ const testPage=String.raw`<!doctype html><html lang="en"><head><meta charset="ut
    frame.remove();
  }
 
+
+ // Universal command search: real records, keyboard shortcut, close and focus return.
+ {
+   const {frame,d,w}=await open('/',390,820);
+   const trigger=d.querySelector('[data-la-search-open]');
+   const dialog=d.querySelector('[data-la-command]');
+   trigger?.click();
+   assert('Command search opens',dialog?.open===true);
+   const input=d.querySelector('[data-la-command-input]');
+   input.value='Pedal Paradise';
+   input.dispatchEvent(new w.Event('input',{bubbles:true}));
+   const results=[...d.querySelectorAll('.la-command-result')];
+   assert('Command search returns actual business and story',results.length>=2&&results.some(x=>x.getAttribute('href')==='/directory/pedal-paradise-bahamas/'));
+   d.querySelector('[data-la-command-close]')?.click();
+   assert('Command search closes',dialog?.open===false);
+   assert('Command search returns focus',d.activeElement===trigger);
+   frame.remove();
+ }
+
  for(const width of [320,390,768,1280]){
    const {frame,d,w}=await open('/directory/',width,850);
    const over=d.documentElement.scrollWidth-d.documentElement.clientWidth;
@@ -93,7 +112,25 @@ const testPage=String.raw`<!doctype html><html lang="en"><head><meta charset="ut
    frame.remove();
  }
 
- for(const route of ['/stories/beyond-the-beach/','/directory/pedal-paradise-bahamas/','/submit/']){
+
+ {
+   const {frame,d,w}=await open('/directory/',390,850);
+   const chips=[...d.querySelectorAll('[data-la-sector-chip]')];
+   const select=d.querySelector('[data-sector]');
+   const technology=chips.find(c=>c.dataset.laSectorChip==='Technology');
+   technology?.click();
+   assert('Sector pill changes actual filter',select?.value==='Technology'&&technology?.getAttribute('aria-pressed')==='true');
+   const filtered=[...d.querySelectorAll('[data-company]')].filter(c=>!c.hidden);
+   assert('Sector pill filters cards',filtered.length>0&&filtered.every(c=>c.dataset.sector==='Technology'));
+   chips.find(c=>c.dataset.laSectorChip==='')?.click();
+   assert('All pill restores cards',d.querySelector('[data-count]')?.textContent==='13');
+   d.querySelector('[data-la-view="list"]')?.click();
+   assert('List view changes real card layout',d.querySelector('[data-la-directory-layout]')?.dataset.view==='list');
+   assert('List button updates pressed state',d.querySelector('[data-la-view="list"]')?.getAttribute('aria-pressed')==='true');
+   frame.remove();
+ }
+
+ for(const route of ['/stories/beyond-the-beach/','/directory/pedal-paradise-bahamas/','/stories/','/about/','/islands/','/submit/']){
    const {frame,d}=await open(route,320,800);
    const over=d.documentElement.scrollWidth-d.documentElement.clientWidth;
    assert('Page overflow '+route,over<=1,'overflow px: '+over);
