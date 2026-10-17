@@ -336,7 +336,7 @@
      renderCommand();
      requestAnimationFrame(()=>input.focus());
    }
-   function closeCommand(){if(command.open)command.close()}
+   function closeCommand(){if(command.open)command.close();if(previouslyFocused?.isConnected&&typeof previouslyFocused.focus==='function')previouslyFocused.focus()}
    for(const opener of searchOpeners)opener.addEventListener('click',openCommand);
    closeButton?.addEventListener('click',closeCommand);
    command.addEventListener('click',event=>{if(event.target===command)closeCommand()});
