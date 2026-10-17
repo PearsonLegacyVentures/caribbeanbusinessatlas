@@ -45,8 +45,8 @@ The direction is cinematic editorial futurism rather than interchangeable SaaS m
 
 On the Living Atlas branch:
 - **29/29 Node tests passed.**
-- **72/72 real Chromium checks passed** after fixing phone-width header and photo grid layout as well as command modal focus.
-- Viewports: 320, 360, 390, 768, 1280 and 1440 pixels.
+- **81/81 real Chromium checks passed** after fixing phone-width header and photo grid layout as well as command modal focus.
+- Viewports: 320, 360, 390, 768, 840, 900, 1024, 1280 and 1440 pixels.
 - Checks include zero horizontal overflow, functioning mobile menu and Escape/focus, source-image decode, Jamaica and Barbados selection, keyboard island switching, horizontal story rail, real directory filters, industry deep links, sector chips, grid/list view, universal search results and focus return, and prelaunch submission behavior.
 - GitHub Actions builds, tests and compares generated static pages with committed `dist`.
 - Cloudflare branch preview deploy succeeded.
