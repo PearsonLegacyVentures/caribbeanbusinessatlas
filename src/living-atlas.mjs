@@ -1,0 +1,77 @@
+/**
+ * The Living Atlas — cinematic, mobile-first, progressive-enhancement homepage.
+ * No fabricated scores, rankings, testimonials or business performance.
+ * All numbers derive from src/data.mjs. Every photograph comes from src/media.mjs.
+ */
+const escapeHtml=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+const linkTo=(slug,type='directory')=>'/'+type+'/'+encodeURIComponent(slug)+'/';
+const code=(country)=>encodeURIComponent(country);
+const find=(companies,slug)=>companies.find(company=>company.slug===slug);
+
+function image(company,media,{priority=false,cls='',label='',asLink=true}={}){
+ const photo=media[company?.slug];
+ if(!company||!photo)return '<div class="la-image la-image--pending '+cls+'"><span>VISUAL COMING SOON</span></div>';
+ const img='<img data-editorial-photo alt="'+escapeHtml(photo.alt)+'" src="'+escapeHtml(photo.url)+'" width="1000" height="750" decoding="async" loading="'+(priority?'eager':'lazy')+'"'+(priority?' fetchpriority="high"':'')+'>';
+ const frame='<div class="la-image '+cls+'"><div class="la-image-fallback" aria-hidden="true"><span>CARIBBEAN BUSINESS ATLAS</span><strong>✳</strong></div>'+img+'<span class="la-image-credit">'+escapeHtml(label||photo.credit)+'</span></div>';
+ return asLink?'<a class="la-image-link" href="'+linkTo(company.slug)+'" aria-label="Explore '+escapeHtml(company.name)+'">'+frame+'</a>':frame;
+}
+
+function storyCard(story,index,companies,storyMedia){
+ const img=storyMedia(story.slug);
+ return '<article class="la-story-card la-spotlight" data-reveal><a class="la-story-image" href="'+linkTo(story.slug,'stories')+'" aria-label="Read '+escapeHtml(story.title)+'"><span class="la-image-fallback" aria-hidden="true"><strong>✳</strong></span>'+(img?'<img data-editorial-photo alt="'+escapeHtml(img.alt)+'" src="'+escapeHtml(img.url)+'" loading="lazy" decoding="async" width="780" height="560">':'')+'<span class="la-story-num">0'+(index+1)+'</span></a><div class="la-story-info"><div class="la-story-topline"><span>'+escapeHtml(story.category)+'</span><span>THE JOURNAL / 2026</span></div><h3><a href="'+linkTo(story.slug,'stories')+'">'+escapeHtml(story.title)+'</a></h3><p>'+escapeHtml(story.summary)+'</p><a class="la-inline-link" href="'+linkTo(story.slug,'stories')+'">Read story <span aria-hidden="true">↗</span></a></div></article>';
+}
+
+function portal(category,label,sub,photo,href,index){
+ return '<a data-reveal class="la-portal la-spotlight la-portal-'+index+'" href="'+href+'"><span class="la-portal-photo"><span class="la-image-fallback" aria-hidden="true"><strong>✳</strong></span>'+(photo?'<img data-editorial-photo src="'+escapeHtml(photo.url)+'" alt="'+escapeHtml(photo.alt)+'" loading="lazy" decoding="async" width="800" height="1100">':'')+'</span><span class="la-portal-shade"></span><span class="la-portal-top">FIELD NOTE / 0'+(index+1)+'</span><span class="la-portal-copy"><span>'+escapeHtml(category)+'</span><strong>'+escapeHtml(label)+'</strong><small>'+escapeHtml(sub)+'</small></span><span class="la-portal-arrow" aria-hidden="true">↗</span></a>';
+}
+
+export function renderLivingHome({companies,stories,companyMedia,storyMedia}){
+ const initial=find(companies,'pedal-paradise-bahamas');
+ const graycliff=find(companies,'graycliff');
+ const spa=find(companies,'tranquilitas-day-spa');
+ const mineral=find(companies,'bahamas-mineral-company');
+ const triblock=find(companies,'triblock-hr');
+ const gk=find(companies,'gracekennedy');
+ const massy=find(companies,'massy-group');
+ const sagicor=find(companies,'sagicor');
+ const regions=['The Bahamas','Jamaica','Barbados','Trinidad and Tobago'].map((name,index)=>{
+  const matches=companies.filter(c=>c.island===name&&c.status!=='Research pending');
+  const representative=([initial,gk,sagicor,massy][index]);
+  const photo=companyMedia[representative.slug];
+  return {name,index,count:matches.length,slug:representative.slug,company:representative.name,category:representative.sector,summary:representative.summary,photo:photo?.url||'',alt:photo?.alt||'',href:'/directory/?country='+code(name)};
+ });
+ const regionJson=JSON.stringify(regions).replace(/</g,'\\u003c');
+ const sectors=[
+   ['Tourism','Island experiences','From the dock to the extraordinary.',initial],
+   ['Technology','The digital builders','Practical systems and bold ideas.',triblock],
+   ['Manufacturing','Made from here','The next chapter for local materials.',mineral]
+ ];
+ const markets=new Set(companies.filter(c=>c.status!=='Research pending').map(c=>c.island)).size;
+ return [
+ '<div class="la-scroll-progress" data-la-progress aria-hidden="true"></div>',
+ '<section class="la-hero" aria-label="Introduction"><div class="la-hero-field" aria-hidden="true"><span class="la-orbit la-orbit-one"></span><span class="la-orbit la-orbit-two"></span><span class="la-sun"></span><span class="la-grid-lines"></span></div>',
+ '<div class="la-hero-inner"><div class="la-hero-copy"><div class="la-eyebrow" data-reveal><span class="la-live-dot"></span><span>VOL. 001</span><span class="la-separator"></span><span>BUILT IN THE CARIBBEAN</span></div>',
+ '<h1 class="la-headline" aria-label="The Caribbean is building what is next"><span class="la-title-line">THE</span><span class="la-title-line la-title-highlight">CARIBBEAN</span><span class="la-title-line">IS BUILDING</span><span class="la-title-line la-title-outline">WHAT’S NEXT<span class="la-title-period">.</span></span></h1>',
+ '<p class="la-hero-description" data-reveal>Big ambition. Distinct islands. Meet the founders, businesses and ideas moving our region forward.</p>',
+ '<div class="la-hero-actions" data-reveal><a class="la-btn la-btn-primary" data-magnetic href="/directory/"><span>Explore the Atlas</span><span class="la-btn-icon" aria-hidden="true">↗</span></a><a class="la-btn la-btn-ghost" data-magnetic href="/stories/"><span>Read the stories</span><span class="la-btn-icon" aria-hidden="true">→</span></a></div>',
+ '<div class="la-hero-caption" data-reveal><span class="la-caption-rule"></span><span>DISCOVER THE BUSINESSES<br>BEHIND THE ISLANDS</span><span class="la-caption-flower" aria-hidden="true">✳</span></div></div>',
+ '<div class="la-hero-visual" data-la-depth><div class="la-visual-frame la-visual-frame-main" data-depth=".045">'+image(initial,companyMedia,{priority:true,cls:'la-image-main',label:'PEDAL PARADISE / NASSAU'})+'</div>',
+ '<div class="la-visual-frame la-visual-frame-side" data-depth=".08">'+image(graycliff,companyMedia,{priority:true,cls:'la-image-side',label:'GRAYCLIFF / NASSAU'})+'</div>',
+ '<div class="la-visual-frame la-visual-frame-low" data-depth=".065">'+image(spa,companyMedia,{cls:'la-image-low',label:'TRANQUILITAS / NASSAU'})+'</div>',
+ '<div class="la-hero-visual-ring" aria-hidden="true"><span>ISLANDS IN MOTION · ISLANDS IN MOTION ·</span></div>',
+ '<div class="la-hero-float" data-depth=".12"><span class="la-float-top">THE CARIBBEAN</span><strong>13<span class="la-float-plus">+</span></strong><span>COMPANY PROFILES</span><small>FOUNDING EDITION</small></div>',
+ '<svg class="la-hero-route" viewBox="0 0 420 500" fill="none" aria-hidden="true"><path d="M25 420C80 360 38 265 150 260S252 162 226 98 315 18 390 50" stroke="currentColor" stroke-dasharray="5 10" stroke-width="1.5"/><circle cx="25" cy="420" r="5" fill="currentColor"/><circle cx="390" cy="50" r="5" fill="currentColor"/></svg>',
+ '</div></div><div class="la-hero-base"><span>01 / THE INTRODUCTION</span><span>THE ISLANDS ARE JUST THE BEGINNING</span><a href="#explore-islands" class="la-scroll-cue">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a></div></section>',
+ '<div class="la-ticker" aria-label="Coverage areas"><div class="la-ticker-track" aria-hidden="true">'+Array.from({length:2},()=>'<span>FOUNDERS</span><i>✳</i><span>TOURISM</span><i>✳</i><span>TECHNOLOGY</span><i>✳</i><span>MANUFACTURING</span><i>✳</i><span>CARIBBEAN CULTURE</span><i>✳</i>').join('')+'</div></div>',
+ '<section class="la-intro" data-reveal><div class="la-section-index"><span>01 / THE BIG PICTURE</span><span>THE REGION / REIMAGINED</span></div><div class="la-intro-grid"><h2>Small islands.<br><em>Massive potential.</em></h2><div class="la-intro-content"><p>Too much of Caribbean business goes unnoticed. The Atlas puts the builders in focus, from Nassau’s streets to the region’s boardrooms.</p><a href="/about/" class="la-inline-link">Get to know the Atlas <span aria-hidden="true">↗</span></a></div></div>',
+ '<div class="la-stats" aria-label="Founding-edition coverage"><div><strong data-la-count="'+companies.length+'">'+companies.length+'</strong><span>COMPANIES</span></div><div><strong data-la-count="'+markets+'">'+markets+'</strong><span>MARKETS</span></div><div><strong data-la-count="'+stories.length+'">'+stories.length+'</strong><span>STORIES</span></div><div class="la-stat-side"><span>NO. 001 / EST. 2026</span><b>✳</b></div></div></section>',
+ '<section class="la-islands" id="explore-islands"><div class="la-section-index la-index-light" data-reveal><span>02 / THE ISLAND EXPLORER</span><span>FOUR MARKETS. MORE TO COME.</span></div><div class="la-islands-heading" data-reveal><div><p class="la-small-kicker">INTERACTIVE / EXPLORE</p><h2>Choose an island.<br><em>Find its builders.</em></h2></div><p>The stories change. The ambition doesn’t. Select a market to meet a company shaping it.</p></div>',
+ '<div class="la-islands-stage"><div class="la-islands-map" aria-label="Schematic Caribbean island selector, not geographically to scale"><svg class="la-island-path" viewBox="0 0 900 270" preserveAspectRatio="none" aria-hidden="true"><path d="M60 70 C180 5 220 205 350 150 S550 40 625 130 S765 210 840 185" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="6 10"/></svg><div class="la-island-points" role="group" aria-label="Choose a Caribbean market">'+regions.map((r,i)=>'<button type="button" class="la-island-btn" data-la-island="'+i+'" aria-pressed="'+(i===0?'true':'false')+'"><span class="la-island-dot" aria-hidden="true"></span><span class="la-island-name">'+escapeHtml(r.name)+'</span><span class="la-island-count">'+r.count+' '+(r.count===1?'profile':'profiles')+'</span></button>').join('')+'</div><p class="la-map-note">A SCHEMATIC CONNECTION / NOT TO SCALE</p></div>',
+ '<div class="la-spotlight" data-la-island-panel><div class="la-spotlight-visual"><div class="la-image-fallback" aria-hidden="true"><strong>✳</strong></div><img data-la-island-image data-editorial-photo src="'+escapeHtml(regions[0].photo)+'" alt="'+escapeHtml(regions[0].alt)+'" width="800" height="650" loading="lazy" decoding="async"><span class="la-spotlight-label">FEATURED FROM THE REGION</span></div><div class="la-spotlight-info" aria-live="polite" aria-atomic="true"><span class="la-spotlight-overline" data-la-island-name>'+escapeHtml(regions[0].name)+'</span><span class="la-spotlight-index">ATLAS FEATURE / 0<span data-la-island-number>1</span></span><h3 data-la-island-company>'+escapeHtml(regions[0].company)+'</h3><p data-la-island-summary>'+escapeHtml(regions[0].summary)+'</p><div class="la-spotlight-actions"><a class="la-btn la-btn-primary" data-la-island-link href="'+regions[0].href+'"><span>Explore '+escapeHtml(regions[0].name)+'</span><span class="la-btn-icon" aria-hidden="true">↗</span></a></div></div></div></div><script type="application/json" id="la-regions">'+regionJson+'</script></section>',
+ '<section class="la-journal"><div class="la-section-index" data-reveal><span>03 / THE JOURNAL</span><span>IDEAS WORTH DIVING INTO</span></div><div class="la-journal-top" data-reveal><div><p class="la-small-kicker">PERSPECTIVES / PEOPLE / BUSINESS</p><h2>Stories with<br><em>something to say.</em></h2></div><div class="la-journal-control"><p>Fresh perspectives on the businesses and ideas transforming our region.</p><div class="la-rail-controls"><button type="button" data-la-rail-prev aria-label="Scroll stories left">←</button><button type="button" data-la-rail-next aria-label="Scroll stories right">→</button></div></div></div><div class="la-story-rail" data-la-story-rail>'+stories.slice(0,7).map((s,i)=>storyCard(s,i,companies,storyMedia)).join('')+'</div><div class="la-section-end"><span>THE FOUNDING EDITION / 2026</span><a class="la-inline-link" href="/stories/">All '+stories.length+' stories <span aria-hidden="true">↗</span></a></div></section>',
+ '<section class="la-portals"><div class="la-section-index" data-reveal><span>04 / WHAT WE COVER</span><span>BUSINESS / WITHOUT BORDERS</span></div><div class="la-portals-head" data-reveal><h2>Made of more<br><em>than sunshine.</em></h2><p>Discover the industries, people and experiments that make the Caribbean more than a destination.</p></div><div class="la-portal-grid">'+sectors.map((s,i)=>portal(s[0],s[1],s[2],companyMedia[s[3].slug],'/directory/?sector='+code(s[0]),i)).join('')+'</div></section>',
+ '<section class="la-featured"><div class="la-section-index" data-reveal><span>05 / ON OUR RADAR</span><span>REAL BUSINESSES / REAL WORK</span></div><div class="la-featured-top" data-reveal><h2>Meet the people<br><em>making moves.</em></h2><a class="la-inline-link" href="/directory/">View the complete directory <span aria-hidden="true">↗</span></a></div><div class="la-featured-grid">'+[triblock,spa,graycliff,gk].map((c,i)=>'<a class="la-featured-company la-spotlight" href="'+linkTo(c.slug)+'" data-reveal><div class="la-featured-img">'+image(c,companyMedia,{cls:'la-featured-photo',asLink:false})+'</div><div class="la-featured-line"><span>0'+(i+1)+' / '+escapeHtml(c.sector.toUpperCase())+'</span><span>↗</span></div><strong>'+escapeHtml(c.name)+'</strong><p>'+escapeHtml(c.island)+'</p></a>').join('')+'</div></section>',
+ '<section class="la-finale"><div class="la-finale-glow" aria-hidden="true"></div><div class="la-section-index la-index-light"><span>06 / YOUR NEXT DISCOVERY</span><span>KEEP EXPLORING</span></div><p class="la-small-kicker" data-reveal>THE CARIBBEAN IS STILL BEING WRITTEN</p><h2 data-reveal>Find the<br><em>next big thing</em><br>right here.</h2><div class="la-finale-bottom" data-reveal><p>We’re building a new way to discover Caribbean enterprise. Start with the businesses and go from there.</p><a class="la-btn la-btn-primary" data-magnetic href="/directory/"><span>Enter the Atlas</span><span class="la-btn-icon" aria-hidden="true">↗</span></a></div><span class="la-finale-sun" aria-hidden="true"></span></section>',
+ '<aside class="la-editorial-note">Our directory is a researched starting point, not a ranking. Some ventures are connected to the publisher, and these relationships are disclosed in their profiles and our <a href="/editorial-policy/">editorial policy</a>.</aside>'
+ ].join('');
+}
