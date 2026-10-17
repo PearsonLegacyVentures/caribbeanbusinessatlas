@@ -26,7 +26,7 @@ const testPage=String.raw`<!doctype html><html lang="en"><head><meta charset="ut
    const {frame,d,w}=await open('/',width,800);
    const measured=d.documentElement.scrollWidth-d.documentElement.clientWidth;
    assert('Homepage overflow '+width,measured<=1,'overflow px: '+measured);
-   assert('Homepage heading '+width,Boolean(d.querySelector('h1')?.textContent.includes('Small islands')));
+   assert('Homepage heading '+width,Boolean(d.querySelector('h1')?.textContent.includes('CARIBBEAN')));
    const toggle=d.querySelector('[data-menu-toggle]');
    const mobile=width<=820;
    assert('Navigation breakpoint '+width,(w.getComputedStyle(toggle).display!=='none')===mobile);
@@ -42,7 +42,7 @@ const testPage=String.raw`<!doctype html><html lang="en"><head><meta charset="ut
 
  {
    const {frame,d}=await open('/',1280,850);
-   const heroImages=[...d.querySelectorAll('.hero-photo-collection img[data-editorial-photo]')];
+   const heroImages=[...d.querySelectorAll('.la-hero-visual img[data-editorial-photo]')];
    await Promise.race([
      Promise.allSettled(heroImages.map(img=>img.decode())),
      new Promise(resolve=>setTimeout(resolve,8500))
@@ -51,6 +51,25 @@ const testPage=String.raw`<!doctype html><html lang="en"><head><meta charset="ut
    assert('Hero documentary images load',loaded>=2,'loaded '+loaded+' of '+heroImages.length+' official business-source photos');
    frame.remove();
  }
+
+ // Native interactions, not decorative fake controls.
+ {
+   const {frame,d,w}=await open('/',390,820);
+   const buttons=[...d.querySelectorAll('[data-la-island]')];
+   const heading=d.querySelector('[data-la-island-company]');
+   assert('Four island choices exist',buttons.length===4);
+   buttons[1]?.click();
+   assert('Island click changes real company',heading?.textContent==='GraceKennedy');
+   assert('Island press state moves',buttons[1]?.getAttribute('aria-pressed')==='true'&&buttons[0]?.getAttribute('aria-pressed')==='false');
+   assert('Island link updates destination',d.querySelector('[data-la-island-link]')?.getAttribute('href')?.includes('Jamaica'));
+   buttons[1]?.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));
+   assert('Island keyboard navigation',heading?.textContent==='Sagicor');
+   const prev=d.querySelector('[data-la-rail-prev]'),next=d.querySelector('[data-la-rail-next]'),rail=d.querySelector('[data-la-story-rail]');
+   assert('Functional story rail buttons',Boolean(prev&&next&&rail));
+   assert('Story rail is horizontally scrollable',rail?.scrollWidth>rail?.clientWidth);
+   frame.remove();
+ }
+
  for(const width of [320,390,768,1280]){
    const {frame,d,w}=await open('/directory/',width,850);
    const over=d.documentElement.scrollWidth-d.documentElement.clientWidth;
@@ -64,6 +83,16 @@ const testPage=String.raw`<!doctype html><html lang="en"><head><meta charset="ut
    assert('Reset filters '+width,count.textContent==='13'&&d.querySelector('[data-empty]').hidden);
    frame.remove();
  }
+
+ {
+   const {frame,d,w}=await open('/directory/?sector=Technology',390,850);
+   const selected=d.querySelector('[data-sector]')?.value;
+   const visible=[...d.querySelectorAll('[data-company]')].filter(c=>!c.hidden);
+   assert('Industry deep links preselect filters',selected==='Technology');
+   assert('Industry deep links filter real cards',visible.length>0&&visible.every(c=>c.dataset.sector==='Technology'));
+   frame.remove();
+ }
+
  for(const route of ['/stories/beyond-the-beach/','/directory/pedal-paradise-bahamas/','/submit/']){
    const {frame,d}=await open(route,320,800);
    const over=d.documentElement.scrollWidth-d.documentElement.clientWidth;
