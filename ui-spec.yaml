@@ -158,3 +158,50 @@ release:
   production_deployment: requires founder approval
   review_site: Cloudflare Pages branch preview only until review
   indexing: disabled
+
+
+living_atlas_v2:
+  concept: "The Living Caribbean Atlas"
+  creative_direction: "Future-facing Caribbean editorial: magnetic movement, documentary imagery, lagoon depth and genuine business exploration"
+  implementation_date: "2026-10-16"
+  source:
+    homepage: src/living-atlas.mjs
+    photo_ribbons: src/page-mosaics.mjs
+    company_photography: src/media.mjs
+    motion_styles: public/living-atlas.css
+    interactions: public/living-atlas.js
+    browser_qa: scripts/browser-qa.mjs
+  colors:
+    night_ocean: "#061e26"
+    deep_teal: "#062d32"
+    lagoon: "#58decf"
+    sun: "#ffd27c"
+    coral: "#ff8065"
+    sand: "#f4f0e6"
+  visual_components:
+    - layered_real_photography_hero
+    - authentic_photo_ribbons
+    - interactive_four_market_spotlight
+    - horizontal_story_rail
+    - filtered_industry_portals
+    - command_palette_search
+    - industry_filter_pills
+    - live_grid_list_layout_switcher
+    - reading_progress
+    - scroll_reveal
+    - magnetic_cta_microinteraction
+    - bounded_mouse_depth
+  interactions_must_be_real: true
+  editorial_facts_and_conflicts: preserve
+  motion:
+    reduce_when_requested: true
+    coarse_pointer_parallax: false
+    make_content_readable_without_javascript: true
+    avoid_forced_auto_navigation: true
+  review_requirements:
+    - 320px_layout_without_horizontal_overflow
+    - real_browser_keyboard_and_touch_checks
+    - no_broken_photography
+    - production_indexing_off
+    - source_rights_review_before_launch
+    - founder_visual_approval_before_main_merge
