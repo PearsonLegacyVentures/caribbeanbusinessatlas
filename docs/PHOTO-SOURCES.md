@@ -1,6 +1,6 @@
 # Photo source and publication-permission register
 
-**Review assets only — 16 October 2026.** The previous design used abstract, misleadingly generic imagery. This branch replaces it with images located on actual company websites. Images are **remotely referenced**, not copied into our repository. Website visibility and attribution do **not** grant image republication rights. Verify licenses or obtain permission before a public launch, particularly for independent companies. Do not imply that website art, screenshots, or concept mockups are photographs of commercial operations.
+**Source images on the public site — updated 16 October 2026.** The previous design used abstract, misleadingly generic imagery. This branch replaces it with images located on actual company websites. Images are **remotely referenced**, not copied into our repository. Website visibility and attribution do **not** grant image republication rights. The site is publicly accessible; licenses or publication permissions for third-party imagery remain to be confirmed. External image hotlinking does not grant republication rights. Do not imply that website art, screenshots, or concept mockups are photographs of commercial operations.
 
 Source-of-truth: `src/media.mjs`, which records every remote image URL, its company source, descriptive alt text, media type, and rights status.
 
@@ -19,6 +19,14 @@ Source-of-truth: `src/media.mjs`, which records every remote image URL, its comp
 | GraceKennedy | gracekennedy.com official site | Official hero photograph | **External permission pending** |
 | Massy Group | massygroup.com official business page | Integrated retail photo | **External permission pending** |
 | Sagicor | sagicor.com Barbados company pages | Official community photograph | **External permission pending** |
+| The New Duff | Official New Duff/Gran Bahama Squarespace site | Business website photograph | **External permission pending** |
+| Blue Mountain Tours Jamaica | Official tour site / Island Routes image host | Tour photograph | **External permission pending** |
+| Earthworks Pottery | earthworks-pottery.com | Studio ceramics photograph | **External permission pending** |
+| D’ Market Movers | dmarketmovers.com | Company identity artwork, not operations photograph | **External permission pending**; storefront availability to confirm |
+| Fond Doux Eco Resort | fonddouxresort.com | Estate/resort photograph | **External permission pending** |
+| Grenada Chocolate Company | thegrenadachocolate.com | Product photograph | **External permission pending** |
+| Caicos Dream Tours | caicosdreamtours.com | Operator snorkeling photograph | **External permission pending** |
+| Kreyòl Essence | kreyolessence.com | Official sourcing/social-impact photograph | **External permission pending** |
 
 ## Implementation and limitations
 
