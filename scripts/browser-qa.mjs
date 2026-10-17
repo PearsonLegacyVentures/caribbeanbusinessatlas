@@ -60,15 +60,20 @@ const testPage=String.raw`<!doctype html><html lang="en"><head><meta charset="ut
  // Native interactions, not decorative fake controls.
  {
    const {frame,d,w}=await open('/',390,820);
+
+   assert('Tranquilitas promotional section present',Boolean(d.querySelector('.la-spa-feature')?.textContent.includes('Tranquilitas')));
+   assert('Tranquilitas booking action works',d.querySelector('.la-spa-actions a')?.href==='https://www.massagebahamas.com/book');
+   assert('Publisher promotion disclosed',d.querySelector('.la-spa-disclosure')?.textContent.includes('connected to the publisher'));
+
    const buttons=[...d.querySelectorAll('[data-la-island]')];
    const heading=d.querySelector('[data-la-island-company]');
-   assert('Four island choices exist',buttons.length===4);
+   assert('Eight island choices exist',buttons.length===8);
    buttons[1]?.click();
-   assert('Island click changes real company',heading?.textContent==='GraceKennedy');
+   assert('Island click changes real company',heading?.textContent==='Blue Mountain Tours Jamaica');
    assert('Island press state moves',buttons[1]?.getAttribute('aria-pressed')==='true'&&buttons[0]?.getAttribute('aria-pressed')==='false');
    assert('Island link updates destination',d.querySelector('[data-la-island-link]')?.getAttribute('href')?.includes('Jamaica'));
    buttons[1]?.dispatchEvent(new w.KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));
-   assert('Island keyboard navigation',heading?.textContent==='Sagicor');
+   assert('Island keyboard navigation',heading?.textContent==='Earthworks Pottery');
    const prev=d.querySelector('[data-la-rail-prev]'),next=d.querySelector('[data-la-rail-next]'),rail=d.querySelector('[data-la-story-rail]');
    assert('Functional story rail buttons',Boolean(prev&&next&&rail));
    assert('Story rail is horizontally scrollable',rail?.scrollWidth>rail?.clientWidth);
@@ -114,7 +119,7 @@ const testPage=String.raw`<!doctype html><html lang="en"><head><meta charset="ut
    search.value='zzzz-no-company-999';search.dispatchEvent(new w.Event('input',{bubbles:true}));
    assert('Empty result '+width,count.textContent==='0'&&!d.querySelector('[data-empty]').hidden);
    d.querySelector('[data-clear-filters-empty]').click();
-   assert('Reset filters '+width,count.textContent==='13'&&d.querySelector('[data-empty]').hidden);
+   assert('Reset filters '+width,count.textContent==='21'&&d.querySelector('[data-empty]').hidden);
    frame.remove();
  }
 
@@ -138,14 +143,23 @@ const testPage=String.raw`<!doctype html><html lang="en"><head><meta charset="ut
    const filtered=[...d.querySelectorAll('[data-company]')].filter(c=>!c.hidden);
    assert('Sector pill filters cards',filtered.length>0&&filtered.every(c=>c.dataset.sector==='Technology'));
    chips.find(c=>c.dataset.laSectorChip==='')?.click();
-   assert('All pill restores cards',d.querySelector('[data-count]')?.textContent==='13');
+   assert('All pill restores cards',d.querySelector('[data-count]')?.textContent==='21');
    d.querySelector('[data-la-view="list"]')?.click();
    assert('List view changes real card layout',d.querySelector('[data-la-directory-layout]')?.dataset.view==='list');
    assert('List button updates pressed state',d.querySelector('[data-la-view="list"]')?.getAttribute('aria-pressed')==='true');
    frame.remove();
  }
 
- for(const route of ['/stories/beyond-the-beach/','/directory/pedal-paradise-bahamas/','/stories/','/about/','/islands/','/submit/']){
+
+ {
+   const {frame,d,w}=await open('/islands/',320,900);
+   const all=[...d.querySelectorAll('.region-row')];
+   assert('Eight Caribbean regional destination links',all.length===8);
+   assert('Source-linked real photos on region page',d.querySelectorAll('.la-ribbon-photo img[data-editorial-photo]').length>=8);
+   frame.remove();
+ }
+
+ for(const route of ['/stories/beyond-the-beach/','/directory/pedal-paradise-bahamas/','/stories/','/about/','/islands/','/stories/tranquilitas-mobile-massage-caribbean/','/directory/earthworks-pottery-barbados/','/submit/']){
    const {frame,d}=await open(route,320,800);
    const over=d.documentElement.scrollWidth-d.documentElement.clientWidth;
    assert('Page overflow '+route,over<=1,'overflow px: '+over+' elements: '+JSON.stringify(over>1?offenders(d):[]));
