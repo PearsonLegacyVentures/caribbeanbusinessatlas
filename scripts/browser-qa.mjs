@@ -21,11 +21,16 @@ const testPage=String.raw`<!doctype html><html lang="en"><head><meta charset="ut
   await new Promise(resolve=>w.requestAnimationFrame(()=>w.requestAnimationFrame(resolve)));
   return {frame,d,w};
  }
+ const offenders=d=>{
+   const max=d.documentElement.clientWidth;
+   return [...d.querySelectorAll('body *')].map(el=>({tag:el.tagName.toLowerCase(),cls:String(el.className||'').slice(0,70),right:Math.round(el.getBoundingClientRect().right),width:Math.round(el.getBoundingClientRect().width)}))
+      .filter(x=>x.right>max+1).slice(0,12);
+ };
  const widths=[320,360,390,768,1280,1440];
  for(const width of widths){
    const {frame,d,w}=await open('/',width,800);
    const measured=d.documentElement.scrollWidth-d.documentElement.clientWidth;
-   assert('Homepage overflow '+width,measured<=1,'overflow px: '+measured);
+   assert('Homepage overflow '+width,measured<=1,'overflow px: '+measured+' elements: '+JSON.stringify(measured>1?offenders(d):[]));
    assert('Homepage heading '+width,Boolean(d.querySelector('h1')?.textContent.includes('CARIBBEAN')));
    const toggle=d.querySelector('[data-menu-toggle]');
    const mobile=width<=820;
@@ -92,7 +97,7 @@ const testPage=String.raw`<!doctype html><html lang="en"><head><meta charset="ut
  for(const width of [320,390,768,1280]){
    const {frame,d,w}=await open('/directory/',width,850);
    const over=d.documentElement.scrollWidth-d.documentElement.clientWidth;
-   assert('Directory overflow '+width,over<=1,'overflow px: '+over);
+   assert('Directory overflow '+width,over<=1,'overflow px: '+over+' elements: '+JSON.stringify(over>1?offenders(d):[]));
    const search=d.querySelector('[data-search]'),count=d.querySelector('[data-count]');
    search.value='Pedal Paradise';search.dispatchEvent(new w.Event('input',{bubbles:true}));
    assert('Directory search '+width,count.textContent==='1');
@@ -133,7 +138,7 @@ const testPage=String.raw`<!doctype html><html lang="en"><head><meta charset="ut
  for(const route of ['/stories/beyond-the-beach/','/directory/pedal-paradise-bahamas/','/stories/','/about/','/islands/','/submit/']){
    const {frame,d}=await open(route,320,800);
    const over=d.documentElement.scrollWidth-d.documentElement.clientWidth;
-   assert('Page overflow '+route,over<=1,'overflow px: '+over);
+   assert('Page overflow '+route,over<=1,'overflow px: '+over+' elements: '+JSON.stringify(over>1?offenders(d):[]));
    if(route==='/submit/')assert('Review data honesty',!d.querySelector('form')&&d.body.textContent.includes('COMING SOON'));
    frame.remove();
  }
