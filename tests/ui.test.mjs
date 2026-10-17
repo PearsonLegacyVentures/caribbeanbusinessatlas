@@ -31,11 +31,15 @@ test('primary content contrast satisfies 4.5:1 target',()=>{
  assert.ok(contrast('#112B2A','#DDF07B')>=4.5);
  assert.ok(contrast('#FFFFFF','#112B2A')>=4.5);
 });
-test('homepage has one leading editorial CTA and original sourced business photography',()=>{
- assert.match(root,/Read the journal/);
- assert.match(root,/hero-photo-collection/);
- assert.match(root,/THE COVER STORY/);
- assert.match(root,/Read the feature/);
+test('Living Atlas homepage has an immersive, genuinely interactive hierarchy',()=>{
+ assert.match(root,/THE CARIBBEAN|CARIBBEAN/);
+ assert.match(root,/la-hero-visual/);
+ assert.match(root,/la-island-btn/);
+ assert.match(root,/la-story-rail/);
+ assert.match(root,/la-portal-grid/);
+ assert.match(root,/Explore the Atlas/);
+ assert.match(root,/Read the stories/);
+ assert.match(root,/id="la-regions"/);
  assert.match(root,/editorial-policy/);
 });
 test('mobile navigation exposes state, label, Escape close and accessible skip link',()=>{
@@ -90,7 +94,7 @@ test('all verified or publisher-owned companies have sourced visual records',()=
 test('real business imagery appears on the homepage, directory, articles and profiles',()=>{
  const home=html(''),directory=html('directory'),story=html('stories/pedal-paradise-nassau-experience'),profile=html('directory/pedal-paradise-bahamas');
  for(const page of [home,directory,story,profile])assert.match(page,/data-editorial-photo/);
- assert.match(home,/hero-photo-collection/);
+ assert.match(home,/la-hero-visual/);
  assert.doesNotMatch(home,/hero-cartography/);
  assert.match(home,/Photo|website|Company photograph|gallery|TOURISM/i);
  assert.match(directory,/media-unverified/);
@@ -100,4 +104,31 @@ test('real business imagery appears on the homepage, directory, articles and pro
 });
 test('editorial article photo associations refer to actual source records',()=>{
  for(const s of stories){const m=storyMedia(s.slug);assert.ok(m,s.slug);assert.ok(m.source.startsWith('https://'))}
+});
+
+test('futuristic palette, layered authentic images and motion guards exist',()=>{
+ const motion=readFileSync('dist/living-atlas.css','utf8');
+ const interaction=readFileSync('dist/living-atlas.js','utf8');
+ for(const token of ['--la-night:','--la-lagoon:','--la-coral:','--la-sun:','--la-sand:'])assert.ok(motion.includes(token),token);
+ for(const visual of ['la-hero-visual','la-islands-stage','la-spotlight','la-portal-grid','la-finale'])assert.ok(motion.includes('.'+visual),visual);
+ assert.match(motion,/prefers-reduced-motion:reduce/);
+ assert.match(interaction,/data-la-island/);
+ assert.match(interaction,/aria-pressed/);
+ assert.match(interaction,/data-la-story-rail/);
+ assert.match(interaction,/prefers-reduced-motion: reduce/);
+ assert.match(interaction,/clearFilters|setIsland/);
+ for(const asset of ['living-atlas.css','living-atlas.js'])assert.ok(root.includes('/'+asset));
+});
+test('homepage interactions use actual content, not marketing counters',()=>{
+ const records=JSON.parse(root.match(/<script type="application\/json" id="la-regions">([^<]+)<\/script>/)?.[1]||'[]');
+ assert.equal(records.length,4);
+ for(const record of records){
+  const matches=companies.filter(c=>c.island===record.name && c.status!=='Research pending');
+  assert.equal(record.count,matches.length);
+  assert.ok(record.href.startsWith('/directory/?country='));
+  assert.ok(record.company.length>2);
+  assert.ok(record.photo.startsWith('https://'));
+ }
+ assert.ok(root.includes('data-la-count="'+companies.length+'"'));
+ assert.ok(root.includes('data-la-count="'+stories.length+'"'));
 });
