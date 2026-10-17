@@ -26,7 +26,7 @@ const testPage=String.raw`<!doctype html><html lang="en"><head><meta charset="ut
    return [...d.querySelectorAll('body *')].map(el=>({tag:el.tagName.toLowerCase(),cls:String(el.className||'').slice(0,70),right:Math.round(el.getBoundingClientRect().right),width:Math.round(el.getBoundingClientRect().width)}))
       .filter(x=>x.right>max+1).slice(0,12);
  };
- const widths=[320,360,390,768,1280,1440];
+ const widths=[320,360,390,768,840,900,1024,1280,1440];
  for(const width of widths){
    const {frame,d,w}=await open('/',width,800);
    const measured=d.documentElement.scrollWidth-d.documentElement.clientWidth;
