@@ -155,9 +155,9 @@ quality_gates:
     - no-javascript-fallback
     - visual-screenshot-review
 release:
-  production_deployment: requires founder approval
-  review_site: Cloudflare Pages branch preview only until review
-  indexing: disabled
+  production_deployment: user-authorized on existing Cloudflare Pages website
+  review_site: use branch previews for changes, deploy reviewed changes to main
+  indexing: enabled with canonical links and generated XML sitemap
 
 
 living_atlas_v2:
@@ -202,6 +202,6 @@ living_atlas_v2:
     - 320px_layout_without_horizontal_overflow
     - real_browser_keyboard_and_touch_checks
     - no_broken_photography
-    - production_indexing_off
+    - canonical_and_sitemap_verified
     - source_rights_review_before_launch
     - founder_visual_approval_before_main_merge
