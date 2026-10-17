@@ -155,3 +155,28 @@ test('secondary page ribbons display authentic visual source references',()=>{
  assert.match(html('directory'),/data-la-view="list"/);
  assert.match(html('directory'),/data-la-directory-layout/);
 });
+
+
+test('UI Taste polish preserves factual counts and clear directory language',()=>{
+  const home=html('');
+  const directory=html('directory');
+  const journal=html('stories');
+  assert.ok(home.includes('<strong>'+companies.length+'</strong><span>COMPANY PROFILES</span>'));
+  assert.doesNotMatch(home,/la-float-plus/);
+  assert.match(home,/data-la-ticker-toggle/);
+  assert.match(directory,/directory-filter-help/);
+  assert.match(directory,/Search companies, industries or islands/);
+  assert.match(directory,/Results update as you search or select filters/);
+  assert.match(journal,/FIELD NOTE/);
+  assert.doesNotMatch(journal,/>1 MIN READ</);
+});
+test('UI Taste motion control has reduced-motion and accessible state support',()=>{
+  const motion=readFileSync('dist/living-atlas.css','utf8');
+  const behavior=readFileSync('dist/living-atlas.js','utf8');
+  assert.match(motion,/\.la-ticker\.is-paused \.la-ticker-track/);
+  assert.match(motion,/\.la-ticker-control:focus-visible/);
+  assert.match(motion,/prefers-reduced-motion:reduce/);
+  assert.match(behavior,/data-la-ticker-toggle/);
+  assert.match(behavior,/aria-pressed/);
+  assert.match(behavior,/Pause moving topics/);
+});
