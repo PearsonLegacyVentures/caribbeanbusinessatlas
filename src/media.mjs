@@ -43,10 +43,38 @@ export const companyMedia={
   "Massy Group integrated retail business image published on its official website","Massy Group","https://massygroup.com/our-business/","Company website photograph"),
  "sagicor":media(
   "https://www.sagicor.com/-/media/hero-images/boys-in-the-park.jpg?h=840&la=en-BB&w=1600&hash=3E4F428AFC035DEED2FC99756964F72E359E2C5E",
-  "Community scene from the official Sagicor Barbados company website","Sagicor","https://www.sagicor.com/en-bb/about-sagicor","Company website photograph")
+  "Community scene from the official Sagicor Barbados company website","Sagicor","https://www.sagicor.com/en-bb/about-sagicor","Company website photograph"),
+ "the-new-duff":media(
+  "https://images.squarespace-cdn.com/content/v1/5e38731681fb5c00d68d7879/369ca2d0-cc94-4223-ab17-8482e3dc0045/Hero.jpg",
+  "Company photograph on The New Duff and Gran Bahama official brand story","The New Duff / Gran Bahama","https://www.thenewduff.com/about-us-1","Official brand photograph"),
+ "blue-mountain-tours-jamaica":media(
+  "https://s3.amazonaws.com/islandroutes.com/YL5xacQHsOp6dHV65eGyqs4qcBhn34BzT1VFaiJv.jpg",
+  "Official Blue Mountain Tours Jamaica image from the company's tour homepage","Blue Mountain Tours Jamaica","https://www.bluemountaintoursja.com/","Official tour image"),
+ "earthworks-pottery-barbados":media(
+  "https://www.earthworks-pottery.com/wp-content/uploads/earthworks-pottery-ceramics.jpg",
+  "Earthworks Pottery ceramics at the Barbados production studio","Earthworks Pottery","https://www.earthworks-pottery.com/about-earthworks/","Studio photograph"),
+ "d-market-movers":media(
+  "https://cdn.shopify.com/s/files/1/0992/6538/0628/files/DMM-social_logo.png?v=1781890097",
+  "Official D Market Movers company identity artwork; live product photographs not independently confirmed","D’ Market Movers","https://dmarketmovers.com/","Company identity artwork"),
+ "fond-doux-eco-resort":media(
+  "https://fonddouxresort.com/wp-content/uploads/2025/10/Rooted.webp",
+  "Historic Saint Lucian cocoa estate and resort photography supplied on the Fond Doux website","Fond Doux Eco Resort","https://fonddouxresort.com/","Resort photograph"),
+ "grenada-chocolate-company":media(
+  "https://thegrenadachocolate.com/wp-content/uploads/2018/02/Grenada-82.jpg",
+  "Grenada Chocolate Company's 82 percent chocolate product photographed for its official catalogue","Grenada Chocolate Company","https://thegrenadachocolate.com/","Product photograph"),
+ "caicos-dream-tours":media(
+  "https://caicosdreamtours.com/wp-content/uploads/sites/371/2026/08/Snorkel-Snorkel-image-3.jpg",
+  "Real snorkeling and boat-tour photograph on Caicos Dream Tours official website","Caicos Dream Tours","https://caicosdreamtours.com/","Tour photograph"),
+ "kreyol-essence":media(
+  "https://kreyolessence.com/cdn/shop/files/ke-impact-hero.jpg?v=1791772949&width=720",
+  "Official Kreyòl Essence imagery accompanying its Haitian sourcing and producer-impact reporting","Kreyòl Essence","https://kreyolessence.com/pages/social-impact","Company impact photograph")
+
 };
 /** No Creative Growth Agency image: the specific entity has not been verified. */
 export const storyImageCompany={
+ "tranquilitas-mobile-massage-caribbean":"tranquilitas-day-spa",
+ "caribbean-makers-craft-enterprise":"earthworks-pottery-barbados",
+ "island-operators-outside-the-resort":"caicos-dream-tours",
  "beyond-the-beach":"pedal-paradise-bahamas",
  "directory-trust":"graycliff",
  "regional-publication":"gracekennedy",
