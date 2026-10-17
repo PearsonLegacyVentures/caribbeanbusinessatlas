@@ -329,15 +329,15 @@
      }
      results.append(list);
    }
-   function openCommand(){
-     previouslyFocused=document.activeElement;
+   function openCommand(fromControl=null){
+     previouslyFocused=fromControl||document.activeElement||searchOpeners[0];
      if(!command.open)command.showModal();
      input.value='';
      renderCommand();
      requestAnimationFrame(()=>input.focus());
    }
-   function closeCommand(){if(command.open)command.close()}
-   for(const opener of searchOpeners)opener.addEventListener('click',openCommand);
+   function closeCommand(){if(command.open)command.close();if(previouslyFocused?.isConnected&&typeof previouslyFocused.focus==='function')previouslyFocused.focus()}
+   for(const opener of searchOpeners)opener.addEventListener('click',()=>openCommand(opener));
    closeButton?.addEventListener('click',closeCommand);
    command.addEventListener('click',event=>{if(event.target===command)closeCommand()});
    command.addEventListener('close',()=>{
