@@ -132,3 +132,26 @@ test('homepage interactions use actual content, not marketing counters',()=>{
  assert.ok(root.includes('data-la-count="'+companies.length+'"'));
  assert.ok(root.includes('data-la-count="'+stories.length+'"'));
 });
+
+test('search command palette has indexed, correct paths and valid accessible dialog',()=>{
+ const page=html('');
+ assert.match(page,/data-la-search-open/);
+ assert.match(page,/data-la-command/);
+ assert.match(page,/data-la-command-input/);
+ const match=page.match(/<script type="application\/json" id="la-command-index">([^<]+)<\/script>/);
+ assert.ok(match,'Search index JSON missing');
+ const records=JSON.parse(match[1]);
+ assert.equal(records.length,companies.length+stories.length);
+ for(const record of records)assert.ok(/^\/(?:directory|stories)\/[a-z0-9-]+\/$/.test(record.href),record.href);
+});
+test('secondary page ribbons display authentic visual source references',()=>{
+ for(const route of ['directory','stories','about','islands']){
+  const page=html(route);
+  assert.match(page,/la-photo-ribbon/);
+  assert.match(page,/la-ribbon-source/);
+  assert.match(page,/data-editorial-photo/);
+ }
+ assert.match(html('directory'),/data-la-sector-chip/);
+ assert.match(html('directory'),/data-la-view="list"/);
+ assert.match(html('directory'),/data-la-directory-layout/);
+});
