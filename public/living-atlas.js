@@ -7,6 +7,31 @@
  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
  const fine=window.matchMedia('(hover: hover) and (pointer: fine)');
  const calm=()=>reduced.matches;
+ 
+ // Moving topic strip must be pausable without relying on a motion-preference setting.
+ const ticker=document.querySelector('.la-ticker');
+ const tickerControl=document.querySelector('[data-la-ticker-toggle]');
+ if(ticker&&tickerControl){
+   function syncTicker(){
+     if(calm()){
+       ticker.classList.remove('is-paused');
+       tickerControl.setAttribute('aria-pressed','false');
+       tickerControl.textContent='Pause motion';
+       tickerControl.hidden=true;
+     }else{
+       tickerControl.hidden=false;
+     }
+   }
+   tickerControl.addEventListener('click',()=>{
+     const paused=ticker.classList.toggle('is-paused');
+     tickerControl.setAttribute('aria-pressed',String(paused));
+     tickerControl.textContent=paused?'Resume motion':'Pause motion';
+     tickerControl.setAttribute('aria-label',paused?'Resume moving topics':'Pause moving topics');
+   });
+   reduced.addEventListener?.('change',syncTicker);
+   syncTicker();
+ }
+
 
  // Navigation across pages remains server-rendered HTML. View transitions are
  // progressive enhancement only; never trap the visitor inside a SPA shell.
