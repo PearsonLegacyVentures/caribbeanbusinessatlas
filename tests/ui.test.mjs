@@ -121,7 +121,7 @@ test('futuristic palette, layered authentic images and motion guards exist',()=>
 });
 test('homepage interactions use actual content, not marketing counters',()=>{
  const records=JSON.parse(root.match(/<script type="application\/json" id="la-regions">([^<]+)<\/script>/)?.[1]||'[]');
- assert.equal(records.length,4);
+ assert.equal(records.length,8);
  for(const record of records){
   const matches=companies.filter(c=>c.island===record.name && c.status!=='Research pending');
   assert.equal(record.count,matches.length);
@@ -179,4 +179,55 @@ test('UI Taste motion control has reduced-motion and accessible state support',(
   assert.match(behavior,/data-la-ticker-toggle/);
   assert.match(behavior,/aria-pressed/);
   assert.match(behavior,/Pause moving topics/);
+});
+
+
+test('published pages are indexable with canonical and accurate sitemap',()=>{
+ const origin='https://caribbeanbusinessatlas.pages.dev';
+ const robots=readFileSync('dist/robots.txt','utf8');
+ const sitemap=readFileSync('dist/sitemap.xml','utf8');
+ assert.match(robots,/User-agent: \*/);
+ assert.match(robots,/Allow: \//);
+ assert.doesNotMatch(robots,/Disallow:\s*\//);
+ assert.match(robots,/Sitemap: https:\/\/caribbeanbusinessatlas\.pages\.dev\/sitemap\.xml/);
+ assert.match(sitemap,/<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
+ for(const route of ['','directory/','stories/','islands/','about/','directory/tranquilitas-day-spa/','stories/tranquilitas-mobile-massage-caribbean/','directory/earthworks-pottery-barbados/']){
+   const markup=html(route);
+   const url=origin+'/'+route;
+   assert.doesNotMatch(markup,/noindex,nofollow/);
+   assert.ok(markup.includes('rel="canonical" href="'+url+'"'),'canonical missing '+url);
+   assert.ok(sitemap.includes('<loc>'+url+'</loc>'),'sitemap missing '+url);
+ }
+ assert.ok(!sitemap.includes('/directory/creative-growth-agency/'));
+ assert.ok(!sitemap.includes('/submit/'));
+});
+test('regional expansion contains sourced operating small-business profiles',()=>{
+ const newSlugs=['the-new-duff','blue-mountain-tours-jamaica','earthworks-pottery-barbados','d-market-movers','fond-doux-eco-resort','grenada-chocolate-company','caicos-dream-tours','kreyol-essence'];
+ assert.equal(companies.length,21);
+ assert.equal(stories.length,12);
+ for(const slug of newSlugs){
+  const c=companies.find(c=>c.slug===slug);
+  assert.ok(c,'missing '+slug);
+  assert.ok(c.sources.length>=2,'missing sources: '+slug);
+  assert.ok(c.url.startsWith('https://'));
+  assert.ok(html('directory/'+slug).includes(c.summary));
+ }
+ assert.match(html('directory/d-market-movers'),/password-protected/);
+ assert.equal(new Set(companies.map(c=>c.island).filter(c=>c!=='Caribbean location unconfirmed')).size,8);
+});
+test('Tranquilitas is prominently featured with clear commercial disclosure',()=>{
+ const spa=companies.find(c=>c.slug==='tranquilitas-day-spa');
+ assert.ok(spa.affiliated);
+ assert.equal(companies[0].slug,'tranquilitas-day-spa');
+ assert.match(root,/la-spa-feature/);
+ assert.match(root,/TRANQUILITAS \/ MOBILE SPA/);
+ assert.match(root,/FEATURED \/ PUBLISHER-AFFILIATED/);
+ assert.match(root,/Book Tranquilitas/);
+ assert.match(root,/massagebahamas\.com\/book/);
+ assert.match(root,/No independently verified regional ranking is claimed/);
+ const story=html('stories/tranquilitas-mobile-massage-caribbean');
+ assert.match(story,/DISCLOSED PROMOTIONAL FEATURE/);
+ assert.match(story,/publisher/);
+ assert.match(story,/Book a Tranquilitas treatment/);
+ assert.match(html('directory/tranquilitas-day-spa'),/publisher has a business interest/i);
 });
