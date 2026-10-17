@@ -234,6 +234,42 @@
    });
  }
 
+
+ // Directory controls are functional, not decorative. Pills mirror the native
+ // sector <select>, and view options change real rendered card layout.
+ if(onDirectory){
+   const selector=document.querySelector('[data-sector]');
+   const chips=[...document.querySelectorAll('[data-la-sector-chip]')];
+   function syncChips(){
+     const selected=selector?.value||'';
+     chips.forEach(chip=>chip.setAttribute('aria-pressed',String((chip.dataset.laSectorChip||'')===selected)));
+   }
+   for(const chip of chips)chip.addEventListener('click',()=>{
+     if(!selector)return;
+     selector.value=chip.dataset.laSectorChip||'';
+     selector.dispatchEvent(new Event('change',{bubbles:true}));
+     const params=new URLSearchParams(location.search);
+     if(selector.value)params.set('sector',selector.value);
+     else params.delete('sector');
+     const query=params.toString();
+     if(history.replaceState)history.replaceState(null,'',location.pathname+(query?'?'+query:'')+location.hash);
+     syncChips();
+   });
+   selector?.addEventListener('change',syncChips);
+   syncChips();
+
+   const layout=document.querySelector('[data-la-directory-layout]');
+   const buttons=[...document.querySelectorAll('[data-la-view]')];
+   const currentView=new URLSearchParams(location.search).get('view');
+   function setView(view){
+     if(!layout||!['grid','list'].includes(view))return;
+     layout.dataset.view=view;
+     buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.laView===view)));
+   }
+   for(const button of buttons)button.addEventListener('click',()=>setView(button.dataset.laView||'grid'));
+   if(currentView==='list')setView('list');
+ }
+
  // Image credits remain navigable source links; failures retain accessible fallbacks.
  const photoObserver=new MutationObserver(records=>{
    for(const record of records){
