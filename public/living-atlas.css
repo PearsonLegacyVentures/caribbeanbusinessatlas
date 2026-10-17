@@ -559,3 +559,19 @@ button:focus-visible,a:focus-visible{outline-color:var(--la-coral)}
  .directory-grid[data-view="list"] .photo-company-card{grid-template-columns:95px minmax(0,1fr)}
  .directory-grid[data-view="list"] .company-bottom .status{display:none}
 }
+
+/* Narrow-phone diagnostics: preserve visible controls without forcing 320px overflow. */
+@media(max-width:390px){
+ .site-header .masthead-inner{padding-inline:10px;gap:5px}
+ .site-header .brand{gap:7px;min-width:0}
+ .site-header .brand-symbol{width:30px;height:30px;flex:none;font-size:22px}
+ .site-header .brand strong{font-size:.63rem}
+ .site-header .menu-toggle{width:45px;min-width:45px;height:44px;padding:7px;justify-content:center}
+ .site-header .menu-toggle .menu-word{display:none}
+ .la-search-trigger{width:40px;min-width:40px;height:44px}
+}
+@media(max-width:650px){
+ .la-photo-ribbon-markets .la-ribbon-photo{width:100%;height:auto;min-height:0;aspect-ratio:.77}
+ .la-photo-ribbon-markets .la-ribbon-label{min-width:0}
+ .la-photo-ribbon-markets .la-ribbon-label strong{overflow-wrap:anywhere}
+}
