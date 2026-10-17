@@ -104,3 +104,5 @@ Preview: https://design-living-atlas-swagv2.caribbeanbusinessatlas.pages.dev/
 - Safe review branch, unmerged to `main`, noindex and production launch not authorized.
 
 New implementation details in `docs/LIVING-ATLAS.md`.
+
+The masthead now prioritizes **Explore businesses** instead of inviting visitors to use the unopened submission form. The latest Chromium QA covers intermediate tablet and compact desktop widths.
