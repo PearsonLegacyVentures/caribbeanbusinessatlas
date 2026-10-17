@@ -72,6 +72,16 @@ const testPage=String.raw`<!doctype html><html lang="en"><head><meta charset="ut
    const prev=d.querySelector('[data-la-rail-prev]'),next=d.querySelector('[data-la-rail-next]'),rail=d.querySelector('[data-la-story-rail]');
    assert('Functional story rail buttons',Boolean(prev&&next&&rail));
    assert('Story rail is horizontally scrollable',rail?.scrollWidth>rail?.clientWidth);
+
+   const ticker=d.querySelector('.la-ticker');
+   const tickerButton=d.querySelector('[data-la-ticker-toggle]');
+   assert('Moving topics have accessible pause button',Boolean(ticker&&tickerButton&&!tickerButton.hidden));
+   tickerButton?.click();
+   assert('Moving topics pause',ticker?.classList.contains('is-paused')===true&&tickerButton.getAttribute('aria-pressed')==='true');
+   assert('Motion button clearly offers resume',tickerButton?.textContent==='Resume motion');
+   tickerButton?.click();
+   assert('Moving topics resume',ticker?.classList.contains('is-paused')===false&&tickerButton.getAttribute('aria-pressed')==='false');
+
    frame.remove();
  }
 
