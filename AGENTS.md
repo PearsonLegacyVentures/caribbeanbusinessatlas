@@ -1,8 +1,8 @@
 # Website development instructions
 Read [ui-spec.yaml](./ui-spec.yaml) before changing any interface. These are binding decisions for design tokens, reusable patterns, layout breakpoints, keyboard and touch behavior, motion and quality gates.
 Use the official HorizonX Vibe Coding UI Specification v1.0 as the underlying methodology; the project spec contains the concrete choices.
-Preserve all routes, researched sources, legal/editorial disclosures, profile status, Cloudflare Pages build and existing test coverage.
-Do not introduce heavy frontend dependencies or claim QA without checks. Public crawling and indexing of the existing Cloudflare Pages website were authorized 16 October 2026. Do not add a custom domain or unsupported rankings without approval. See [docs/HORIZONX-QA.md](./docs/HORIZONX-QA.md).
+Preserve all routes, researched sources, legal/editorial disclosures, profile status, `src/site-config.mjs`, Cloudflare Pages build and existing test coverage.
+Do not introduce heavy frontend dependencies or claim QA without checks. Public crawling and indexing of the existing Cloudflare Pages website were authorized 16 October 2026. The approved canonical domain is **https://mag.bahamasaisolutions.com/**. Never switch canonicals or sitemap entries to `pages.dev`, or change domains without new approval; avoid unsupported rankings. See [docs/SEO-DOMAIN.md](./docs/SEO-DOMAIN.md) for redirection, metadata and verification. See [docs/HORIZONX-QA.md](./docs/HORIZONX-QA.md).
 
 ## Living Atlas v2
 
