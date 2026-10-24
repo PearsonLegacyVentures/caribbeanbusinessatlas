@@ -18,7 +18,22 @@ const layout=(title,body,description='Caribbean business discovery and editorial
   '/privacy/':'Privacy Notice | Caribbean Business Atlas',
   '/submit/':'Suggest a Business | Caribbean Business Atlas'
  };
- const fullTitle=titleOverrides[path]||title+' | '+SITE_NAME;
+ const storyTitles={
+  'tranquilitas-mobile-massage-caribbean':'Tranquilitas Mobile Massage | Caribbean Business Atlas',
+  'caribbean-makers-craft-enterprise':'Caribbean Makers & Local Crafts | Caribbean Business Atlas',
+  'island-operators-outside-the-resort':'Caribbean Tours & Local Experiences | Caribbean Atlas',
+  'beyond-the-beach':'Caribbean Tourism Businesses | Caribbean Business Atlas',
+  'directory-trust':'Trustworthy Caribbean Business Directories | Caribbean Atlas',
+  'regional-publication':'Building a Caribbean Business Publication | Caribbean Atlas',
+  'practical-technology':'Caribbean Small-Business Technology | Caribbean Atlas',
+  'pedal-paradise-nassau-experience':'Pedal Paradise Nassau Tours | Caribbean Business Atlas',
+  'caribbean-native-payroll-triblock-hr':'Caribbean Payroll Technology & HR | Caribbean Atlas',
+  'conch-shell-commercial-materials-bahamas':'Conch Shell Products in The Bahamas | Caribbean Atlas',
+  'cocoloop-bahamas-circular-business-concept':'CocoLoop Bahamas & Coconut By-Products | Caribbean Atlas',
+  'regional-firms-what-scale-looks-like':'Caribbean Business Groups & Regional Scale | Caribbean Atlas'
+ };
+ const matchingStory=stories.find(t=>path==='/stories/'+t.slug+'/');
+ const fullTitle=matchingStory?storyTitles[matchingStory.slug]:titleOverrides[path]||title+' | '+SITE_NAME;
  const searchRecords=[...companies.map(c=>({name:c.name,type:'Business',detail:c.sector+' · '+c.island,href:'/directory/'+c.slug+'/'})),...stories.map(t=>({name:t.title,type:'Story',detail:t.category+' · Editorial',href:'/stories/'+t.slug+'/'}))];
  const searchPayload=JSON.stringify(searchRecords).replace(/</g,'\\u003c');
  const command='<dialog class="la-command" data-la-command aria-label="Search the Atlas"><div class="la-command-inner"><div class="la-command-field"><span aria-hidden="true">⌕</span><label class="sr-only" for="la-command-query">Search businesses and stories</label><input type="search" id="la-command-query" data-la-command-input placeholder="Search the Caribbean Atlas..." autocomplete="off" spellcheck="false"><button type="button" data-la-command-close aria-label="Close search">ESC</button></div><div class="la-command-meta"><span>SEARCH COMPANIES &amp; STORIES</span><span>QUICK ACCESS</span></div><div class="la-command-results" data-la-command-results aria-live="polite"></div><a href="/directory/" class="la-command-all">Browse the full business directory <span aria-hidden="true">↗</span></a></div></dialog><script type="application/json" id="la-command-index">'+searchPayload+'</script>';
