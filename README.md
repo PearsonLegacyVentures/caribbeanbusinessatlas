@@ -10,7 +10,7 @@ The current static generator produces **41 pages** from 21 researched/provisiona
 
 The directory supports live company search plus country and industry filters. Each profile distinguishes established operations from pre-commercial, in-development and identity-verification status. Source links accompany evidence-backed entries. Information supplied by companies is distinguished from independent reporting.
 
-**Public indexing authorized 16 October 2026.** Pages are intended to be indexable on `https://caribbeanbusinessatlas.pages.dev/`, with canonical URLs and a generated sitemap. The inactive submission page is omitted from the sitemap.
+**Public indexing authorized 16 October 2026.** Pages are intended to be indexable on `https://mag.bahamasaisolutions.com/`, with canonical URLs and a generated sitemap. The inactive submission page is omitted from the sitemap.
 
 ## Run locally
 
@@ -50,7 +50,7 @@ Business nominations are intentionally not collected in review mode. After owner
 
 The build only activates form submission when the site key **and** contact are provided; the backend requires KV **and** Turnstile secret and verifies each token. Accepted records expire from KV after **90 days**. Before activation, review consent language, retention obligations, privacy and contact terms. Do not store sensitive documents in the form.
 
-Cloudflare Pages settings **after approval**: Build command `npm run build`, output directory `dist`, root `/`. Deploy the standalone repository only. Do not change Bahamas AI Solutions or another existing Cloudflare project.
+Cloudflare Pages settings **after approval**: Build command `npm run build`, output directory `dist`, root `/`. Deploy the standalone repository only. Do not change unrelated Bahamas AI Solutions projects.
 
 ## Editorial trust
 
@@ -71,9 +71,9 @@ The publisher is Amar Pearson. Multiple featured companies are connected to him.
 - [ ] Publish verified contact and privacy information.
 - [ ] Test live submission endpoint and consent/abuse protection.
 - [x] Add canonical URLs, generate sitemap and enable search indexing. RSS is a separate future enhancement.
-- [ ] Review GitHub Actions test results and get explicit production approval.
+- [x] Site reviewed and deployed through the existing Cloudflare Pages workflow; future releases require normal change review.
 
-**GitHub commits ≠ verified production release.**
+**GitHub commits ≠ verified production release.** Confirm Cloudflare deployment and live custom-domain behavior after each release.
 
 ## Cloudflare Pages blank-site recovery
 
@@ -87,7 +87,7 @@ The design branch `design/horizonx-editorial-upgrade` uses the original vendor-n
 
 Preview (not the production branch): https://design-horizonx-editorial-up.caribbeanbusinessatlas.pages.dev/
 
-GitHub Actions runs `npm run build`, `npm test` and `npm run qa:browser`, testing actual mobile-sized Chromium viewports, keyboard navigation and directory interaction. **No production merge until review and authorization.**
+GitHub Actions runs `npm run build`, `npm test` and `npm run qa:browser`, testing actual mobile-sized Chromium viewports, keyboard navigation and directory interaction. Use a review branch for future changes; merge into production only after testing and authorization.
 
 ## Living Caribbean Atlas SWAGv2 branch
 
@@ -114,3 +114,11 @@ The masthead now prioritizes **Explore businesses** instead of inviting visitors
 - New profiles: The New Duff, Blue Mountain Tours Jamaica, Earthworks Pottery, D' Market Movers (availability to confirm), Fond Doux Eco Resort, Grenada Chocolate Company, Caicos Dream Tours and Kreyòl Essence.
 - Open crawling via `public/robots.txt`, canonical URLs in `scripts/generate.mjs`, sitemap at `/sitemap.xml`. Search ranking or appearance is not guaranteed; Search Console submission is a separate step.
 - Photo source attribution and third-party publication-permission caveats in `docs/PHOTO-SOURCES.md` remain important.
+
+## Current production domain and SEO
+
+**Official website:** https://mag.bahamasaisolutions.com/  
+**Sitemap:** https://mag.bahamasaisolutions.com/sitemap.xml  
+**Search crawler instructions:** https://mag.bahamasaisolutions.com/robots.txt
+
+All ready page canonicals, Open Graph URLs and sitemap entries use the custom domain. The legacy `caribbeanbusinessatlas.pages.dev` production hostname redirects to it via Cloudflare Pages middleware; branch preview domains remain separate. Two unfinished pages are specifically excluded from Google indexing and the sitemap (inactive `/submit/` and unverified `/directory/creative-growth-agency/`). See [docs/SEO-DOMAIN.md](docs/SEO-DOMAIN.md) for release checks, structured data and Search Console instructions.
