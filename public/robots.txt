@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://caribbeanbusinessatlas.pages.dev/sitemap.xml
+Sitemap: https://mag.bahamasaisolutions.com/sitemap.xml
