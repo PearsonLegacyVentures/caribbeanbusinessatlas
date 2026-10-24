@@ -183,13 +183,13 @@ test('UI Taste motion control has reduced-motion and accessible state support',(
 
 
 test('published pages are indexable with canonical and accurate sitemap',()=>{
- const origin='https://caribbeanbusinessatlas.pages.dev';
+ const origin='https://mag.bahamasaisolutions.com';
  const robots=readFileSync('dist/robots.txt','utf8');
  const sitemap=readFileSync('dist/sitemap.xml','utf8');
  assert.match(robots,/User-agent: \*/);
  assert.match(robots,/Allow: \//);
  assert.doesNotMatch(robots,/Disallow:\s*\//);
- assert.match(robots,/Sitemap: https:\/\/caribbeanbusinessatlas\.pages\.dev\/sitemap\.xml/);
+ assert.match(robots,/Sitemap: https:\/\/mag\.bahamasaisolutions\.com\/sitemap\.xml/);
  assert.match(sitemap,/<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
  for(const route of ['','directory/','stories/','islands/','about/','directory/tranquilitas-day-spa/','stories/tranquilitas-mobile-massage-caribbean/','directory/earthworks-pottery-barbados/']){
    const markup=html(route);
