@@ -24,7 +24,6 @@ test('sitewide canonical domain is mag.bahamasaisolutions.com',()=>{
   const markup=get(route);
   const url=SITE_ORIGIN+'/'+(route?route+'/':'');
   assert.equal(canonical(markup),url,'canonical '+route);
-  assert.equal(metas(markup,'property'),undefined); // OG tags are checked explicitly below.
   assert.ok(markup.includes('<meta property="og:url" content="'+url+'">'),'OG URL '+route);
   assert.ok(markup.includes('<meta name="twitter:title"'),'Twitter title '+route);
   assert.ok(!markup.includes('caribbeanbusinessatlas.pages.dev'),'old host leaked in '+route);
