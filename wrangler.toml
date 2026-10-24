@@ -1,4 +1,4 @@
-# Cloudflare Pages review site output.
+# Cloudflare Pages production site output; canonical domain: mag.bahamasaisolutions.com.
 name = "caribbeanbusinessatlas"
 pages_build_output_dir = "./dist"
 compatibility_date = "2026-10-16"
