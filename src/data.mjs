@@ -448,6 +448,101 @@ export const companies = [
 
 export const stories = [
   {
+    "slug": "beach-massage-nassau-tranquilitas",
+    "title": "Beach Massage in Nassau: Tranquilitas Brings the Spa to the Shore",
+    "category": "Wellness & Travel",
+    "datePublished": "2026-10-28",
+    "dateModified": "2026-10-28",
+    "summary": "Private waterfront setups, couples treatments and ocean air. A guide to Tranquilitas beach massage in Nassau, Bahamas, and how to book it.",
+    "paragraphs": [
+      "There is a difference between spending time at the beach and having the beach become part of an experience. Tranquilitas takes a familiar Nassau activity, a professional massage, and places it beside the water. The result is a treatment built around the setting as much as the service itself.",
+      "It is not a walk-up massage station on a busy stretch of sand. Tranquilitas describes its beach treatments as prearranged appointments in private or controlled waterfront locations, with a therapist, massage table, fresh linens and oils brought to the agreed setting. For visitors who want the ocean without sacrificing comfort or privacy, that distinction matters."
+    ],
+    "sections": [
+      {
+        "heading": "A beach massage, without the beach-day chaos",
+        "paragraphs": [
+          "A waterfront massage sounds simple until the logistics get involved. Direct sun, wind, uneven ground, foot traffic and limited privacy can turn a beautiful setting into an uncomfortable appointment. Tranquilitas says it only confirms beach massage where access, shade, weather and privacy allow for a proper professional setup.",
+          "Suitable settings may include a beachfront villa, an approved resort waterfront, a private deck or a quiet coastal property. That does not mean every hotel beach or public shoreline is available for booking. Property permission, location access and actual conditions have to be checked first."
+        ]
+      },
+      {
+        "heading": "What the therapist brings",
+        "paragraphs": [
+          "The experience is designed to feel like a spa appointment rather than an improvised treatment outdoors. According to Tranquilitas, the mobile setup includes a spa-grade massage table, fresh linens, massage oils and shade arrangements where needed. The therapist handles the equipment so guests can focus on the appointment.",
+          "Depending on the booked service, guests may request Swedish massage for lighter flowing pressure, deep tissue for firmer targeted work or the company's signature Bahama Bliss approach. As with any professional massage, pressure preferences, allergies and relevant health concerns should be discussed before the session."
+        ]
+      },
+      {
+        "heading": "For couples, the setting becomes part of the occasion",
+        "paragraphs": [
+          "Couples beach massage is a natural fit for honeymoons, anniversaries, birthdays and quiet moments during a Nassau getaway. Tranquilitas advertises side-by-side treatments with two therapists when staffing and the chosen location permit it. Both guests can book together without turning the day into a separate trip to an indoor spa.",
+          "Late-afternoon appointments are worth considering for softer light and a gentler atmosphere. However, a sunset booking is still subject to the property's access rules, available therapists and the weather. For cruise guests, it is particularly important to leave enough time for transport and the ship's boarding deadline."
+        ]
+      },
+      {
+        "heading": "Where can you book a beach massage in Nassau?",
+        "paragraphs": [
+          "Tranquilitas lists private waterfront possibilities around Cable Beach, Nassau, Paradise Island and other parts of New Providence. Its website references resort settings, villas, docks and yacht decks, but these are examples of potential locations, not a claim of exclusive partnerships or guaranteed access at named hotels.",
+          "If the requested beach is too busy, exposed or unsuitable, an in-villa or in-suite massage may be the better option. Confirm the exact address, whether the host or property allows outside therapists, and where equipment can be unloaded before finalizing."
+        ]
+      },
+      {
+        "heading": "What does a Tranquilitas beach massage cost?",
+        "paragraphs": [
+          "At the time this article was prepared in October 2026, the Tranquilitas Nassau service menu listed a 60-minute beach massage starting at US$214.50, a 90-minute session from US$275 and couples beach massage from US$429. These are company-published starting prices, not fixed quotes for every location or date.",
+          "Service selection, beach or property access, travel, upgrades and available staffing can affect the final amount. The current booking page is the right place to confirm inclusions, applicable add-ons and the price before paying."
+        ]
+      },
+      {
+        "heading": "How to arrange the experience",
+        "paragraphs": [
+          "Start with the date, number of guests, preferred duration and where you are staying. Share whether the setting is a private villa, hotel, yacht or other waterfront property. Tranquilitas can then confirm the appropriate location, appointment time, equipment setup and booking terms.",
+          "A good outdoor appointment includes a weather backup. Ask what happens if rain, strong wind or unsafe conditions make the shoreline unsuitable, and whether an indoor alternative or a rescheduled time is available. These details matter just as much as the massage technique.",
+          "The attraction is straightforward: a professional treatment with the sea as the backdrop, arranged with the care an indoor spa would expect. If your idea of Nassau is more time by the water and less time moving between appointments, this is one experience worth considering."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I get a massage on any public beach in Nassau?",
+        "answer": "No. Tranquilitas currently advertises beach massage only in suitable private or controlled waterfront settings. Access, privacy, shade and local conditions must be confirmed."
+      },
+      {
+        "question": "Does Tranquilitas offer couples beach massage?",
+        "answer": "Yes. Side-by-side couples appointments with two therapists are advertised, subject to location suitability, therapist availability and final booking confirmation."
+      },
+      {
+        "question": "Do I need to bring a massage table?",
+        "answer": "No. Tranquilitas describes a mobile setup with a professional table, linens and oils. Confirm any special equipment or shade needs when booking."
+      },
+      {
+        "question": "What if the weather changes?",
+        "answer": "Beach appointments depend on conditions. Ask the team about moving the appointment indoors or rescheduling before you confirm; specific arrangements follow your booking terms."
+      },
+      {
+        "question": "Can cruise passengers book?",
+        "answer": "Cruise visitors can inquire, but should allow time for travel, check-in and return to the ship. Availability and a suitable permitted waterfront location must be confirmed."
+      }
+    ],
+    "bookingUrl": "https://www.massagebahamas.com/booking?category=mobile&service=beach-massage-nassau",
+    "bookingLabel": "Check beach massage availability",
+    "sources": [
+      {
+        "name": "Tranquilitas beach massage in Nassau: settings, setup and services",
+        "url": "https://www.massagebahamas.com/beach-massage-nassau"
+      },
+      {
+        "name": "Tranquilitas Nassau treatment menu and starting prices",
+        "url": "https://www.massagebahamas.com/best-massage-nassau-bahamas"
+      },
+      {
+        "name": "Tranquilitas online booking and appointment selection",
+        "url": "https://www.massagebahamas.com/booking?category=mobile&service=beach-massage-nassau"
+      }
+    ]
+  },
+  {
     "slug": "tranquilitas-mobile-massage-caribbean",
     "title": "Beyond the spa room: Tranquilitas takes massage to the Caribbean stay",
     "category": "Wellness",
