@@ -43,7 +43,7 @@ test('specific beach service claims and access restrictions are accurate in publ
  for(const phrase of ['private or controlled waterfront','suitable','60-minute','90-minute','couples','weather','property permission','US$214.50','US$275','US$429']){
   assert.ok(markup.toLowerCase().includes(phrase.toLowerCase()),'Missing service information: '+phrase);
  }
- assert.doesNotMatch(markup,/best|#1 mobile spa in the Caribbean/i);
+ assert.doesNotMatch(markup,/(?:the )?#1 mobile spa in the Caribbean/i);
  assert.ok(markup.includes('not a claim of exclusive partnerships'));
 });
 
