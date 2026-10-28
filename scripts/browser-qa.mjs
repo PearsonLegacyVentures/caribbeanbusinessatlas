@@ -159,6 +159,30 @@ const testPage=String.raw`<!doctype html><html lang="en"><head><meta charset="ut
    frame.remove();
  }
 
+
+ // Editorial feature: native FAQ, direct booking, authentic source image and all screen sizes.
+ for(const width of [320,390,768,1280]){
+   const {frame,d,w}=await open('/stories/beach-massage-nassau-tranquilitas/',width,880);
+   const over=d.documentElement.scrollWidth-d.documentElement.clientWidth;
+   assert('Beach article responsive '+width,over<=1,'overflow px: '+over+' '+JSON.stringify(over>1?offenders(d):[]));
+   assert('Beach article headings '+width,d.querySelectorAll('.story-body-section h2').length===6);
+   assert('Beach FAQ disclosure controls '+width,d.querySelectorAll('.story-faq-item').length===5);
+   const first=d.querySelector('.story-faq-item');
+   first?.querySelector('summary')?.click();
+   assert('Beach FAQ expand '+width,first?.open===true);
+   first?.querySelector('summary')?.click();
+   assert('Beach FAQ collapse '+width,first?.open===false);
+   const booking=d.querySelector('.story-booking-actions .la-btn');
+   assert('Beach massage direct booking '+width,booking?.href.includes('/booking?category=mobile&service=beach-massage-nassau'));
+   assert('Beach promo disclosure '+width,d.querySelector('.story-booking-disclosure')?.textContent.includes('Publisher-affiliated'));
+   if(width===390){
+     const img=d.querySelector('.article-visual img[data-editorial-photo]');
+     if(img)await Promise.race([img.decode().catch(()=>{}),new Promise(resolve=>setTimeout(resolve,8500))]);
+     assert('Beach image loads from official service page',Boolean(img?.naturalWidth),img?.currentSrc||'no image');
+   }
+   frame.remove();
+ }
+
  for(const route of ['/stories/beyond-the-beach/','/directory/pedal-paradise-bahamas/','/stories/','/about/','/islands/','/stories/tranquilitas-mobile-massage-caribbean/','/directory/earthworks-pottery-barbados/','/submit/']){
    const {frame,d}=await open(route,320,800);
    const over=d.documentElement.scrollWidth-d.documentElement.clientWidth;
