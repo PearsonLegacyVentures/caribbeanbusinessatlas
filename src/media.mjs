@@ -85,4 +85,12 @@ export const storyImageCompany={
  "cocoloop-bahamas-circular-business-concept":"cocoloop-bahamas",
  "regional-firms-what-scale-looks-like":"massy-group"
 };
-export const storyMedia=slug=>companyMedia[storyImageCompany[slug]]||null;
+export const storyMedia=slug=>slug==='beach-massage-nassau-tranquilitas'
+ ?media(
+  'https://static.wixstatic.com/media/8baa80_43023c407ba041e4aa27791a2c22479f~mv2.jpg',
+  'Beach massage imagery published on the Tranquilitas Nassau service website',
+  'Tranquilitas beach massage service imagery',
+  'https://www.massagebahamas.com/best-massage-nassau-bahamas',
+  'Official company service-page image','publisher-owned'
+ )
+ :companyMedia[storyImageCompany[slug]]||null;
