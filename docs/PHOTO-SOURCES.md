@@ -36,3 +36,9 @@ Source-of-truth: `src/media.mjs`, which records every remote image URL, its comp
 - Hotlinked image URLs can change, refuse external embeds, disappear or impose unpredictable bandwidth. Photograph loading should be smoke-tested after major deployments.
 - Rights must be cleared before we self-host, modify, or use external photographs in production/marketing. If permission cannot be secured, choose legitimately licensed editorial photography clearly labeled as illustrative or replace with a real company-approved image.
 - No generated images are presented as independent documentary proof.
+
+## New article imagery — 28 October 2026
+
+- **Beach Massage in Nassau: Tranquilitas Brings the Spa to the Shore** (`/stories/beach-massage-nassau-tranquilitas/`): image URL `https://static.wixstatic.com/media/8baa80_43023c407ba041e4aa27791a2c22479f~mv2.jpg` retrieved from the official Tranquilitas Nassau service page at `https://www.massagebahamas.com/best-massage-nassau-bahamas`. This is a **company-supplied service-page image**, not independent evidence of a specific delivered session. The editor treats it as a publisher-owned promotional visual; confirm the underlying image's original rights before reusing it elsewhere.
+
+- Current beach treatment settings and booking conditions were confirmed against the official `https://www.massagebahamas.com/beach-massage-nassau` page. The article does not promise beach access at any hotel without approval.
