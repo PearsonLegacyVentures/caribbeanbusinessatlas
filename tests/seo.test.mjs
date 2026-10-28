@@ -42,7 +42,7 @@ test('sitemap and robots publish only official-domain, indexable routes',()=>{
  assert.ok(!robots.includes('pages.dev'));
  assert.ok(xml.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'));
  const urls=[...xml.matchAll(/<loc>(https?:\/\/[^<]+)<\/loc>/g)].map(x=>x[1]);
- assert.equal(urls.length,39);
+ assert.equal(urls.length,8+companies.length+stories.length-2);
  assert.equal(new Set(urls).size,urls.length);
  for(const url of urls){
   assert.ok(url.startsWith(SITE_ORIGIN+'/'),url);
