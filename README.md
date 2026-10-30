@@ -6,7 +6,7 @@ Repository: `PearsonLegacyVentures/caribbeanbusinessatlas`
 
 ## Site
 
-The current static generator produces **41 pages** from 21 researched/provisional company records and 12 editorial pieces, plus a custom 404. Routes: `/`, `/stories/`, `/stories/{slug}/`, `/directory/`, `/directory/{slug}/`, `/islands/`, `/about/`, `/submit/`, `/editorial-policy/`, and `/privacy/`.
+The current static generator produces **43 pages** from 21 researched/provisional company records and 14 editorial pieces, plus a custom 404. Routes: `/`, `/stories/`, `/stories/{slug}/`, `/directory/`, `/directory/{slug}/`, `/islands/`, `/about/`, `/submit/`, `/editorial-policy/`, and `/privacy/`.
 
 The directory supports live company search plus country and industry filters. Each profile distinguishes established operations from pre-commercial, in-development and identity-verification status. Source links accompany evidence-backed entries. Information supplied by companies is distinguished from independent reporting.
 
@@ -109,7 +109,7 @@ The masthead now prioritizes **Explore businesses** instead of inviting visitors
 
 ## October 2026 regional publication update
 
-- **21** directory profiles across **eight** identified Caribbean markets, **12** journal stories, and a generated XML sitemap.
+- **21** directory profiles across **eight** identified Caribbean markets, **14** journal stories, and a generated XML sitemap.
 - Tranquilitas leads the hero and receives a distinct **publisher-affiliated** mobile-spa promotion and story, with direct booking actions. This is not an independently verified regional #1 ranking.
 - New profiles: The New Duff, Blue Mountain Tours Jamaica, Earthworks Pottery, D' Market Movers (availability to confirm), Fond Doux Eco Resort, Grenada Chocolate Company, Caicos Dream Tours and Kreyòl Essence.
 - Open crawling via `public/robots.txt`, canonical URLs in `scripts/generate.mjs`, sitemap at `/sitemap.xml`. Search ranking or appearance is not guaranteed; Search Console submission is a separate step.

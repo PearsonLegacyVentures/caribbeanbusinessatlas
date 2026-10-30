@@ -42,3 +42,7 @@ Source-of-truth: `src/media.mjs`, which records every remote image URL, its comp
 - **Beach Massage in Nassau: Tranquilitas Brings the Spa to the Shore** (`/stories/beach-massage-nassau-tranquilitas/`): image URL `https://static.wixstatic.com/media/8baa80_43023c407ba041e4aa27791a2c22479f~mv2.jpg` retrieved from the official Tranquilitas Nassau service page at `https://www.massagebahamas.com/best-massage-nassau-bahamas`. This is a **company-supplied service-page image**, not independent evidence of a specific delivered session. The editor treats it as a publisher-owned promotional visual; confirm the underlying image's original rights before reusing it elsewhere.
 
 - Current beach treatment settings and booking conditions were confirmed against the official `https://www.massagebahamas.com/beach-massage-nassau` page. The article does not promise beach access at any hotel without approval.
+
+## New editorial visual — 30 October 2026
+
+- **The Guest Is Already Here: Caribbean Tourism's Next Revenue Play** (`/stories/caribbean-guest-services-tourism-2026/`): reuses the existing Tranquilitas company-gallery photograph mapped in `src/media.mjs` (`companyMedia["tranquilitas-day-spa"]`), credited to the company and marked publisher-owned. It illustrates the disclosed Nassau wellness case study, not Airbnb's platform, Caribbean-wide tourism or verified booking outcomes. Confirm original photographer rights before reuse outside this publication.

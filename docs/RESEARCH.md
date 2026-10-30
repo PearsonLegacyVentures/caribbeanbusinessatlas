@@ -53,3 +53,14 @@ These examples establish the publication's genuine regional scope, but official 
 3. Arrange verified interviews or public documents before profiling founder performance or claiming a firm is categorically best.
 4. Obtain primary evidence for metrics, permits, awards or certifications before repeating.
 5. Update dated facts ahead of production publication.
+
+## Editorial evidence — 30 October 2026: Guest services after check-in
+
+- Article: `/stories/caribbean-guest-services-tourism-2026/` — 2026-10-30. Analysis about distributing tourism spending after arrival; no measured revenue forecast is claimed.
+- CTO official 2025 year-end review: https://www.onecaribbean.org/ — 35.0 million stay-over arrivals, +2.5%; retrieved 30 October 2026.
+- Jamaica Gleaner, 13 October 2026: https://web4.jamaica-gleaner.com/article/news/20261013/caribbean-tourism-growth-slows-cruise-arrivals-surge — CTO SOTIC figures: first-half 2026 stay-over arrivals +1.9%, cruise visits +11% to approximately 21.7 million. These are cruise visits, not unique passengers. This is independent reporting of CTO figures, not the direct CTO dataset.
+- Airbnb official launch, 13 May 2025: https://news.airbnb.com/en-uk/2025-summer-release-now-you-can-airbnb-more-than-an-airbnb — 10 categories in 260 cities at launch. Nassau availability and any Tranquilitas Airbnb Services listing **not verified**.
+- Airbnb host resource, 1 December 2025: https://www.airbnb.com/resources/hosting-homes/a/introducing-airbnb-services-741 — host rules and provider insurance; local requirements vary.
+- Tranquilitas official Nassau page: https://www.massagebahamas.com/best-massage-nassau-bahamas — mobile massage for hotels, villas and vacation rentals. Publisher-affiliated information, not independent performance evidence.
+- Photo: existing publisher-affiliated Tranquilitas company-gallery image; no Airbnb or third-party platform image.
+- Conflict: publisher has a business interest in Tranquilitas. On-page case-study byline, disclosure and attribution required. No independent ranking or exclusive partnership implied.
