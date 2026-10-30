@@ -204,7 +204,7 @@ test('published pages are indexable with canonical and accurate sitemap',()=>{
 test('regional expansion contains sourced operating small-business profiles',()=>{
  const newSlugs=['the-new-duff','blue-mountain-tours-jamaica','earthworks-pottery-barbados','d-market-movers','fond-doux-eco-resort','grenada-chocolate-company','caicos-dream-tours','kreyol-essence'];
  assert.equal(companies.length,21);
- assert.equal(stories.length,13);
+ assert.ok(stories.length>=13,'preserve founding-edition reporting as new articles publish');
  for(const slug of newSlugs){
   const c=companies.find(c=>c.slug===slug);
   assert.ok(c,'missing '+slug);
