@@ -456,7 +456,6 @@ export const stories = [
     "summary": "Why Caribbean tourism growth depends on booking clarity, staffing, scheduling and reliable delivery—with a disclosed Tranquilitas case study.",
     "affiliated": true,
     "paragraphs": [
-      "Why Caribbean Tourism Growth Needs Better Small-Business Operations",
       "The Caribbean's tourism headlines often begin with arrivals. For an independent operator, the more revealing question is what happens after a visitor decides to spend. Does the inquiry reach someone who can answer? Is the price clear? Can the business promise a time it can actually deliver? And when plans change, who owns the problem?",
       "These questions matter because a destination can post record arrivals while an individual operator still loses business through unanswered messages, uncertain staffing or confusing payment instructions. That is an operational argument, not a claim that the region has measured a particular volume of lost bookings."
     ],
