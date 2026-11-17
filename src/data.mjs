@@ -448,6 +448,262 @@ export const companies = [
 
 export const stories = [
   {
+    "slug": "bahamas-yacht-wellness-concierge-massage-2026",
+    "title": "Beyond the Marina: Why Yacht Wellness Is a Nassau Concierge Opportunity",
+    "category": "Wellness & Yachting",
+    "datePublished": "2026-11-17",
+    "dateModified": "2026-11-17",
+    "summary": "How Nassau yacht concierge teams can arrange professional mobile wellness with practical onboard safeguards.",
+    "affiliated": true,
+    "paragraphs": [
+      "A yacht may arrive with its own itinerary, crew and carefully planned provisioning. Yet guests still want experiences that fit their time on board: a private chef, a guided excursion, a photographer or a massage that does not require a journey across Nassau. The commercial opportunity is not simply selling luxury. It is becoming a dependable supplier to the people responsible for the guest's schedule.",
+      "In September 2026, The Bahamas Ministry of Tourism launched its “Dock Anchor & Discover” campaign at the Monaco Yacht Show, describing an effort to promote the country's wider yachting ecosystem to owners, brokers and captains. A November 2 ministry release described further engagement at the Fort Lauderdale International Boat Show. These are official accounts of marketing activity, not independent proof that demand for onboard spa treatments has increased."
+    ],
+    "sections": [
+      {
+        "heading": "The customer is not always the person receiving the treatment",
+        "paragraphs": [
+          "A hotel guest might find a massage online and book it personally. A yacht guest may ask a chief steward, captain, charter manager or shoreside concierge to make arrangements. That changes the sale. The supplier must reassure an intermediary that the appointment will be punctual, discreet and operationally straightforward.",
+          "A useful inquiry starts with the vessel's location, date, guest count and preferred treatment length. But a credible confirmation goes further: where will the therapist board, who grants access, how much space is available for a table, and what security or identification procedure applies? The intermediary also needs to know how payment and cancellation will work.",
+          "A vague promise to “come to any yacht” is not a service standard. A berth at a Nassau marina is different from an anchorage requiring tender access. Weather, boarding permissions and vessel movements can make a seemingly simple appointment impossible. A provider should confirm each location individually rather than advertise universal coverage."
+        ]
+      },
+      {
+        "heading": "A case study in taking the spa to the guest",
+        "paragraphs": [
+          "Nassau-based Tranquilitas Day Spa advertises both treatments at its Collins Avenue location and mobile massage for guest properties, including yachts, villas and hotels. Its service model is relevant because it transfers the treatment setting to the customer's location. The company describes supplying therapists and portable equipment, with appointments subject to booking confirmation.",
+          "Publisher affiliation disclosure: Tranquilitas is connected to the publisher of Caribbean Business Atlas. This is a disclosed company example, not an independently tested ranking, endorsement or claim of market leadership. Its yacht offering and geographic reach are company-published descriptions; this article does not verify a roster of yacht clients, a marina partnership, booking volumes or performance results.",
+          "The practical distinction is between being capable of delivering a mobile treatment and being ready for a yacht-specific job. A therapist may be excellent at the treatment itself while still needing a separate boarding plan, equipment movement procedure and clear liaison with crew. The captain or concierge should approve the setup before a guest is promised a time.",
+          "For readers considering a booking, Tranquilitas lists its service options at its official Nassau service page. Confirm the vessel's location, permissions, total price and available therapists directly rather than assuming an advertised mobile service is immediately available."
+        ]
+      },
+      {
+        "heading": "Why the wider yachting push matters",
+        "paragraphs": [
+          "The ministry's September announcement emphasized a range of products and experiences beyond marina infrastructure. It also highlighted cruising-permit changes introduced in April 2026, including different permit durations. A separate November release positioned the Bahamas' participation at the Fort Lauderdale show as a way to deepen relationships in boating, superyacht and charter markets.",
+          "Those policy details are not a shortcut to selling services. The Bahamas' official boating guidance says visiting vessels must meet customs and immigration requirements at designated ports of entry. Maritime legal analysis published by Chambers and Partners also discusses revised permit and anchorage arrangements. Service businesses should not give captains immigration or customs advice outside their competence; the vessel's agent and authorities handle those matters.",
+          "For an independent supplier, the strategic signal is narrower and more useful. If national marketing encourages more yachting activity, the businesses most likely to benefit are those that can be discovered, vetted and booked without creating extra work for the crew. A compelling Instagram photograph does not substitute for a dependable arrival time."
+        ]
+      },
+      {
+        "heading": "What a yacht-ready wellness service needs",
+        "paragraphs": [
+          "A strong offer should specify exactly what the provider can deliver: treatment types, number of therapists, minimum booking notice, permitted locations, equipment needs and what happens if a vessel moves. A clear service menu is helpful, but a concise operational sheet for concierges may be even more valuable.",
+          "Consider a two-guest massage aboard a vessel. If both want simultaneous treatments, the supplier needs two therapists, sufficient deck or cabin space, and safe access for both. If the space is too small, sequential appointments may be more realistic. If the yacht departs early, the cancellation and rescheduling terms should already be understood. These are illustrative planning scenarios, not reported Tranquilitas transactions.",
+          "The best relationship is also repeatable. A chief steward should not need to explain the same boarding requirements every visit. A supplier who records the approved contact channel, invoicing preferences and access procedures—with appropriate privacy safeguards—can make the next booking easier. That is an operational advantage, not a guarantee of referrals."
+        ]
+      },
+      {
+        "heading": "From one Nassau appointment to a regional network",
+        "paragraphs": [
+          "The temptation is to treat the Caribbean as a single yacht-wellness market. It is not. Each island has its own transport, local providers, access rules and scheduling constraints. A Nassau therapist cannot simply be assumed available in Antigua, St. Barts or the Turks and Caicos Islands.",
+          "Tranquilitas promotes regional mobile wellness coverage, but destination-specific capacity should be checked rather than inferred from a locations page. Any broader concierge network must distinguish a confirmed local supplier from an aspiration to serve a market. Guests and captains deserve a firm answer, not a map of hypothetical availability.",
+          "For yacht teams, the next step is simple: send the service provider the berth or anchorage details, desired date, guest count and preferred treatments, then request written confirmation of access, equipment and final price. For Bahamian wellness businesses, the opportunity is equally clear. The Bahamas is marketing its yachting ecosystem abroad; earning a place in the onboard guest experience requires operational credibility at home."
+        ]
+      }
+    ],
+    "bookingUrl": "https://www.massagebahamas.com/best-massage-nassau-bahamas",
+    "bookingLabel": "Explore Tranquilitas services",
+    "sources": [
+      {
+        "name": "Official service and research reference",
+        "url": "https://www.bahamas.com/pressroom/the-bahamas-ministry-of-tourism-launches-dock-anchor--discover-campaign-spotlighting-the-destinations-full-yachting-ecosystem-to-owners-brokers-and-captains"
+      },
+      {
+        "name": "Research and verification source",
+        "url": "https://www.bahamas.com/de/pressroom/the-bahamas-strengthens-global-marine-tourism-partnerships-at-fort-lauderdale-international-boat-show"
+      },
+      {
+        "name": "Additional source",
+        "url": "https://www.bahamas.com/getting-here/boating/boat-regulations"
+      },
+      {
+        "name": "Supporting source",
+        "url": "https://chambers.com/articles/charting-a-new-course-substantial-developments-in-bahamian-maritime-law"
+      },
+      {
+        "name": "Additional industry reference",
+        "url": "https://www.massagebahamas.com/best-massage-nassau-bahamas"
+      }
+    ]
+  },
+  {
+    "slug": "caribbean-experiences-market-ready-2026",
+    "title": "A Beautiful Place Is Not a Bookable Product: The Caribbean's Experience Economy Test",
+    "category": "Tourism & Enterprise",
+    "datePublished": "2026-11-13",
+    "dateModified": "2026-11-13",
+    "summary": "What Caribbean operators need to turn local experiences into reliable, bookable tourism products.",
+    "affiliated": true,
+    "paragraphs": [
+      "A new Caribbean Tourism Organization discussion asks how communities turn distinctive assets into commercially viable experiences. The answer begins with packaging, permission, pricing and delivery—not another pretty photograph.",
+      "The Caribbean has no shortage of experiences worth sharing. A fisherman can explain a working harbor better than any brochure. A craftsperson can make a visitor understand an island's history through a single object. A quiet coastal setting can become the backdrop to an unforgettable wellness appointment. Yet none of those assets automatically becomes a product that a visitor can confidently reserve.",
+      "That distinction is the subject of the Caribbean Tourism Organization's November 10, 2026 webinar, “From Assets to Experiences: Developing Market-Ready Community Tourism Products.” Its published agenda focuses on authenticity, appropriate packaging and pricing, links to the wider destination and meaningful value for communities. The CTO says its Sustainable Tourism Technical Committee survey identified product development as a challenge and priority for destination support. The webinar agenda establishes the discussion's aims; it does not prove that any specific business has improved its sales."
+    ],
+    "sections": [
+      {
+        "heading": "What makes an experience ready to sell?",
+        "paragraphs": [
+          "Start with a question that sounds obvious: what exactly is the customer buying? “Authentic island culture” may be a compelling theme, but it is not a reservation. A guided village walk with a stated duration, meeting point, group limit, accessibility information and cancellation policy is much closer to a sellable product.",
+          "The same applies to a cooking lesson, a nature excursion or a private wellness treatment. A guest should know what is included, what to wear or bring, how far the venue is from their accommodation, and what happens if the weather changes. The operator should know whether permission is required to use a beach, dock, heritage site or private property.",
+          "These details are not bureaucratic decoration. They are the difference between an attractive idea and a service that can be delivered repeatedly without misleading guests or exhausting the people providing it."
+        ]
+      },
+      {
+        "heading": "Price the whole experience, not just the hour",
+        "paragraphs": [
+          "A small operator may calculate a price from the visible activity alone: an hour with a guide, a cooking session or a massage. But transport, setup, equipment, insurance, payment fees, cleaning, booking communication and time between appointments all affect the actual economics.",
+          "A realistic package needs a clear base price and a disciplined approach to extras. Guests should not discover essential charges after they have committed. Operators should also account for cancellations and weather interruptions rather than quietly absorbing every disruption.",
+          "That does not mean every community venture needs a luxury price tag. It means the price should support safe, consistent delivery and fair compensation. A business that attracts guests but loses money on every booking is not sustainable merely because it looks popular online."
+        ]
+      },
+      {
+        "heading": "Distribution is part of product design",
+        "paragraphs": [
+          "The Caribbean Hotel and Tourism Association's 2026 Direct Booking Summit, announced with technology partner Triptease, centered on direct reservations, conversion and dependence on online travel agencies. That conversation focused on hotels, but its underlying question matters to smaller operators too: who controls the guest relationship, and how easily can a traveler act on an offer?",
+          "For a local experience, the answer might involve an accommodation host, a concierge, a tourism directory or a direct booking page. Each channel needs accurate descriptions, contact details and a reliable method for confirming availability. A referral arrangement should identify who handles payment, changes and guest complaints.",
+          "Digital tools help, but they are not a substitute for a workable product. UN Tourism's Digital Futures programme, launched in 2022, identified e-commerce, connectivity, payments and security among the capabilities relevant to tourism small businesses. Those are enduring operational categories, not evidence that every new booking platform increases sales."
+        ]
+      },
+      {
+        "heading": "A Nassau wellness example: Tranquilitas",
+        "paragraphs": [
+          "Tranquilitas Day Spa, based in Nassau, illustrates how an ordinary service can be packaged around a visitor's location. Its official website promotes treatments at its Collins Avenue spa and mobile massage for settings such as hotels, villas and suitable private properties. The core treatment may be familiar, but delivering it off-site creates a different experience and a different operating challenge.",
+          "A mobile massage cannot be booked responsibly on the basis of an attractive setting alone. Someone must confirm access, equipment space, therapist travel, scheduling and the property's rules. A beach appointment adds weather, shade and privacy considerations. These are practical questions any visitor should resolve before payment, not assurances that every location is available.",
+          "Publisher affiliation disclosure: Tranquilitas is connected to the publisher of Caribbean Business Atlas. Its services and geographic reach are company-reported; this example is not an independent quality ranking, an endorsement based on comparative testing or evidence of superior business performance.",
+          "The case has a wider application. A village food tour, guided snorkeling trip or artisan workshop becomes more useful to travelers when the provider turns an appealing idea into a clear, location-specific promise. The customer is buying confidence as well as the activity."
+        ]
+      },
+      {
+        "heading": "Community value must survive the transaction",
+        "paragraphs": [
+          "The CTO's emphasis on community-rooted tourism raises a harder question than whether guests enjoy themselves: where does the money go? A viable product should be designed with the people who supply the experience, not simply marketed using their culture or surroundings.",
+          "Operators can ask who receives referral commissions, whether local suppliers are paid fairly, how visitor traffic affects residents, and whether the activity is appropriate for the place. Some experiences should remain small. Limited capacity can protect both the visitor experience and the community, provided the business is transparent about it.",
+          "The right measure is not only bookings. It is whether the activity can be delivered safely, fairly and consistently while preserving what made it distinctive in the first place."
+        ]
+      },
+      {
+        "heading": "The next move for Caribbean operators",
+        "paragraphs": [
+          "Before buying ads or commissioning a new website, test one offer from the visitor's perspective. Can someone unfamiliar with the island understand the product, see the total cost, check the location, ask a relevant question and receive a dependable confirmation? Can the team fulfill it at the promised time?",
+          "For travelers interested in Nassau wellness, Tranquilitas's official service information is a starting point; guests should confirm current availability, price and property access directly. For tourism entrepreneurs, the CTO's market-ready experiences webinar provides a timely prompt to review the product itself.",
+          "A beautiful place earns attention. A well-designed experience earns a booking—and gives the people behind it a better chance of earning a living."
+        ]
+      }
+    ],
+    "bookingUrl": "https://www.massagebahamas.com/best-massage-nassau-bahamas",
+    "bookingLabel": "Explore Tranquilitas services",
+    "sources": [
+      {
+        "name": "Official service and research reference",
+        "url": "https://www.onecaribbean.org/events-calendar/from-assets-to-experiences-webinar/"
+      },
+      {
+        "name": "Research and verification source",
+        "url": "https://www.onecaribbean.org/"
+      },
+      {
+        "name": "Additional source",
+        "url": "https://www.untourism.int/events/launching-event-of-the-unwto-digital-futures-programme"
+      },
+      {
+        "name": "Supporting source",
+        "url": "https://www.hospitalitynet.org/news/4131577/chta-announces-second-annual-direct-booking-summit-caribbean"
+      },
+      {
+        "name": "Additional industry reference",
+        "url": "https://caribbeanhotelandtourism.com/effortless-is-the-new-personal-how-ai-can-help-caribbean-hospitality-deliver-seamless-experiences/"
+      },
+      {
+        "name": "Company service reference",
+        "url": "https://www.massagebahamas.com/best-massage-nassau-bahamas"
+      }
+    ]
+  },
+  {
+    "slug": "nassau-couples-massage-honeymoon-anniversary-guide",
+    "title": "A Couples Massage in Nassau Should Fit the Trip, Not Take It Over",
+    "category": "Wellness & Travel",
+    "datePublished": "2026-11-10",
+    "dateModified": "2026-11-10",
+    "summary": "How couples can choose between Nassau in-spa, villa and beach massage while managing itinerary, access and price.",
+    "affiliated": true,
+    "paragraphs": [
+      "Nassau is exceptionally good at filling a calendar. A couple can spend the morning on the water, return to a resort for lunch, dress for dinner and discover that the only unclaimed hour is the one they meant to spend relaxing. A massage is supposed to simplify that day, not become another journey through traffic.",
+      "Tranquilitas Day Spa offers two different answers: treatments at its Collins Avenue spa and couples appointments that can be arranged at a guest's accommodation or an approved waterfront setting. The choice is not simply indoors versus outdoors. It is a decision about privacy, logistics, price and how much of the holiday a couple wants to devote to the experience.",
+      "Publisher affiliation: Tranquilitas is connected to the publisher of Caribbean Business Atlas. This is a disclosed company feature based on public service descriptions, not an independent ranking, endorsement of treatment outcomes or verified customer survey."
+    ],
+    "sections": [
+      {
+        "heading": "Why romance travel is a real category, not a marketing slogan",
+        "paragraphs": [
+          "The Bahamas Ministry of Tourism put romance travel on its 2026 calendar through Romance Week, held February 8–14, and the From The Bahamas with Love programme for wedding professionals later that month. The ministry framed honeymoons, anniversaries, proposals and destination weddings as different occasions within the same travel market. Those are official promotional initiatives; they do not establish how many couples buy massages.",
+          "The broader visitor base is substantial. In its September 11, 2026 release, the ministry reported 1,314,639 stopover arrivals between January and July 2026, 4.3% above the corresponding period in 2025. That is a measure of overnight visitor arrivals, not a count of couples or potential spa customers. It does, however, explain why services built around accommodation and the visitor's schedule are commercially relevant.",
+          "For the traveler, the important question is narrower: where should the appointment happen, and what must be confirmed before paying?"
+        ]
+      },
+      {
+        "heading": "Choose the setting before choosing the treatment",
+        "paragraphs": [
+          "An in-spa couples massage works well when the couple wants a distinct outing. Tranquilitas lists its Nassau spa at #7 Fourth Terrace, Collins Avenue. A dedicated treatment environment can be preferable to converting a guest room into a temporary spa, particularly when the accommodation is small or shared with family.",
+          "An in-suite or villa appointment has a different advantage: the couple stays where they are. Tranquilitas says its mobile team brings tables, linens and oils to suitable hotels, villas, private homes and other approved locations. The provider still needs adequate space, safe access and permission from the property. A booking request does not override hotel rules about outside professionals.",
+          "A beach setting can be memorable, but it adds variables. Wind, shade, privacy, weather and permission to use the space matter more than the photograph in the advertisement. Tranquilitas describes waterfront sessions as arranged in suitable locations, rather than as walk-up appointments on any public beach. A villa terrace or approved private waterfront may be more practical than a crowded shoreline."
+        ]
+      },
+      {
+        "heading": "Compare the full price, not just the headline",
+        "paragraphs": [
+          "On the Tranquilitas Nassau menu reviewed in November 2026, couples Swedish massage for 80 minutes was advertised from US$319; couples deep tissue for 80 minutes from US$341; and couples Bahama Bliss from US$374. The same menu showed a couples mobile session from US$445.50 and couples beach massage from US$429. These are company-published starting figures, not guaranteed all-in quotes for every date or address.",
+          "The distinction matters. A treatment at the spa, a session that requires two therapists to travel and a beach setup have different delivery costs. Ask whether the quoted amount includes transportation, applicable service charges, the selected duration, the number of therapists and any venue-specific fees. Verify the current total at checkout, since menus and availability can change.",
+          "The most expensive option is not necessarily the most suitable. A couple staying close to Collins Avenue may prefer the in-spa visit. A pair with a full itinerary or limited mobility may find an approved in-room appointment more convenient. A beachfront session makes sense only when the location can support a safe and private setup."
+        ]
+      },
+      {
+        "heading": "Make the appointment work around the actual itinerary",
+        "paragraphs": [
+          "For cruise passengers, the ship's boarding deadline is non-negotiable. Allow for getting off the vessel, reaching the appointment, completing the full session and returning with a substantial buffer. Do not book based solely on the ship's published port departure time.",
+          "For hotel guests, the simplest option may be an afternoon slot after an excursion and before dinner. Ask the property whether an outside therapist can enter, and identify where equipment can be set up. If the couple is celebrating an anniversary, say so during the inquiry; the provider can explain any available additions without implying they are included in the standard price.",
+          "For a beach session, establish a weather alternative before payment. Rain or strong wind can make the intended location unsuitable even if both therapists are available. Confirm cancellation and rescheduling terms in writing rather than assuming a scenic setting comes with a flexible refund."
+        ]
+      },
+      {
+        "heading": "The questions worth asking before you book",
+        "paragraphs": [
+          "Start with the practical details: the exact date, two guests, preferred duration and whether both want the same pressure style. Provide the property name and address, not just the neighbourhood. Ask if the treatment will be simultaneous, whether two therapists are included, and how early the team needs access to set up.",
+          "Then confirm the final price, payment method, gratuity treatment, cancellation window and who to contact if the property or weather changes the plan. Tranquilitas's published policies note that some mobile and couples cancellations may incur a fee, and that same-day appointments depend on availability. A clear written confirmation protects the guests and the service team.",
+          "Finally, communicate allergies, injuries, pregnancy or other relevant health considerations before the appointment. Massage is a wellness service, not a substitute for medical assessment, and a therapist may need to adjust or decline a particular treatment."
+        ]
+      },
+      {
+        "heading": "The quieter definition of luxury",
+        "paragraphs": [
+          "A couples massage does not have to be the centrepiece of a Nassau holiday to be worthwhile. Sometimes its value is precisely that it fits between the memorable parts: the boat ride, the wedding, the sunset dinner or a slow morning with nowhere else to be.",
+          "Tranquilitas's mix of in-spa, mobile and beach options gives visitors different ways to plan that pause. The right choice is the one with a confirmed setting, realistic timing and transparent price. Review the company's current Nassau couples and mobile massage menu and confirm availability directly before making the rest of the day's plans."
+        ]
+      }
+    ],
+    "bookingUrl": "https://www.massagebahamas.com/best-massage-nassau-bahamas",
+    "bookingLabel": "Explore Tranquilitas services",
+    "sources": [
+      {
+        "name": "Official service and research reference",
+        "url": "https://www.massagebahamas.com/best-massage-nassau-bahamas"
+      },
+      {
+        "name": "Research and verification source",
+        "url": "https://www.massagebahamas.com/locations"
+      },
+      {
+        "name": "Additional source",
+        "url": "https://www.bahamas.com/pressroom/the-bahamas-sustains-strong-tourism-growth-through-july-2026"
+      },
+      {
+        "name": "Supporting source",
+        "url": "https://www.globenewswire.com/news-release/2026/02/09/3234950/0/en/the-bahamas-puts-the-spotlight-on-love-with-romance-week-and-from-the-bahamas-with-love-conference.html"
+      }
+    ]
+  },
+  {
     "slug": "beach-massage-nassau-tranquilitas",
     "title": "Beach Massage in Nassau: Tranquilitas Brings the Spa to the Shore",
     "category": "Wellness & Travel",
