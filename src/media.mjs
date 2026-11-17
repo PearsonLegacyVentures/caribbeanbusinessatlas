@@ -73,6 +73,9 @@ export const companyMedia={
 /** No Creative Growth Agency image: the specific entity has not been verified. */
 export const storyImageCompany={
  "caribbean-guest-services-tourism-2026":"tranquilitas-day-spa",
+ "bahamas-yacht-wellness-concierge-massage-2026":"tranquilitas-day-spa",
+ "caribbean-experiences-market-ready-2026":"tranquilitas-day-spa",
+ "nassau-couples-massage-honeymoon-anniversary-guide":"tranquilitas-day-spa",
  "tranquilitas-mobile-massage-caribbean":"tranquilitas-day-spa",
  "caribbean-makers-craft-enterprise":"earthworks-pottery-barbados",
  "island-operators-outside-the-resort":"caicos-dream-tours",
