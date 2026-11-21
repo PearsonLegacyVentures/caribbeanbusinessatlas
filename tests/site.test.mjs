@@ -18,3 +18,5 @@ test('approved November stories render with disclosures, source links and canoni
   assert.ok(readFileSync('dist/sitemap.xml','utf8').includes('/stories/'+slug+'/'));
  }
 });
+
+test('weather resilience feature is included in generated routes and sitemap',()=>{const slug='caribbean-tourism-weather-resilience-booking-2026';const story=stories.find(x=>x.slug===slug);assert.ok(story);assert.equal(story.affiliated,true);assert.ok(story.sources.length>=5);const html=readFileSync('dist/stories/'+slug+'/index.html','utf8');assert.match(html,/Tranquilitas/i);assert.match(html,/rel="canonical"/);assert.ok(readFileSync('dist/sitemap.xml','utf8').includes('/stories/'+slug+'/'))});
