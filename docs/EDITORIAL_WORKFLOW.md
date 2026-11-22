@@ -11,13 +11,13 @@ Caribbean Business Atlas is an editorial business directory and journal. It can 
 3. **Draft:** Strong lead, useful specifics, reader questions answered, links to official business channels. Attribute vendor claims.
 4. **Verify:** Check company name, current status, URL, geography, image rights, figures, reviews and quotes. Keep source notes.
 5. **Conflict review:** Disclose founder interests and clearly label sponsored placements; do not market them as editorial awards.
-6. **Approve:** Editor signs off on evidence, design and language. **No automatic publication before approval.**
+6. **Approve:** The owner provided standing publishing authorization on 22 November 2026. No article-by-article signoff is needed when sources, image rights, disclosures, accuracy and tests pass.
 7. **Publish:** Update article slug, date, metadata, valid source links and canonical URL after the domain has been approved.
 8. **Maintain:** Recheck key facts, respond to corrections and record significant changes.
 
 ### Editorial cadence
 
-**Target after launch:** a researched piece every 2–3 days, but only when evidence and editorial approval support it. Automatically prepare story briefs or drafts; never autonomously invent interviews, awards, prices, business results or citations. The manual editorial brief generator can be expanded to connected feeds and sources once credentials and workflow are approved.
+**Target from 22 November 2026:** four fully researched, unique articles per week: Tuesday, Wednesday, Friday and Sunday, in Nassau time. This doubles the previous Tuesday/Friday cadence. Publish without separate approval once source verification, affiliate disclosures, image permissions and release checks pass. When evidence is missing, prepare a research draft rather than invent interviews, awards, prices, results or citations. The manual editorial brief generator may support research assignments.
 
 ### Coverage mix
 
