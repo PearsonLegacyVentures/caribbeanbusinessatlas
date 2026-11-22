@@ -72,6 +72,8 @@ export const companyMedia={
 };
 /** No Creative Growth Agency image: the specific entity has not been verified. */
 export const storyImageCompany={
+ "tranquilitas-msme-innovative-business-nomination-2026":"tranquilitas-day-spa",
+ "tranquilitas-mobile-spa-service-innovation-bahamas":"tranquilitas-day-spa",
  "caribbean-guest-services-tourism-2026":"tranquilitas-day-spa",
  "tranquilitas-mobile-massage-caribbean":"tranquilitas-day-spa",
  "caribbean-makers-craft-enterprise":"earthworks-pottery-barbados",
