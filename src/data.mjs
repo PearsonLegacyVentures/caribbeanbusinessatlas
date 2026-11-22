@@ -447,6 +447,123 @@ export const companies = [
 ];
 
 export const stories = [
+{
+  "slug": "tranquilitas-msme-innovative-business-nomination-2026",
+  "title": "Tranquilitas Nominated for Innovative Business of the Year",
+  "category": "Business & Innovation",
+  "datePublished": "2026-11-22",
+  "dateModified": "2026-11-22",
+  "affiliated": true,
+  "summary": "Tranquilitas Day Spa reports an Innovative Business of the Year nomination at SBDC Bahamas' 2026 MSME Honors.",
+  "paragraphs": [
+    "Tranquilitas Day Spa, the Nassau wellness business offering in-spa and mobile massage services, says it was nominated for Innovative Business of the Year at SBDC Bahamas' 2026 MSME Honors. The company-reported nomination puts attention on a service model designed to reach guests in a treatment room or at the places where they are staying.",
+    "The Small Business Development Centre's fifth annual National MSME Honors took place on Friday, November 20, 2026, at Sapodilla Estate in New Providence. The organization presents the event as recognition of Bahamian small businesses and entrepreneurs. Caribbean Business Atlas has not independently reviewed a nomination notice or winners list for Tranquilitas. This report concerns a nomination, not an award win."
+  ],
+  "sections": [
+    {
+      "heading": "From a Nassau spa to mobile wellness",
+      "paragraphs": [
+        "Tranquilitas lists a physical spa at #7 Fourth Terrace, Collins Avenue, Nassau. It also advertises massage appointments at hotels, villas, private residences, yachts and selected suitable waterfront locations around Nassau and Paradise Island. Individual and couples treatments can be requested through the company's published booking channels.",
+        "The choice matters to travelers. Some want a dedicated treatment room; others prefer a therapist to arrive at their accommodation. Mobile bookings depend on confirmed staff availability, adequate setup space, property permission and the exact requested service."
+      ]
+    },
+    {
+      "heading": "The operational work behind the idea",
+      "paragraphs": [
+        "Massage is an established profession. The innovation question is how a small wellness business connects customer discovery, reservations, therapist coordination and fulfillment across different types of locations. Tranquilitas has been developing digital booking and therapist-dispatch workflows to support that work.",
+        "The business also describes arranging selected wellness requests in other Caribbean destinations through local professionals. These are company-reported offerings, with availability and conditions confirmed destination by destination; they are not a guarantee of immediate service or proof of exclusive resort partnerships."
+      ]
+    },
+    {
+      "heading": "A nomination, not a ranking",
+      "paragraphs": [
+        "The Atlas is owned by a founder with a business interest in Tranquilitas. The nomination was reported to us by the business, and the public SBDC materials consulted confirm the 2026 ceremony but not Tranquilitas's individual nomination or a category result. No independent award win, judge's score, ranking or audited performance outcome is being claimed.",
+        "The significance of the story is the wider question it raises: how can Bahamian service companies make local professional services easier to find, arrange and deliver while retaining a personal guest experience?"
+      ]
+    },
+    {
+      "heading": "Where guests can learn more",
+      "paragraphs": [
+        "Tranquilitas publishes its service menu and contact details online. Nassau guests can request in-spa appointments at its Collins Avenue location or inquire about mobile treatments at a hotel, villa, yacht or other suitable setting. Confirm the location, date, party size and terms before booking."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "SBDC Bahamas — organization and MSME programs",
+      "url": "https://sbdcbahamas.com/"
+    },
+    {
+      "name": "SBDC Bahamas — MSME Honors 2026 announcements",
+      "url": "https://bs.linkedin.com/company/sbdcbahamas"
+    },
+    {
+      "name": "Tranquilitas official services and booking",
+      "url": "https://www.massagebahamas.com/"
+    }
+  ],
+  "ctaUrl": "https://www.massagebahamas.com/book",
+  "ctaLabel": "Explore Tranquilitas services"
+},
+{
+  "slug": "tranquilitas-mobile-spa-service-innovation-bahamas",
+  "title": "How Tranquilitas Is Rethinking Spa Access in The Bahamas",
+  "category": "Wellness & Enterprise",
+  "datePublished": "2026-11-22",
+  "dateModified": "2026-11-22",
+  "affiliated": true,
+  "summary": "The operational ideas behind a Nassau spa's mobile treatments, booking workflows and regional therapist coordination.",
+  "paragraphs": [
+    "A massage booked at a villa or yacht looks effortless to the guest. For the operator, the appointment involves transport, equipment, staffing, access permissions, the right treatment space and clear communication. The experience is only as good as that coordination.",
+    "Those practical details are central to the service model being developed by Nassau's Tranquilitas Day Spa. The company reports that it received an Innovative Business of the Year nomination at SBDC Bahamas' 2026 MSME Honors. This publisher-affiliated analysis looks at the model, not an independently verified award result or business-performance ranking."
+  ],
+  "sections": [
+    {
+      "heading": "The whole appointment is the product",
+      "paragraphs": [
+        "A customer selecting a treatment is only the beginning. Before a mobile service can happen, the team needs an accurate location, an available professional, realistic travel time and an appropriate place to set up. For beach appointments, weather, shade, privacy and permission to use the location add another layer.",
+        "Tranquilitas advertises treatment options at its Nassau spa as well as hotels, villas, yachts, private homes and selected waterfront settings. Its own booking information is the appropriate source for available services and prices. An outside therapist cannot be assumed to have permission to work at every resort or property."
+      ]
+    },
+    {
+      "heading": "A fixed spa and a mobile network serve different needs",
+      "paragraphs": [
+        "Travelers do not all want to use their vacation time in the same way. Some prefer a quiet treatment room away from their accommodation. Others want a wellness appointment to fit between activities without another journey. Offering both gives guests a choice, but increases operational complexity for the business.",
+        "Therapist travel, equipment setup, staff schedules, local access and notice periods can affect the appointment. Good service depends on communicating those constraints before money changes hands, rather than promising instant availability everywhere."
+      ]
+    },
+    {
+      "heading": "The role of technology is coordination",
+      "paragraphs": [
+        "Tranquilitas has been developing web-based booking and therapist-dispatch processes for mobile requests. Such systems can make it easier to circulate requests and record whether a professional has accepted a job. They cannot replace trained practitioners, location suitability or dependable customer support.",
+        "The company also describes coordinating selected Caribbean destination bookings with local partners. Those services must be confirmed individually: a destination page is not proof that every treatment is available at every hour, and the Atlas has not audited regional service volume or customer outcomes."
+      ]
+    },
+    {
+      "heading": "A lesson for Caribbean service operators",
+      "paragraphs": [
+        "Tour providers, chefs, rental firms and wellness businesses face a similar challenge: convert a customer's interest into a confirmed service delivered by a real person. Mobile-first booking information and reliable coordination may matter more to that goal than another marketing claim about innovation.",
+        "Guests can explore Tranquilitas's current Nassau in-spa and mobile options using the company's official booking channel. The company-reported SBDC nomination is a timely reason to examine the operational model, not a substitute for testing its results."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Tranquilitas official service information",
+      "url": "https://www.massagebahamas.com/"
+    },
+    {
+      "name": "SBDC Bahamas — 2026 MSME Honors announcements",
+      "url": "https://bs.linkedin.com/company/sbdcbahamas"
+    },
+    {
+      "name": "SBDC Bahamas — about the organization",
+      "url": "https://sbdcbahamas.com/about-us/"
+    }
+  ],
+  "ctaUrl": "https://www.massagebahamas.com/book",
+  "ctaLabel": "Check appointment options"
+},
   {
     "slug": "beach-massage-nassau-tranquilitas",
     "title": "Beach Massage in Nassau: Tranquilitas Brings the Spa to the Shore",
