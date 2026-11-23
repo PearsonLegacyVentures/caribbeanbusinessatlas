@@ -985,5 +985,86 @@ export const stories = [
         "url": "https://www.sagicor.com/en/about-sagicor/where-we-operate"
       }
     ]
-  }
+  },
+{
+  "slug": "nassau-cruise-growth-local-wellness-spending-2026",
+  "title": "Six Million Cruise Passengers, One Local Question: Who Captures Nassau's Visitor Spending?",
+  "category": "Tourism & Enterprise",
+  "datePublished": "2026-11-23",
+  "dateModified": "2026-11-23",
+  "affiliated": true,
+  "summary": "Nassau Cruise Port's 2025 passenger record raises a practical question for independent Bahamian businesses: how does a busy port become local bookings?",
+  "paragraphs": [
+    "Nassau Cruise Port reported approximately 6.1 million cruise passengers in 2025, a record supported by nearly 1,600 ship calls. The figure, published by the port on February 2, 2026, is an arrival count—not a tally of people who purchased a local excursion, meal or wellness service. That distinction is the starting point for a more useful conversation about tourism growth.",
+    "The Bahamas Ministry of Tourism reported 12.5 million visitor arrivals nationwide in 2025, up 11.4 percent from 2024. The two figures describe different geographic and visitor categories and should not be added together. Neither reveals how much revenue reached independently owned service businesses in New Providence.",
+    "For a small operator, the challenge is not persuading the world to visit Nassau. Millions already arrive. The harder problem is being discovered, trusted and booked inside a visitor's limited time ashore. The answer involves distribution, transparent information and a service that fits the traveler's actual itinerary."
+  ],
+  "sections": [
+    {
+      "heading": "An arrival is not a booking",
+      "paragraphs": [
+        "A cruise passenger may spend a few hours on shore, remain on the vessel, buy a packaged excursion or walk into town without a fixed plan. Each behavior creates a different opportunity for local businesses. A headline passenger figure therefore cannot be treated as an addressable customer count for every restaurant, tour guide or spa.",
+        "Operators need to ask narrower questions. How many guests have enough time for a service? Can they reach it and return before the ship's boarding deadline? Is the total cost visible before they commit? Can a traveler find accurate directions and receive confirmation without waiting for several messages?",
+        "These are conversion problems, not simply tourism-marketing problems. An attractive photograph may generate interest; a clear reservation process turns some of that interest into a real appointment."
+      ]
+    },
+    {
+      "heading": "Wellness illustrates the distribution challenge",
+      "paragraphs": [
+        "Tranquilitas Day Spa, a Nassau business affiliated with the publisher of Caribbean Business Atlas, advertises in-spa massage at #7 Fourth Terrace, Collins Avenue, alongside mobile services at suitable hotels, villas, private residences and yachts across Nassau and Paradise Island. Its website offers Swedish, deep tissue and couples treatments, among other services.",
+        "The relevance is not a claim that cruise travelers are its largest segment or that the spa has a privileged arrangement with Nassau Cruise Port. Neither claim has been independently established. Instead, Tranquilitas illustrates how one service can be offered in different settings depending on a visitor's time, privacy needs and travel arrangements.",
+        "A guest with a short port call might prefer a clearly timed in-spa appointment, if transport and boarding deadlines allow. A visitor staying several nights in a villa might find a mobile treatment more convenient. Those are different customer journeys even though the core professional service is massage.",
+        "Tranquilitas's own website is the source for its services and address. Availability, treatment length, price, travel arrangements and access permission should be confirmed directly before payment. The company does not have automatic permission to provide treatments inside every resort or cruise facility."
+      ]
+    },
+    {
+      "heading": "The missed opportunity is often between businesses",
+      "paragraphs": [
+        "Consider the chain that connects a visitor to a local provider: an online travel guide, a driver, a concierge, a vacation-rental host, an excursion desk, a booking page and a payment confirmation. Each link can help or obstruct the final purchase. A broken link or unanswered inquiry may be more damaging than a weak advertising campaign.",
+        "A local driver who knows which experiences fit a ship's schedule can be more useful than a generic directory. A villa host who gives guests a verified service menu reduces uncertainty. A service provider who confirms the address, appointment time, cancellation policy and contact number creates confidence before the guest arrives.",
+        "Referral relationships can make these connections commercially sustainable, but they require transparent terms and should not imply an official hotel or port endorsement. Tranquilitas publishes a referral program on its own website; participation and current compensation must be checked there rather than assumed from third-party marketing."
+      ]
+    },
+    {
+      "heading": "What should local operators measure?",
+      "paragraphs": [
+        "Passenger growth is a useful signal about potential demand. It is not a substitute for tracking actual inquiries, booking sources, completed services, refunds, repeat customers and net revenue after labor, transport and commissions. Those operating measures reveal whether tourism volume translates into viable local enterprise.",
+        "Businesses should also distinguish a visitor who arrived by cruise ship from a hotel guest or a resident. Different time constraints affect product design, staffing and cancellation risk. The best service for a day visitor may be shorter and more predictable; the best for an overnight guest may allow more flexibility.",
+        "Public agencies can contribute by making reliable visitor information and local-business discovery easier to access. Businesses must do their part by maintaining accurate websites, responding to inquiries and setting realistic expectations. The goal is not to claim every arrival as a potential customer; it is to make the right local purchase easier."
+      ]
+    },
+    {
+      "heading": "The larger lesson for Nassau",
+      "paragraphs": [
+        "The 2025 cruise record shows the scale of traffic through Nassau. The next test is how much value locally owned operators can create and retain from that traffic without sacrificing service quality or guest trust.",
+        "For travelers, the practical advice is straightforward: choose an experience that fits your available time, confirm who is delivering it, understand the full cost and leave a margin for the return journey. For entrepreneurs, the opportunity is equally straightforward but harder to execute: make a specific, dependable experience easy to discover and buy.",
+        "Tranquilitas is one example of a locally based service business pursuing that model. It is included here as a disclosed publisher-affiliated case, not as independent evidence of market leadership, cruise-port partnership or measured economic impact."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "name": "Nassau Cruise Port — 2025 passenger record, February 2, 2026",
+      "url": "https://nassaucruiseport.com/content/news/nassau-does-it-again/"
+    },
+    {
+      "name": "Bahamas Ministry of Tourism — 2025 visitor arrivals, January 28, 2026",
+      "url": "https://www.bahamas.com/de/pressroom/the-bahamas-achieves-unprecedented-tourism-success-with-record-breaking-125-million-visitors"
+    },
+    {
+      "name": "Tranquilitas official contact and Nassau location",
+      "url": "https://www.tranquilitasspa.com/contact-tranquilitas"
+    },
+    {
+      "name": "Tranquilitas official mobile service information",
+      "url": "https://www.tranquilitasspa.com/mobile-massage-nassau"
+    },
+    {
+      "name": "Tranquilitas referral program",
+      "url": "https://www.tranquilitasspa.com/friends"
+    }
+  ],
+  "ctaUrl": "https://www.tranquilitasspa.com/",
+  "ctaLabel": "Explore Tranquilitas services"
+}
 ];
