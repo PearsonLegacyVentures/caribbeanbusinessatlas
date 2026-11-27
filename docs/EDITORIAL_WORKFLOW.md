@@ -17,11 +17,31 @@ Caribbean Business Atlas is an editorial business directory and journal. It can 
 
 ### Editorial cadence
 
-**Target from 22 November 2026:** eight fully researched, distinct articles per week: one each Monday through Saturday, and two on Sunday, Nassau time. The existing Tuesday/Friday task handles two; the other five-day task handles Monday, Wednesday, Thursday, Saturday and two Sunday stories. Rotate subject matter across **all current and developing Tranquilitas destination countries and territories** over several weeks: The Bahamas, Caribbean destinations, United States locations and European partner markets, plus verified future additions. See `docs/DESTINATION_COVERAGE.md` for the editorial status rules and rotation list. Every destination-specific claim about active services, local therapists, partners, prices or bookings must be verified against current public evidence or authorized business information; planned destinations must not be described as live. Publish without separate approval once source verification, affiliation disclosures, image permissions and release checks pass. If evidence is missing, prepare a research draft rather than invent interviews, awards, prices, results or citations. The manual editorial brief generator may support research assignments.
+**Standing weekly target (updated 27 November 2026): EIGHT distinct, researched articles**, with exactly **SIX Tranquilitas features** and **TWO features of the founder's other eligible businesses**.
+
+| Day | Article assignment |
+| --- | --- |
+| Monday | 1 Tranquilitas article |
+| Tuesday | 1 Tranquilitas article (existing Tuesday/Friday task) |
+| Wednesday | 1 other founder-business article |
+| Thursday | 1 Tranquilitas article |
+| Friday | 1 Tranquilitas article (existing Tuesday/Friday task) |
+| Saturday | 1 other founder-business article |
+| Sunday | 2 distinct Tranquilitas articles, independently verified and published in the same scheduled Sunday run |
+
+This allocation requires **six Tranquilitas stories and two other-business stories**, not six articles total. The Monday/Wednesday/Thursday/Saturday/Sunday task must produce TWO separate stories on Sunday because the account's active-automation limit prevents a dedicated extra Sunday publishing task. The Tuesday/Friday task remains assigned only to Tranquilitas.
+
+The two Wednesday/Saturday features may cover **ONLY** the following publisher-affiliated businesses: **Mel J's Event Rentals; Bahamas AI Solutions; Bahama Mineral Co.; CocoLoop Bahamas; ClearKayakPhotos.com (Clear Kayak Photos)**. Rotate these five subjects over time so the same venture does not dominate. Do not treat any other company as a primary featured business in new articles within this eight-per-week schedule; independently sourced third-party mentions are acceptable for context, comparison or news verification. Preserve historical researched profiles and existing public pages.
+
+Tranquilitas editorial coverage should rotate all current and emerging locations across The Bahamas, Caribbean, United States and Europe over time, not repeatedly default to Nassau. See `docs/DESTINATION_COVERAGE.md` for geographic status rules. Before any destination-specific claim about active services, local therapists, partners, prices or bookings, verify against current primary evidence or authorized business records; describe unconfirmed or planned destinations as such. Avoid publishing what amounts to identical destination advertisements.
+
+**All six named ventures are connected to the publisher.** Display a clear disclosure in each relevant story; company-provided descriptions are not third-party endorsement. CocoLoop is in development, and Bahama Mineral Co.'s operating/commercial stage must be verified before new claims. Do not invent customers, wins, reviews, partnerships, product launches, interviews or performance statistics.
+
+There is standing publication approval from the owner, but publication still requires source verification, factual accuracy, original useful writing, image rights, functional links, build/test QA, sitemap/canonical consistency and live deployment verification. When a blocker persists, leave the piece as an unpublished draft or pull request; **do not count it toward published output**. Track the number actually live against eight, rather than confusing drafted articles with completed publication.
 
 ### Coverage mix
 
-For each six pieces, aim for: two sourced independent company stories; one industry insight; one founder/operator interview with direct quotes; one commercial or partnership analysis; one evidence-backed business feature. Mix country and size. No minimum percentage of affiliated businesses is a substitute for transparency.
+Within the two eligible other-venture slots, alternate product/business explainers, practical customer guides, documented milestones, founding stories and relevant sector analysis. Within six Tranquilitas slots, balance destination-specific guest help with actual operations and travel industry trends. Avoid forced cross-promotion, keyword stuffing and claims of independent awards. All articles must be genuinely useful and credible; no weekly quota excuses thin or unverified work.
 
 ### Editorial selection vs ranked lists
 
