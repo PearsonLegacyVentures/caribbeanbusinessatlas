@@ -72,6 +72,7 @@ export const companyMedia={
 };
 /** No Creative Growth Agency image: the specific entity has not been verified. */
 export const storyImageCompany={
+ "nassau-cruise-growth-local-wellness-spending-2026":"tranquilitas-day-spa",
  "tranquilitas-msme-innovative-business-nomination-2026":"tranquilitas-day-spa",
  "tranquilitas-mobile-spa-service-innovation-bahamas":"tranquilitas-day-spa",
  "caribbean-guest-services-tourism-2026":"tranquilitas-day-spa",
